@@ -1556,20 +1556,6 @@ footer{
   </div>
   <div class="nav-social">
     <!-- Lojas — em breve -->
-    <div class="nav-stores">
-      <span class="nav-store-icon" aria-label="App Store">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-        </svg>
-      </span>
-      <span class="nav-store-icon" aria-label="Google Play">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M3.61 1.814a1 1 0 00-.61.92v18.532a1 1 0 00.61.92L13.792 12 3.61 1.814zm10.182 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.2 1.73l-2.302-2.302 2.302-2.301 1.617.937a1 1 0 010 1.729l-1.617.937zM5.864 2.658L16.8 9l-2.302 2.302-8.634-8.644z"/>
-        </svg>
-      </span>
-      <span class="nav-stores-divider"></span>
-      <span class="nav-stores-label">App disponível em breve</span>
-    </div>
     <a href="https://www.instagram.com/meu.kora?igsh=cW5rdjFxc2lzNXA3" class="nav-social-link" target="_blank" rel="noopener" aria-label="Instagram">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -2335,65 +2321,82 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, {passive: true});
 
-// ── 2. Scroll reveal (IntersectionObserver) ─────────────────────
+// ── 2. Scroll reveal — repete a cada visita ──────────────────────
 const srObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('on'); srObs.unobserve(e.target); }
-  });
+  entries.forEach(e => e.target.classList.toggle('on', e.isIntersecting));
 }, { threshold: 0.1 });
 document.querySelectorAll('.sr').forEach(el => srObs.observe(el));
 
-// ── 3. Radar chart — anima área ao entrar no viewport ───────────
+// ── 3. Radar chart — repete a cada visita ────────────────────────
 const scoreSci = document.querySelector('.score-sci');
 if (scoreSci) {
   const radarObs = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
+      scoreSci.classList.remove('in-view');
+      void scoreSci.offsetWidth;
       scoreSci.classList.add('in-view');
-      radarObs.disconnect();
+    } else {
+      scoreSci.classList.remove('in-view');
     }
   }, { threshold: 0.2 });
   radarObs.observe(scoreSci);
 }
 
-// ── 4. Chat card animation ──────────────────────────────────────
+// ── 4. Chat card — repete a cada visita ──────────────────────────
 const chatCard = document.querySelector('.chat-card');
 if (chatCard) {
+  let chatTimer = null, chatInterval = null;
+  const inp = document.getElementById('chat-typewriter');
+  const chatText = 'Opção 1, pode me ajudar com o preparo nunca fiz tilápia.';
+
   const chatObs = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
+      clearTimeout(chatTimer); clearInterval(chatInterval);
+      chatCard.classList.remove('in-view');
+      void chatCard.offsetWidth;
       chatCard.classList.add('in-view');
-      chatObs.disconnect();
-
-      // Typewriter no input após última mensagem
-      const inp  = document.getElementById('chat-typewriter');
-      const text = 'Opção 1, pode me ajudar com o preparo nunca fiz tilápia.';
-      let i = 0;
-      setTimeout(() => {
-        inp.value = '';
-        const type = setInterval(() => {
-          inp.value += text[i++];
-          if (i >= text.length) clearInterval(type);
+      if (inp) inp.value = '';
+      chatTimer = setTimeout(() => {
+        let i = 0;
+        chatInterval = setInterval(() => {
+          inp.value += chatText[i++];
+          if (i >= chatText.length) clearInterval(chatInterval);
         }, 42);
       }, 7000);
+    } else {
+      chatCard.classList.remove('in-view');
+      clearTimeout(chatTimer); clearInterval(chatInterval);
+      if (inp) inp.value = '';
     }
   }, { threshold: 0.35 });
   chatObs.observe(chatCard);
 }
 
-// ── 5. Contador de vagas ────────────────────────────────────────
+// ── 5. Contador de vagas — repete a cada visita ───────────────────
 const wlGauge = document.querySelector('.wl-gauge');
 if (wlGauge) {
+  let cntRaf = null;
+  const cntEl = document.getElementById('wl-counter');
+
   const cntObs = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
-      cntObs.disconnect();
-      const el = document.getElementById('wl-counter');
+      cancelAnimationFrame(cntRaf);
+      wlGauge.classList.remove('on');
+      void wlGauge.offsetWidth;
+      wlGauge.classList.add('on');
+      if (cntEl) cntEl.textContent = '0';
       const target = 42, duration = 1800, start = performance.now();
       const tick = now => {
         const t = Math.min((now - start) / duration, 1);
         const ease = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(ease * target);
-        if (t < 1) requestAnimationFrame(tick);
+        cntEl.textContent = Math.round(ease * target);
+        if (t < 1) cntRaf = requestAnimationFrame(tick);
       };
-      requestAnimationFrame(tick);
+      cntRaf = requestAnimationFrame(tick);
+    } else {
+      wlGauge.classList.remove('on');
+      cancelAnimationFrame(cntRaf);
+      if (cntEl) cntEl.textContent = '0';
     }
   }, { threshold: 0.4 });
   cntObs.observe(wlGauge);
