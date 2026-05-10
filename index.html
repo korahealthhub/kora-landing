@@ -1523,12 +1523,17 @@ footer{
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:16px;
 }
-.foot-brand{display:flex;align-items:center;gap:8px}
-.foot-k{width:22px;height:22px;object-fit:contain;opacity:.7}
-.foot-name{
-  height:13px;object-fit:contain;
-  filter:brightness(0) invert(1);
-  opacity:.4;
+.foot-brand{display:flex;align-items:center;gap:10px}
+.foot-store-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:7px;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.45);flex-shrink:0;
+}
+.foot-stores-divider{width:1px;height:16px;background:rgba(255,255,255,0.12)}
+.foot-stores-label{
+  font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;
+  color:rgba(255,255,255,0.35);letter-spacing:.04em;text-transform:uppercase;
 }
 .foot-links{
   display:flex;align-items:center;gap:22px;flex-wrap:wrap;
@@ -1869,22 +1874,12 @@ footer{
 </section>
 
 <!-- ─── Stats strip ──────────────────────────────────────────── -->
-<div class="stats-strip">
-  <div class="stats-strip-inner">
-    <div class="stat-item sr">
-      <span class="stat-num">6</span>
-      <span class="stat-desc">pilares monitorados</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item sr d1">
-      <span class="stat-num">1 min</span>
-      <span class="stat-desc">check-in diário</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item sr d2">
-      <span class="stat-num">100%</span>
-      <span class="stat-desc">seus dados</span>
-    </div>
+<div class="mid-cta sr">
+  <p class="mid-cta-text">Pronto para organizar sua saúde de verdade?</p>
+  <div class="wl-btn-wrap" style="margin-top:0;">
+    <a href="#lista" class="hero-cta" style="font-size:15px;padding:15px 32px;">
+      Garantir minha vaga gratuita <span class="cta-arrow">→</span>
+    </a>
   </div>
 </div>
 
@@ -2313,8 +2308,18 @@ footer{
 <!-- ─── Footer ────────────────────────────────────────────────── -->
 <footer>
   <div class="foot-brand">
-    <img src="./logo-k.png" class="foot-k" alt="">
-    <img src="./nome-kora.png" class="foot-name" alt="Kora">
+    <span class="foot-store-icon" aria-label="App Store">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+    </span>
+    <span class="foot-store-icon" aria-label="Google Play">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.18 23.76c.3.17.65.19.97.07l11.65-6.74-2.5-2.5-10.12 9.17zm-1.12-20.3A1.5 1.5 0 0 0 2 4.5v15a1.5 1.5 0 0 0 .06.54l10.44-9.54L2.06 3.46zM20.1 9.24l-2.5-1.44-2.8 2.56 2.8 2.8 2.52-1.46a1.5 1.5 0 0 0 0-2.46zM4.15.24a1 1 0 0 0-.97.07L13.3 9.58l2.5-2.5L4.15.24z"/>
+      </svg>
+    </span>
+    <span class="foot-stores-divider"></span>
+    <span class="foot-stores-label">App disponível em breve</span>
   </div>
   <div class="foot-links">
     <a href="https://korahealthhub.github.io/kora-privacy" class="foot-link" target="_blank" rel="noopener">Privacidade</a>
