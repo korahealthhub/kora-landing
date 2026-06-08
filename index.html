@@ -118,9 +118,9 @@ nav.scrolled{
 .entry-btn{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:16px;
   padding:16px;
-  border-radius:16px;
+  border-radius:24px;
   cursor:pointer;
   transition:transform .18s ease, opacity .18s ease, box-shadow .18s ease;
   border:1px solid transparent;
@@ -161,8 +161,8 @@ nav.scrolled{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:40px;height:40px;
-  border-radius:12px;
+  width:44px;height:44px;
+  border-radius:14px;
   background:rgba(255,255,255,0.12);
   flex-shrink:0;
   color:#fff;
@@ -173,23 +173,27 @@ nav.scrolled{
 
 .entry-btn-body{
   flex:1;
+  display:flex;
+  flex-direction:column;
 }
 .entry-btn-label{
   font-family:'Manrope',sans-serif;
-  font-weight:700;
-  font-size:15px;
+  font-weight:800;
+  font-size:16px;
   color:#fff;
   line-height:1.2;
+  display:block;
 }
 .entry-btn-caption{
   font-family:'Manrope',sans-serif;
   font-weight:500;
   font-size:12px;
-  color:rgba(255,255,255,0.55);
-  margin-top:3px;
+  color:rgba(255,255,255,0.50);
+  margin-top:4px;
+  display:block;
 }
 .entry-btn-primary .entry-btn-caption{
-  color:rgba(255,255,255,0.72);
+  color:rgba(255,255,255,0.70);
 }
 
 /* ─── Divisor ────────────────────────────────────────────────── */
@@ -257,7 +261,8 @@ footer{
     <a href="./sobre.html#lista" class="entry-btn entry-btn-primary">
       <span class="entry-btn-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
         </svg>
       </span>
       <span class="entry-btn-body">
@@ -270,9 +275,7 @@ footer{
     <a href="./sobre.html" class="entry-btn entry-btn-secondary">
       <span class="entry-btn-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
         </svg>
       </span>
       <span class="entry-btn-body">
