@@ -178,35 +178,42 @@ nav.scrolled{
 .toc-mobile-list a:hover{color:var(--text);background:rgba(255,255,255,0.03)}
 
 /* ─── Guide layout ───────────────────────────────────────────────── */
-.guide-layout{
-  max-width:1140px;
-  margin:0 auto;
-  padding:40px 24px 80px;
-}
-@media(min-width:1024px){
-  .guide-layout{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:60px;
-    align-items:start;
-    padding:48px 80px 80px;
-  }
+.guide-layout {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
 }
 
-/* ─── TOC sidebar ────────────────────────────────────────────────── */
-.toc-sidebar{
-  display:none;
+.toc-sidebar {
+  display: none;
 }
-@media(min-width:1024px){
-  .toc-sidebar{
-    display:block;
-    position:sticky;
-    top:84px;
-    width:220px;
-    max-height:calc(100vh - 104px);
-    overflow-y:auto;
-    overflow-x:hidden;
-    padding-top:8px;
+
+.guide-content {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    align-items: start;
+    padding-top: 48px;
+  }
+
+  .toc-sidebar {
+    display: block;
+    position: sticky;
+    top: 84px;
+    width: 220px;
+    max-height: calc(100vh - 104px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 8px;
+  }
+
+  .guide-content {
+    min-width: 0;
   }
 }
 .toc-heading{
@@ -244,15 +251,7 @@ nav.scrolled{
   background:rgba(61,158,140,0.06);
 }
 
-/* ─── Guide content ──────────────────────────────────────────────── */
-.guide-content{
-  width:100%;
-}
-@media(min-width:1024px){
-  .guide-content{
-    min-width:0;
-  }
-}
+
 
 /* ─── Section ────────────────────────────────────────────────────── */
 .guide-section{
