@@ -100,10 +100,9 @@
 
   /* ── HERO ── */
   .guide-intro {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 52px 24px 32px;
+    padding: 40px 0 32px;
     border-bottom: 1px solid var(--border-l);
+    margin-bottom: 32px;
   }
 
   .guide-title {
@@ -213,11 +212,6 @@
   .guide-content { width: 100%; }
 
   @media (min-width: 1024px) {
-    .guide-intro {
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-
     .guide-layout {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -539,14 +533,6 @@
 
 <!-- ─── Intro ────────────────────────────────────────────────────── -->
 <div class="guide-wrap">
-  <div class="guide-intro">
-    <h1 class="guide-title">Guia do usuário</h1>
-    <p class="guide-lead">Tudo que você precisa saber para aproveitar ao máximo o Kora, do primeiro acesso ao dia a dia.</p>
-    <div class="guide-meta">
-      <span class="guide-badge">14 seções</span>
-      <span class="guide-badge">Usuários novos</span>
-    </div>
-  </div>
 
   <!-- ─── Guide layout ─────────────────────────────────────────── -->
   <div class="guide-layout">
@@ -576,6 +562,16 @@
 
     <!-- ─── Content ──────────────────────────────────────────────── -->
     <main class="guide-content">
+
+      <!-- Hero -->
+      <div class="guide-intro">
+        <h1 class="guide-title">Guia do usuário</h1>
+        <p class="guide-lead">Tudo que você precisa saber para aproveitar ao máximo o Kora, do primeiro acesso ao dia a dia.</p>
+        <div class="guide-meta">
+          <span class="guide-badge">14 seções</span>
+          <span class="guide-badge">Usuários novos</span>
+        </div>
+      </div>
 
       <!-- ─── Mobile TOC ─────────────────────────────────────────── -->
       <div class="toc-mobile-wrap">
