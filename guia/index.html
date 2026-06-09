@@ -179,9 +179,9 @@ nav.scrolled{
 
 /* ─── Guide layout ───────────────────────────────────────────────── */
 .guide-layout{
-  max-width:var(--max);
+  max-width:1140px;
   margin:0 auto;
-  padding:40px var(--px) 80px;
+  padding:40px 24px 80px;
 }
 @media(min-width:1024px){
   .guide-layout{
@@ -189,7 +189,7 @@ nav.scrolled{
     grid-template-columns:220px 1fr;
     gap:60px;
     align-items:start;
-    padding-top:48px;
+    padding:48px 80px 80px;
   }
 }
 
@@ -206,7 +206,6 @@ nav.scrolled{
     max-height:calc(100vh - 104px);
     overflow-y:auto;
     overflow-x:hidden;
-    z-index:1;
     padding-top:8px;
   }
 }
@@ -247,9 +246,12 @@ nav.scrolled{
 
 /* ─── Guide content ──────────────────────────────────────────────── */
 .guide-content{
-  min-width:0;
-  position:relative;
-  z-index:2;
+  width:100%;
+}
+@media(min-width:1024px){
+  .guide-content{
+    min-width:0;
+  }
 }
 
 /* ─── Section ────────────────────────────────────────────────────── */
