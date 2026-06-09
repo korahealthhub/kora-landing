@@ -466,6 +466,27 @@
       margin-right: 4px;
     }
 
+    /* SCREEN IMAGES */
+    .screens {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+
+    .screen-img {
+      width: 160px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 560px) {
+      .screen-img {
+        width: 140px;
+      }
+    }
+
     /* BACK TO TOP */
     .back-top {
       position: fixed;
@@ -555,11 +576,8 @@
     <p>O app funciona melhor com planos configurados, mas da para comecar sem nenhum. O check-in diário e a hidratação já funcionam no primeiro acesso.</p>
     <p>O que você come, o quanto dorme e se você treinou afetam diretamente o score do dia. Acompanhar esses dados ao longo do tempo mostra padrão, não apenas momentos isolados.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>home_01</span>
-        <span>HomeScreen com anel do score e cards do dia</span>
-      </div>
+    <div class="screens">
+      <img src="./home_01.png" alt="Tela inicial do Kora com score e cards do dia" class="screen-img">
     </div>
 
     <div class="faq">
@@ -589,11 +607,9 @@
     <p>Quando um item e configurado, o card correspondente aparece na tela inicial com os dados do dia. A tela inicial mostra apenas o que foi ativado.</p>
     <p>O tour guiado aparece no checklist e explica cada parte do app. Você pode acessá-lo novamente em Perfil, na seção Guias, a qualquer momento.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>checklist_01</span>
-        <span>ChecklistScreen com item expandido</span>
-      </div>
+    <div class="screens">
+      <img src="./checklist_close.png" alt="Checklist de configuração recolhido" class="screen-img">
+      <img src="./checklist_expand.png" alt="Checklist de configuração expandido com opções" class="screen-img">
     </div>
 
     <div class="faq">
@@ -636,11 +652,8 @@
     </div>
     <p>O anel animado na home muda de cor conforme a faixa: verde, laranja ou vermelho. Toque no score para ver o detalhamento na tela de Evolução.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>score_01</span>
-        <span>HomeScreen com anel do score em destaque</span>
-      </div>
+    <div class="screens">
+      <img src="./roscascore.png" alt="Anel do Kora Score com os seis pilares" class="screen-img">
     </div>
 
     <div class="faq">
@@ -670,11 +683,11 @@
     <p>O check-in pode ser refeito se você quiser corrigir alguma informação. O último registro é o que vale para o score.</p>
     <p>Sem check-in, os pilares de sono, disposição e humor ficam zerados naquele dia. Você pode ativar um lembrete matinal em Perfil, na seção Notificacoes.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>checkin_01</span>
-        <span>CheckinScreen com seções de sono e disposição</span>
-      </div>
+    <div class="screens">
+      <img src="./checkin_01.png" alt="Check-in — tela inicial" class="screen-img">
+      <img src="./checkin_02.png" alt="Check-in — registro de sono" class="screen-img">
+      <img src="./checkin_03.png" alt="Check-in — disposição" class="screen-img">
+      <img src="./checkin_04.png" alt="Check-in — humor" class="screen-img">
     </div>
 
     <div class="faq">
@@ -708,15 +721,11 @@
 
     <p>Como o plano aparece na tela de Nutrição: um card por refeição com horário, nome e lista de alimentos. Para trocar ou atualizar, acesse Perfil, seção Meus Planos, toque em Nutrição.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>nutrição_01</span>
-        <span>NutritionScreen com banner de macros</span>
-      </div>
-      <div class="print-box">
-        <span>nutrição_02</span>
-        <span>NutritionScreen com cards de refeição</span>
-      </div>
+    <div class="screens">
+      <img src="./cadastro_nutrição_01.png" alt="Cadastro de plano alimentar — passo 1" class="screen-img">
+      <img src="./cadastro_nutrição_02.png" alt="Cadastro de plano alimentar — passo 2" class="screen-img">
+      <img src="./cadastro_nutrição_03.png" alt="Cadastro de plano alimentar — passo 3" class="screen-img">
+      <img src="./cadastro_nutrição_04.png" alt="Cadastro de plano alimentar — passo 4" class="screen-img">
     </div>
 
     <div class="faq">
@@ -751,15 +760,10 @@
 
     <p>Os macros no banner da tela de Nutrição se atualizam conforme você registra. O anel de calorias muda de cor quando você se apróxima da meta diária.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>nutrição_03</span>
-        <span>NutritionScreen com card de refeição expandido</span>
-      </div>
-      <div class="print-box">
-        <span>nutrição_04</span>
-        <span>FoodSearchScreen com resultados de busca</span>
-      </div>
+    <div class="screens">
+      <img src="./registro_nutrição_01.png" alt="Registro de refeição — passo 1" class="screen-img">
+      <img src="./registro_nutrição_02.png" alt="Registro de refeição — passo 2" class="screen-img">
+      <img src="./registro_nutrição_03.png" alt="Registro de refeição — passo 3" class="screen-img">
     </div>
 
     <div class="faq">
@@ -789,11 +793,8 @@
     <p>Para registrar, toque no botao de check ao lado de cada suplemento. Quando o horário passou e o suplemento ainda não foi marcado, o card exibe um aviso visual.</p>
     <p>Para desativar a função de suplementos, acesse Perfil, seção Meus Planos, toque em Suplementação e selecione desativar.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>suplementos_01</span>
-        <span>NutritionScreen scrollada até seção de suplementos</span>
-      </div>
+    <div class="screens">
+      <img src="./registro_suplemento_01.png" alt="Registro de suplemento" class="screen-img">
     </div>
 
     <div class="faq">
@@ -825,15 +826,9 @@
     <p>Cada exercício da biblioteca tem uma animação que demonstra a execução correta. Elas aparecem como miniatura no card do exercício. Se um exercício não tiver animação, você pode vincular um da biblioteca em Vincular exercício.</p>
     <p>Para trocar ou atualizar o plano, acesse Perfil, seção Meus Planos, toque em Treino.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>treino_01</span>
-        <span>WorkoutScreen com ficha expandida e thumbnails</span>
-      </div>
-      <div class="print-box">
-        <span>treino_02</span>
-        <span>WorkoutScreen com banner de sugestao de ficha</span>
-      </div>
+    <div class="screens">
+      <img src="./treino_01.png" alt="Plano de treino — fichas" class="screen-img">
+      <img src="./treino_02.png" alt="Plano de treino — exercícios" class="screen-img">
     </div>
 
     <div class="faq">
@@ -868,15 +863,11 @@
 
     <p>O treino aparece no histórico e na tela de Evolução no mesmo dia, com detalhamento de grupos musculares e duração.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>treino_03</span>
-        <span>ActiveWorkoutScreen com cronômetro ativo</span>
-      </div>
-      <div class="print-box">
-        <span>treino_04</span>
-        <span>WorkoutDoneScreen com resumo da sessão</span>
-      </div>
+    <div class="screens">
+      <img src="./inicio_treino_01.png" alt="Iniciar treino — passo 1" class="screen-img">
+      <img src="./inicio_treino_02png.png" alt="Iniciar treino — passo 2" class="screen-img">
+      <img src="./inicio_treino_03.png" alt="Iniciar treino — passo 3" class="screen-img">
+      <img src="./inicio_treino_04.png" alt="Iniciar treino — passo 4" class="screen-img">
     </div>
 
     <div class="faq">
@@ -906,11 +897,8 @@
     <p>O percentual da meta atingida é o que alimenta o pilar de Hidratação no score do dia. Chegou a 100% da meta significa score máximo nesse pilar.</p>
     <p>Dica: registre sempre que beber um copo para manter o progresso atualizado ao longo do dia.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>hidratação_01</span>
-        <span>HomeScreen com card de hidratação em destaque</span>
-      </div>
+    <div class="screens">
+      <img src="./hidratação_01.png" alt="Card de hidratação na tela inicial" class="screen-img">
     </div>
 
     <div class="faq">
@@ -947,15 +935,8 @@
     <p>Como registrar uma refeição pelo Coach: por texto, escreva o que você comeu ("Comi uma banana e dois ovos mexidos agora") e o Coach pergunta em qual refeição registrar. Por foto, toque no ícone de câmera, envie a imagem e o Coach identifica os alimentos.</p>
     <p>O Coach extrai padroes das conversas anteriores. Ele pode lembrar preferências e contexto geral, mas não guarda transcrições completas.</p>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>coach_01</span>
-        <span>CoachScreen com chips de sugestao de perguntas</span>
-      </div>
-      <div class="print-box">
-        <span>coach_02</span>
-        <span>CoachScreen com resposta personalizada do Coach</span>
-      </div>
+    <div class="screens">
+      <img src="./coachkora_01.png" alt="Coach Kora em conversa ativa" class="screen-img">
     </div>
 
     <div class="faq">
@@ -993,15 +974,10 @@
       <li><strong>Coach com contexto:</strong> botao para abrir o Coach já sabendo que você está analisando aquele período específico.</li>
     </ul>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>evolução_01</span>
-        <span>EvolutionScreen com score e calendário colorido</span>
-      </div>
-      <div class="print-box">
-        <span>evolução_02</span>
-        <span>EvolutionScreen com hexágono dos pilares</span>
-      </div>
+    <div class="screens">
+      <img src="./evolução_01.png" alt="Tela de evolução — score" class="screen-img">
+      <img src="./evolução_02.png" alt="Tela de evolução — pilares" class="screen-img">
+      <img src="./evolução_03.png" alt="Tela de evolução — gráficos" class="screen-img">
     </div>
 
     <div class="faq">
@@ -1038,15 +1014,11 @@
       <li><strong>Excluir conta:</strong> disponível na seção Conta. Os dados são removidos em até 30 dias conforme a LGPD.</li>
     </ul>
 
-    <div class="prints">
-      <div class="print-box">
-        <span>perfil_01</span>
-        <span>ProfileScreen com Perfil pessoal e Meus planos</span>
-      </div>
-      <div class="print-box">
-        <span>perfil_02</span>
-        <span>ProfileScreen com Preferências de treino</span>
-      </div>
+    <div class="screens">
+      <img src="./perfil_01.png" alt="Perfil — dados pessoais" class="screen-img">
+      <img src="./perfil_02.png" alt="Perfil — preferências de treino" class="screen-img">
+      <img src="./perfil_03.png" alt="Perfil — meus planos" class="screen-img">
+      <img src="./perfil_04.png" alt="Perfil — configurações" class="screen-img">
     </div>
 
     <div class="faq">
