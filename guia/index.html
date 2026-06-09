@@ -100,9 +100,9 @@
 
   /* ── HERO ── */
   .guide-intro {
-    padding: 40px 0 32px;
+    padding-bottom: 32px;
     border-bottom: 1px solid var(--border-l);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .guide-title {
@@ -137,144 +137,93 @@
     color: var(--teal-l); text-transform: uppercase;
   }
 
-  /* ── MOBILE TOC ── */
-  .toc-mobile-wrap {
-    display: block;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border-l);
-    margin-bottom: 32px;
-  }
-
-  .toc-mobile-btn {
-    display: flex; align-items: center; justify-content: space-between;
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--bg3);
-    border: 1px solid var(--border-l);
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 13px; font-weight: 600;
-  }
-
-  .toc-mobile-btn svg {
-    transition: transform .25s ease;
-    flex-shrink: 0;
-    color: var(--text-dim);
-  }
-
-  .toc-mobile-btn.open svg { transform: rotate(180deg); }
-
-  .toc-mobile-list {
-    display: none;
-    background: var(--bg3);
-    border: 1px solid var(--border-l);
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    padding: 8px 0;
-  }
-
-  .toc-mobile-list.open { display: block; }
-
-  .toc-mobile-list ol {
-    list-style: none;
-    counter-reset: toc-counter;
-    padding: 0;
-  }
-
-  .toc-mobile-list li { counter-increment: toc-counter; }
-
-  .toc-mobile-list a {
-    display: flex; align-items: center; gap: 10px;
-    padding: 9px 16px;
-    font-size: 13px; color: var(--text-dim);
-    transition: color .15s, background .15s;
-  }
-
-  .toc-mobile-list a::before {
-    content: counter(toc-counter);
-    min-width: 18px;
-    font-size: 11px; font-weight: 700;
-    color: var(--text-faint);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .toc-mobile-list a:hover { color: var(--text); background: rgba(255,255,255,0.03); }
-
-  /* ── GRID LAYOUT ── */
-  .guide-layout {
-    max-width: var(--max);
+  /* ── CONTEÚDO ── */
+  .guide-content {
+    max-width: 760px;
     margin: 0 auto;
-    padding: 0 24px 80px;
-    flex: 1;
+    padding: 80px 24px 80px;
   }
 
-  .toc-sidebar { display: none; }
-  .guide-content { width: 100%; }
-
-  @media (min-width: 1024px) {
-    .guide-layout {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 64px;
-      align-items: start;
-      padding-top: 40px;
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-
-    .toc-mobile-wrap { display: none; }
-
-    .toc-sidebar {
-      display: block;
-      position: sticky;
-      top: var(--nav-h);
-      max-height: calc(100vh - var(--nav-h));
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-
-    .toc-sidebar::-webkit-scrollbar { width: 3px; }
-    .toc-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-    .guide-content { min-width: 0; }
+  /* ── ACCORDION SUMÁRIO ── */
+  .toc-accordion {
+    margin-bottom: 40px;
+    border: 1px solid var(--border-l);
+    border-radius: 12px;
+    overflow: hidden;
   }
 
-  /* ── TOC SIDEBAR ── */
-  .toc-heading {
-    font-size: 10px; font-weight: 700; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--text-faint);
-    margin-bottom: 14px;
+  .toc-btn {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: none;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
   }
 
-  .toc-list {
-    list-style: none;
-    counter-reset: toc-counter;
-    display: flex; flex-direction: column; gap: 2px;
-  }
-
-  .toc-list li { counter-increment: toc-counter; }
-
-  .toc-link {
-    display: flex; align-items: center; gap: 8px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    font-size: 12.5px; font-weight: 500;
-    color: var(--text-dim);
-    transition: color .15s, background .15s;
-    border-left: 2px solid transparent;
-  }
-
-  .toc-link::before {
-    content: counter(toc-counter);
-    min-width: 16px;
-    font-size: 10px; font-weight: 700;
+  .toc-btn svg {
+    width: 16px;
+    height: 16px;
     color: var(--text-faint);
-    font-family: 'DM Mono', monospace;
+    transition: transform 0.25s;
     flex-shrink: 0;
   }
 
-  .toc-link:hover { color: var(--text); background: rgba(255,255,255,0.04); }
-  .toc-link.active { color: var(--teal-l); border-left-color: var(--teal); background: rgba(61,158,140,0.06); }
+  .toc-btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .toc-panel {
+    display: none;
+    padding: 8px 20px 16px;
+    border-top: 1px solid var(--border-l);
+  }
+
+  .toc-panel.open {
+    display: block;
+  }
+
+  .toc-panel ol {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  @media (max-width: 560px) {
+    .toc-panel ol { columns: 1; }
+  }
+
+  .toc-panel li {
+    break-inside: avoid;
+    padding: 4px 0;
+  }
+
+  .toc-panel a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s;
+  }
+
+  .toc-panel a:hover { color: var(--teal-l); }
+
+  .toc-n {
+    font-size: 10px;
+    color: var(--text-faint);
+    min-width: 14px;
+    font-variant-numeric: tabular-nums;
+  }
 
   /* ── SEÇÕES ── */
   .guide-section {
@@ -531,37 +480,9 @@
   </a>
 </nav>
 
-<!-- ─── Intro ────────────────────────────────────────────────────── -->
+<!-- ─── Conteúdo ─────────────────────────────────────────────────── -->
 <div class="guide-wrap">
-
-  <!-- ─── Guide layout ─────────────────────────────────────────── -->
-  <div class="guide-layout">
-
-    <!-- TOC desktop -->
-    <aside class="toc-sidebar" aria-label="Sumário">
-      <p class="toc-heading">Neste guia</p>
-      <nav>
-        <ol class="toc-list">
-          <li><a href="#o-que-e" class="toc-link">O que é o Kora</a></li>
-          <li><a href="#primeiros-passos" class="toc-link">Primeiros passos</a></li>
-          <li><a href="#kora-score" class="toc-link">Kora Score</a></li>
-          <li><a href="#check-in" class="toc-link">Check-in diário</a></li>
-          <li><a href="#plano-alimentar" class="toc-link">Plano alimentar</a></li>
-          <li><a href="#registrar-refeicao" class="toc-link">Registrar refeição</a></li>
-          <li><a href="#suplementos" class="toc-link">Suplementos</a></li>
-          <li><a href="#plano-treino" class="toc-link">Plano de treino</a></li>
-          <li><a href="#registrar-treino" class="toc-link">Registrar treino</a></li>
-          <li><a href="#hidratacao" class="toc-link">Hidratação</a></li>
-          <li><a href="#coach" class="toc-link">Coach Kora</a></li>
-          <li><a href="#evolucao" class="toc-link">Tela de Evolução</a></li>
-          <li><a href="#perfil" class="toc-link">Perfil e configurações</a></li>
-          <li><a href="#faq" class="toc-link">Dúvidas frequentes</a></li>
-        </ol>
-      </nav>
-    </aside>
-
-    <!-- ─── Content ──────────────────────────────────────────────── -->
-    <main class="guide-content">
+  <main class="guide-content">
 
       <!-- Hero -->
       <div class="guide-intro">
@@ -573,30 +494,30 @@
         </div>
       </div>
 
-      <!-- ─── Mobile TOC ─────────────────────────────────────────── -->
-      <div class="toc-mobile-wrap">
-        <button class="toc-mobile-btn" id="toc-mobile-btn" aria-expanded="false">
-          Ver sumário
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- ─── Accordion sumário ─────────────────────────────────── -->
+      <div class="toc-accordion">
+        <button class="toc-btn" id="toc-btn" aria-expanded="false">
+          <span>Ver sumário</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </button>
-        <nav class="toc-mobile-list" id="toc-mobile-list">
+        <nav class="toc-panel" id="toc-panel">
           <ol>
-            <li><a href="#o-que-e">O que é o Kora</a></li>
-            <li><a href="#primeiros-passos">Primeiros passos</a></li>
-            <li><a href="#kora-score">Kora Score</a></li>
-            <li><a href="#check-in">Check-in diário</a></li>
-            <li><a href="#plano-alimentar">Plano alimentar</a></li>
-            <li><a href="#registrar-refeicao">Registrar o que você comeu</a></li>
-            <li><a href="#suplementos">Suplementos</a></li>
-            <li><a href="#plano-treino">Plano de treino</a></li>
-            <li><a href="#registrar-treino">Iniciar e registrar um treino</a></li>
-            <li><a href="#hidratacao">Hidratação</a></li>
-            <li><a href="#coach">Coach Kora</a></li>
-            <li><a href="#evolucao">Tela de Evolução</a></li>
-            <li><a href="#perfil">Perfil e configurações</a></li>
-            <li><a href="#faq">Dúvidas frequentes</a></li>
+            <li><a href="#o-que-e"><span class="toc-n">1</span>O que é o Kora</a></li>
+            <li><a href="#primeiros-passos"><span class="toc-n">2</span>Primeiros passos</a></li>
+            <li><a href="#kora-score"><span class="toc-n">3</span>Kora Score</a></li>
+            <li><a href="#check-in"><span class="toc-n">4</span>Check-in diário</a></li>
+            <li><a href="#plano-alimentar"><span class="toc-n">5</span>Plano alimentar</a></li>
+            <li><a href="#registrar-refeicao"><span class="toc-n">6</span>Registrar o que você comeu</a></li>
+            <li><a href="#suplementos"><span class="toc-n">7</span>Suplementos</a></li>
+            <li><a href="#plano-treino"><span class="toc-n">8</span>Plano de treino</a></li>
+            <li><a href="#registrar-treino"><span class="toc-n">9</span>Iniciar e registrar um treino</a></li>
+            <li><a href="#hidratacao"><span class="toc-n">10</span>Hidratação</a></li>
+            <li><a href="#coach"><span class="toc-n">11</span>Coach Kora</a></li>
+            <li><a href="#evolucao"><span class="toc-n">12</span>Tela de Evolução</a></li>
+            <li><a href="#perfil"><span class="toc-n">13</span>Perfil e configurações</a></li>
+            <li><a href="#faq"><span class="toc-n">14</span>Dúvidas frequentes</a></li>
           </ol>
         </nav>
       </div>
@@ -1314,8 +1235,7 @@
         </div>
       </section>
 
-    </main><!-- /guide-content -->
-  </div><!-- /guide-layout -->
+  </main>
 </div><!-- /guide-wrap -->
 
 <!-- ─── Footer ───────────────────────────────────────────────────── -->
@@ -1356,64 +1276,45 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, {passive: true});
 
-// Mobile TOC toggle
-const tocBtn = document.getElementById('toc-mobile-btn');
-const tocList = document.getElementById('toc-mobile-list');
-tocBtn.addEventListener('click', () => {
-  const open = tocList.classList.toggle('open');
-  tocBtn.classList.toggle('open', open);
-  tocBtn.setAttribute('aria-expanded', String(open));
-});
-tocList.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    tocList.classList.remove('open');
-    tocBtn.classList.remove('open');
-    tocBtn.setAttribute('aria-expanded', 'false');
-  });
-});
+// Accordion do sumário
+const tocBtn = document.getElementById('toc-btn');
+const tocPanel = document.getElementById('toc-panel');
 
-// Accordion
+if (tocBtn && tocPanel) {
+  tocBtn.addEventListener('click', () => {
+    const isOpen = tocPanel.classList.toggle('open');
+    tocBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  tocPanel.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      tocPanel.classList.remove('open');
+      tocBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
-    // Close all in same block
     const block = btn.closest('.faq-block');
     block.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
 });
 
-// Back to top
-const btt = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  btt.classList.toggle('visible', window.scrollY > 300);
-}, {passive: true});
-btt.addEventListener('click', () => {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-});
-
-// TOC active state via IntersectionObserver
-const sections = document.querySelectorAll('.guide-section');
-const tocLinks = document.querySelectorAll('.toc-link');
-const tocMap = {};
-tocLinks.forEach(link => {
-  const id = link.getAttribute('href').slice(1);
-  tocMap[id] = link;
-});
-
-let activeId = null;
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      if (activeId) tocMap[activeId]?.classList.remove('active');
-      activeId = entry.target.id;
-      tocMap[activeId]?.classList.add('active');
-    }
+// Botão voltar ao topo
+const backTop = document.querySelector('.back-to-top');
+if (backTop) {
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('visible', window.scrollY > 300);
+  }, {passive: true});
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-}, {rootMargin: '-80px 0px -60% 0px', threshold: 0});
-
-sections.forEach(s => observer.observe(s));
+}
 </script>
 
 <!--
