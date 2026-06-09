@@ -201,10 +201,13 @@ nav.scrolled{
   .toc-sidebar{
     display:block;
     position:sticky;
-    top:80px;
+    top:84px;
     width:220px;
-    max-height:calc(100vh - 100px);
+    max-height:calc(100vh - 104px);
     overflow-y:auto;
+    overflow-x:hidden;
+    z-index:1;
+    padding-top:8px;
   }
 }
 .toc-heading{
@@ -245,6 +248,8 @@ nav.scrolled{
 /* ─── Guide content ──────────────────────────────────────────────── */
 .guide-content{
   min-width:0;
+  position:relative;
+  z-index:2;
 }
 
 /* ─── Section ────────────────────────────────────────────────────── */
