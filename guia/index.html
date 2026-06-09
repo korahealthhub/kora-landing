@@ -43,7 +43,7 @@ button{cursor:pointer}
   --px:         80px;
   --max:        1140px;
 }
-@media(max-width:768px){:root{--px:22px}}
+@média(max-width:768px){:root{--px:22px}}
 
 /* ─── Base ───────────────────────────────────────────────────────── */
 body{
@@ -130,7 +130,7 @@ nav.scrolled{
   margin:28px auto 0;
   padding:0 var(--px);
 }
-@media(min-width:1024px){.toc-mobile-wrap{display:none}}
+@média(min-width:1024px){.toc-mobile-wrap{display:none}}
 .toc-mobile-btn{
   display:flex;align-items:center;justify-content:space-between;
   width:100%;
@@ -182,7 +182,7 @@ nav.scrolled{
   margin:0 auto;
   padding:40px var(--px) 80px;
 }
-@media(min-width:1024px){
+@média(min-width:1024px){
   .guide-layout{
     display:grid;
     grid-template-columns:220px 1fr;
@@ -196,7 +196,7 @@ nav.scrolled{
 .toc-sidebar{
   display:none;
 }
-@media(min-width:1024px){
+@média(min-width:1024px){
   .toc-sidebar{
     display:block;
     position:sticky;
@@ -508,7 +508,7 @@ footer{
 .foot-link:hover{color:var(--text-dim)}
 
 /* ─── Responsive ─────────────────────────────────────────────────── */
-@media(max-width:640px){
+@média(max-width:640px){
   .print-row{justify-content:center}
   .pillar-row{flex-direction:column;gap:4px}
   .pillar-dot{display:none}
@@ -520,7 +520,7 @@ footer{
 <!-- ─── Nav ─────────────────────────────────────────────────────── -->
 <nav id="nav">
   <a href="../" class="nav-brand">
-    <img src="../nome-kora.png" class="nav-name" alt="Kora">
+    <img src="./nome-kora.png" class="nav-name" alt="Kora">
   </a>
   <a href="../" class="nav-back">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -534,37 +534,37 @@ footer{
 <div class="guide-wrap">
   <div class="guide-intro">
     <h1 class="guide-title">Guia do usuário</h1>
-    <p class="guide-lead">Tudo que voce precisa saber para aproveitar ao maximo o Kora, do primeiro acesso ao dia a dia.</p>
+    <p class="guide-lead">Tudo que você precisa saber para aproveitar ao máximo o Kora, do primeiro acesso ao dia a dia.</p>
     <div class="guide-meta">
-      <span class="guide-badge">14 secoes</span>
-      <span class="guide-badge">Usuarios novos</span>
+      <span class="guide-badge">14 seções</span>
+      <span class="guide-badge">Usuários novos</span>
     </div>
   </div>
 
   <!-- ─── Mobile TOC ───────────────────────────────────────────── -->
   <div class="toc-mobile-wrap">
     <button class="toc-mobile-btn" id="toc-mobile-btn" aria-expanded="false">
-      Ver sumario
+      Ver sumário
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"/>
       </svg>
     </button>
     <nav class="toc-mobile-list" id="toc-mobile-list">
       <ol>
-        <li><a href="#o-que-e">O que e o Kora</a></li>
+        <li><a href="#o-que-e">O que é o Kora</a></li>
         <li><a href="#primeiros-passos">Primeiros passos</a></li>
         <li><a href="#kora-score">Kora Score</a></li>
-        <li><a href="#check-in">Check-in diario</a></li>
+        <li><a href="#check-in">Check-in diário</a></li>
         <li><a href="#plano-alimentar">Plano alimentar</a></li>
-        <li><a href="#registrar-refeicao">Registrar o que voce comeu</a></li>
+        <li><a href="#registrar-refeicao">Registrar o que você comeu</a></li>
         <li><a href="#suplementos">Suplementos</a></li>
         <li><a href="#plano-treino">Plano de treino</a></li>
         <li><a href="#registrar-treino">Iniciar e registrar um treino</a></li>
-        <li><a href="#hidratacao">Hidratacao</a></li>
+        <li><a href="#hidratacao">Hidratação</a></li>
         <li><a href="#coach">Coach Kora</a></li>
-        <li><a href="#evolucao">Tela de Evolucao</a></li>
-        <li><a href="#perfil">Perfil e configuracoes</a></li>
-        <li><a href="#faq">Duvidas frequentes</a></li>
+        <li><a href="#evolucao">Tela de Evolução</a></li>
+        <li><a href="#perfil">Perfil e configurações</a></li>
+        <li><a href="#faq">Dúvidas frequentes</a></li>
       </ol>
     </nav>
   </div>
@@ -573,24 +573,24 @@ footer{
   <div class="guide-layout">
 
     <!-- TOC desktop -->
-    <aside class="toc-sidebar" aria-label="Sumario">
+    <aside class="toc-sidebar" aria-label="Sumário">
       <p class="toc-heading">Neste guia</p>
       <nav>
         <ol class="toc-list">
-          <li><a href="#o-que-e" class="toc-link">O que e o Kora</a></li>
+          <li><a href="#o-que-e" class="toc-link">O que é o Kora</a></li>
           <li><a href="#primeiros-passos" class="toc-link">Primeiros passos</a></li>
           <li><a href="#kora-score" class="toc-link">Kora Score</a></li>
-          <li><a href="#check-in" class="toc-link">Check-in diario</a></li>
+          <li><a href="#check-in" class="toc-link">Check-in diário</a></li>
           <li><a href="#plano-alimentar" class="toc-link">Plano alimentar</a></li>
-          <li><a href="#registrar-refeicao" class="toc-link">Registrar refeicao</a></li>
+          <li><a href="#registrar-refeicao" class="toc-link">Registrar refeição</a></li>
           <li><a href="#suplementos" class="toc-link">Suplementos</a></li>
           <li><a href="#plano-treino" class="toc-link">Plano de treino</a></li>
           <li><a href="#registrar-treino" class="toc-link">Registrar treino</a></li>
-          <li><a href="#hidratacao" class="toc-link">Hidratacao</a></li>
+          <li><a href="#hidratacao" class="toc-link">Hidratação</a></li>
           <li><a href="#coach" class="toc-link">Coach Kora</a></li>
-          <li><a href="#evolucao" class="toc-link">Tela de Evolucao</a></li>
-          <li><a href="#perfil" class="toc-link">Perfil e configuracoes</a></li>
-          <li><a href="#faq" class="toc-link">Duvidas frequentes</a></li>
+          <li><a href="#evolucao" class="toc-link">Tela de Evolução</a></li>
+          <li><a href="#perfil" class="toc-link">Perfil e configurações</a></li>
+          <li><a href="#faq" class="toc-link">Dúvidas frequentes</a></li>
         </ol>
       </nav>
     </aside>
@@ -599,18 +599,18 @@ footer{
     <main class="guide-content">
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 1 — O que e o Kora
+           SEÇÃO 1 — O que é o Kora
       ══════════════════════════════════════════════════════════════ -->
       <section id="o-que-e" class="guide-section">
-        <span class="section-num">Secao 01</span>
-        <h2 class="section-title">O que e o Kora</h2>
-        <p class="section-sub">Um app que acompanha sua saude de forma simples, integrando sono, alimentacao, treino, hidratacao, disposicao e humor em um unico lugar.</p>
+        <span class="section-num">Seção 01</span>
+        <h2 class="section-title">O que é o Kora</h2>
+        <p class="section-sub">Um app que acompanha sua saúde de forma simples, integrando sono, alimentação, treino, hidratação, disposição e humor em um único lugar.</p>
 
         <div class="section-body">
-          <p>O Kora nao e um app de dieta nem de academia. E um acompanhamento diario de seis pilares de saude que se influenciam mutuamente. Quando voce dorme bem, sua disposicao melhora. Quando treina, seu humor tende a subir. O app conecta esses pontos e mostra o resultado no seu score do dia.</p>
-          <p>Qualquer pessoa pode usar, independente de ter personal trainer ou nutricionista. Voce pode subir um plano existente, criar um do zero ou pedir para o Coach IA gerar um baseado no seu perfil.</p>
-          <p>O app funciona melhor com planos configurados, mas da para comecar sem nenhum. O check-in diario e a hidratacao ja funcionam no primeiro acesso.</p>
-          <p>O que voce come, o quanto dorme e se voce treinou afetam diretamente o score do dia. Acompanhar esses dados ao longo do tempo mostra padrao, nao apenas momentos isolados.</p>
+          <p>O Kora não é um app de dieta nem de academia. E um acompanhamento diário de seis pilares de saúde que se influenciam mutuamente. Quando você dorme bem, sua disposição melhora. Quando treina, seu humor tende a subir. O app conecta esses pontos e mostra o resultado no seu score do dia.</p>
+          <p>Qualquer pessoa pode usar, independente de ter personal trainer ou nutricionista. Você pode subir um plano existente, criar um do zero ou pedir para o Coach IA gerar um baseado no seu perfil.</p>
+          <p>O app funciona melhor com planos configurados, mas da para comecar sem nenhum. O check-in diário e a hidratação já funcionam no primeiro acesso.</p>
+          <p>O que você come, o quanto dorme e se você treinou afetam diretamente o score do dia. Acompanhar esses dados ao longo do tempo mostra padrão, não apenas momentos isolados.</p>
         </div>
 
         <div class="print-row">
@@ -626,34 +626,34 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">O Kora substitui um nutricionista ou personal trainer?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Nao. O Kora e uma ferramenta de acompanhamento. Os planos gerados pelo Coach IA tem carater orientativo. Para condicoes de saude especificas, consulte um profissional.</div>
+            <div class="faq-a">Não. O Kora é uma ferramenta de acompanhamento. Os planos gerados pelo Coach IA tem caráter orientativo. Para condições de saúde específicas, consulte um profissional.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Preciso ter plano alimentar para usar o Kora?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Nao. Voce pode usar o Kora registrando apenas check-in e hidratacao. Os macros e o pilar de alimentacao so sao calculados completamente com um plano configurado.</div>
+            <div class="faq-a">Não. Você pode usar o Kora registrando apenas check-in e hidratação. Os macros e o pilar de alimentação só são calculados completamente com um plano configurado.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">O app funciona no Android?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. O Kora esta disponivel para iOS e Android.</div>
+            <div class="faq-a">Sim. O Kora está disponível para iOS e Android.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 2 — Primeiros passos
+           SEÇÃO 2 — Primeiros passos
       ══════════════════════════════════════════════════════════════ -->
       <section id="primeiros-passos" class="guide-section">
-        <span class="section-num">Secao 02</span>
+        <span class="section-num">Seção 02</span>
         <h2 class="section-title">Primeiros passos</h2>
-        <p class="section-sub">Ao abrir o app pela primeira vez, o Kora apresenta um checklist de configuracao. Voce faz no seu ritmo e pode pular qualquer item para configurar depois.</p>
+        <p class="section-sub">Ao abrir o app pela primeira vez, o Kora apresenta um checklist de configuração. Você faz no seu ritmo e pode pular qualquer item para configurar depois.</p>
 
         <div class="section-body">
-          <p>O checklist tem tres itens: plano alimentar, plano de treino e suplementos. Para cada item voce escolhe entre quatro opcoes: subir PDF de um profissional, criar manualmente, gerar com o Coach IA ou pular por agora.</p>
-          <p>Nenhum item e obrigatorio. Tudo pode ser configurado ou alterado depois em Perfil, na secao Meus Planos.</p>
+          <p>O checklist tem tres itens: plano alimentar, plano de treino e suplementos. Para cada item você escolhe entre quatro opções: subir PDF de um profissional, criar manualmente, gerar com o Coach IA ou pular por agora.</p>
+          <p>Nenhum item e obrigatório. Tudo pode ser configurado ou alterado depois em Perfil, na seção Meus Planos.</p>
           <p>Quando um item e configurado, o card correspondente aparece na tela inicial com os dados do dia. A tela inicial mostra apenas o que foi ativado.</p>
-          <p>O tour guiado aparece no checklist e explica cada parte do app. Voce pode acessá-lo novamente em Perfil, na secao Guias, a qualquer momento.</p>
+          <p>O tour guiado aparece no checklist e explica cada parte do app. Você pode acessá-lo novamente em Perfil, na seção Guias, a qualquer momento.</p>
         </div>
 
         <div class="print-row">
@@ -669,50 +669,50 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">Posso usar o Kora sem plano alimentar ou de treino?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. O app registra check-in e hidratacao sem nenhuma configuracao adicional. Os cards de alimentacao e treino aparecem na home apenas quando os planos estao configurados.</div>
+            <div class="faq-a">Sim. O app registra check-in e hidratação sem nenhuma configuração adicional. Os cards de alimentação e treino aparecem na home apenas quando os planos estão configurados.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Como reconfigurar depois de pular?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Acesse Perfil, role ate a secao Meus Planos e toque em qualquer item para configurar ou trocar.</div>
+            <div class="faq-a">Acesse Perfil, role até a seção Meus Planos e toque em qualquer item para configurar ou trocar.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">O que acontece com meus dados se eu trocar o plano?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O plano anterior e arquivado. Voce pode acessá-lo no historico de planos dentro do Perfil.</div>
+            <div class="faq-a">O plano anterior e arquivado. Você pode acessá-lo no histórico de planos dentro do Perfil.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 3 — Kora Score
+           SEÇÃO 3 — Kora Score
       ══════════════════════════════════════════════════════════════ -->
       <section id="kora-score" class="guide-section">
-        <span class="section-num">Secao 03</span>
+        <span class="section-num">Seção 03</span>
         <h2 class="section-title">Kora Score</h2>
-        <p class="section-sub">O Kora Score e um numero de 0 a 100 que resume como foi o seu dia nos seis pilares de saude. Ele atualiza em tempo real conforme voce registra atividades.</p>
+        <p class="section-sub">O Kora Score é um número de 0 a 100 que resume como foi o seu dia nos seis pilares de saúde. Ele atualiza em tempo real conforme você registra atividades.</p>
 
         <div class="section-body">
-          <p>O score nao e uma nota. E um retrato do dia baseado no que voce registrou. Um score de 60 nao significa que voce foi mal — pode significar que um dos pilares ainda nao foi registrado.</p>
+          <p>O score não é uma nota. E um retrato do dia baseado no que você registrou. Um score de 60 não significa que você foi mal — pode significar que um dos pilares ainda não foi registrado.</p>
 
           <p>Os seis pilares e como cada um e calculado:</p>
           <ul class="pillar-grid">
-            <li class="pillar-row"><span class="pillar-dot" style="background:#A78BFA"></span><span><span class="pillar-label">Sono:</span> horas dormidas e horario de dormir registrados no check-in.</span></li>
-            <li class="pillar-row"><span class="pillar-dot" style="background:#34D399"></span><span><span class="pillar-label">Disposicao:</span> autoavaliacao de 1 a 5 no check-in diario.</span></li>
-            <li class="pillar-row"><span class="pillar-dot" style="background:#FBBF24"></span><span><span class="pillar-label">Alimentacao:</span> percentual de refeicoes e suplementos concluidos no dia.</span></li>
-            <li class="pillar-row"><span class="pillar-dot" style="background:#F472B6"></span><span><span class="pillar-label">Humor:</span> autoavaliacao de 1 a 5 no check-in diario.</span></li>
+            <li class="pillar-row"><span class="pillar-dot" style="background:#A78BFA"></span><span><span class="pillar-label">Sono:</span> horas dormidas e horário de dormir registrados no check-in.</span></li>
+            <li class="pillar-row"><span class="pillar-dot" style="background:#34D399"></span><span><span class="pillar-label">Disposição:</span> autoavaliação de 1 a 5 no check-in diário.</span></li>
+            <li class="pillar-row"><span class="pillar-dot" style="background:#FBBF24"></span><span><span class="pillar-label">Alimentação:</span> percentual de refeições e suplementos concluidos no dia.</span></li>
+            <li class="pillar-row"><span class="pillar-dot" style="background:#F472B6"></span><span><span class="pillar-label">Humor:</span> autoavaliação de 1 a 5 no check-in diário.</span></li>
             <li class="pillar-row"><span class="pillar-dot" style="background:#FB923C"></span><span><span class="pillar-label">Treino:</span> baseado nos minutos de atividade. 20 minutos equivale a score 60, 45 minutos a 90, 60 minutos ou mais a 100. Dia de descanso marcado conta positivamente.</span></li>
-            <li class="pillar-row"><span class="pillar-dot" style="background:#38BDF8"></span><span><span class="pillar-label">Hidratacao:</span> percentual da meta diaria de agua atingida.</span></li>
+            <li class="pillar-row"><span class="pillar-dot" style="background:#38BDF8"></span><span><span class="pillar-label">Hidratação:</span> percentual da meta diária de agua atingida.</span></li>
           </ul>
 
-          <p>Faixas de referencia:</p>
+          <p>Faixas de referência:</p>
           <div class="score-ranges">
             <div class="score-range"><span class="range-dot green"></span>Acima de 75: bom</div>
             <div class="score-range"><span class="range-dot amber"></span>Entre 50 e 75: aceitavel</div>
-            <div class="score-range"><span class="range-dot red"></span>Abaixo de 50: atencao</div>
+            <div class="score-range"><span class="range-dot red"></span>Abaixo de 50: atenção</div>
           </div>
 
-          <p>O anel animado na home muda de cor conforme a faixa: verde, laranja ou vermelho. Toque no score para ver o detalhamento na tela de Evolucao.</p>
+          <p>O anel animado na home muda de cor conforme a faixa: verde, laranja ou vermelho. Toque no score para ver o detalhamento na tela de Evolução.</p>
         </div>
 
         <div class="print-row">
@@ -727,8 +727,8 @@ footer{
           <p class="faq-heading">Perguntas frequentes</p>
 
           <div class="faq-item">
-            <button class="faq-q">Por que meu score esta baixo mesmo me sentindo bem?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O score reflete os registros feitos no app, nao como voce se sente. Se o check-in nao foi feito, sono e disposicao ficam zerados. Verifique qual pilar esta mais baixo tocando no score.</div>
+            <button class="faq-q">Por que meu score está baixo mesmo me sentindo bem?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">O score reflete os registros feitos no app, não como você se sente. Se o check-in não foi feito, sono e disposição ficam zerados. Verifique qual pilar esta mais baixo tocando no score.</div>
           </div>
 
           <div class="faq-item">
@@ -738,31 +738,31 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">Dia de descanso prejudica meu score?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Nao. Marcar um dia de descanso conta positivamente para o pilar de treino. O Kora reconhece que descanso faz parte da rotina saudavel.</div>
+            <div class="faq-a">Não. Marcar um dia de descanso conta positivamente para o pilar de treino. O Kora reconhece que descanso faz parte da rotina saudável.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 4 — Check-in diario
+           SEÇÃO 4 — Check-in diário
       ══════════════════════════════════════════════════════════════ -->
       <section id="check-in" class="guide-section">
-        <span class="section-num">Secao 04</span>
-        <h2 class="section-title">Check-in diario</h2>
-        <p class="section-sub">O check-in e o registro matinal que alimenta tres dos seis pilares: sono, disposicao e humor. Leva menos de um minuto.</p>
+        <span class="section-num">Seção 04</span>
+        <h2 class="section-title">Check-in diário</h2>
+        <p class="section-sub">O check-in é o registro matinal que alimenta tres dos seis pilares: sono, disposição e humor. Leva menos de um minuto.</p>
 
         <div class="section-body">
-          <p>O check-in registra quatro informacoes: horas de sono, horario que voce dormiu, nivel de disposicao de 1 a 5 e humor de 1 a 5. Esses dados alimentam diretamente tres pilares do score do dia.</p>
-          <p>Para acessar, toque em Registrar no card de check-in na tela inicial. O melhor momento e pela manha, logo apos acordar, para refletir o sono da noite anterior. Mas pode ser feito a qualquer hora do dia.</p>
-          <p>O check-in pode ser refeito se voce quiser corrigir alguma informacao. O ultimo registro e o que vale para o score.</p>
-          <p>Sem check-in, os pilares de sono, disposicao e humor ficam zerados naquele dia. Voce pode ativar um lembrete matinal em Perfil, na secao Notificacoes.</p>
+          <p>O check-in registra quatro informações: horas de sono, horário que você dormiu, nivel de disposição de 1 a 5 e humor de 1 a 5. Esses dados alimentam diretamente tres pilares do score do dia.</p>
+          <p>Para acessar, toque em Registrar no card de check-in na tela inicial. O melhor momento e pela manha, logo após acordar, para refletir o sono da noite anterior. Mas pode ser feito a qualquer hora do dia.</p>
+          <p>O check-in pode ser refeito se você quiser corrigir alguma informação. O último registro é o que vale para o score.</p>
+          <p>Sem check-in, os pilares de sono, disposição e humor ficam zerados naquele dia. Você pode ativar um lembrete matinal em Perfil, na seção Notificacoes.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             <span class="print-name">checkin_01</span>
-            <span class="print-desc">CheckinScreen com secoes de sono e disposicao</span>
+            <span class="print-desc">CheckinScreen com seções de sono e disposição</span>
           </div>
         </div>
 
@@ -776,44 +776,44 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">E se eu esquecer de registrar o sono?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O pilar de sono ficara zerado naquele dia. Voce pode ativar o lembrete de check-in em Perfil, na secao Notificacoes.</div>
+            <div class="faq-a">O pilar de sono ficara zerado naquele dia. Você pode ativar o lembrete de check-in em Perfil, na seção Notificacoes.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 5 — Plano alimentar
+           SEÇÃO 5 — Plano alimentar
       ══════════════════════════════════════════════════════════════ -->
       <section id="plano-alimentar" class="guide-section">
-        <span class="section-num">Secao 05</span>
+        <span class="section-num">Seção 05</span>
         <h2 class="section-title">Plano alimentar</h2>
-        <p class="section-sub">O plano alimentar define suas refeicoes, calorias e macronutrientes diarios. Voce pode criar de tres formas diferentes.</p>
+        <p class="section-sub">O plano alimentar define suas refeições, calorias e macronutrientes diários. Você pode criar de tres formas diferentes.</p>
 
         <div class="section-body">
           <div class="callout">
-            <strong>O que sao macronutrientes?</strong> Macronutrientes sao os tres componentes principais dos alimentos que o corpo usa como energia. Proteina constroi e repara musculos. Carboidrato e a principal fonte de energia para o dia. Gordura regula hormonios e absorve vitaminas. As calorias totais sao a soma dos tres.
+            <strong>O que são macronutrientes?</strong> Macronutrientes são os tres componentes principais dos alimentos que o corpo usa como energia. Proteina constroi e repara músculos. Carboidrato é a principal fonte de energia para o dia. Gordura regula hormonios e absorve vitaminas. As calorias totais são a soma dos tres.
           </div>
 
           <p>As tres formas de criar um plano:</p>
           <ol class="steps-list">
-            <li><strong>Subir PDF do nutricionista:</strong> o app le o arquivo e extrai refeicoes, horarios e alimentos usando inteligencia artificial. Funciona com a maioria dos formatos de prescricao nutricional.</li>
-            <li><strong>Criar manualmente:</strong> voce define quantas refeicoes quer por dia e adiciona os alimentos uma a uma usando a base de dados do app.</li>
-            <li><strong>Gerar com o Coach IA:</strong> descreva seu objetivo, restricoes e preferencias e o Coach cria um plano personalizado baseado no seu perfil.</li>
+            <li><strong>Subir PDF do nutricionista:</strong> o app le o arquivo e extrai refeições, horários e alimentos usando inteligência artificial. Funciona com a maioria dos formatos de prescrição nutricional.</li>
+            <li><strong>Criar manualmente:</strong> você define quantas refeições quer por dia e adiciona os alimentos uma a uma usando a base de dados do app.</li>
+            <li><strong>Gerar com o Coach IA:</strong> descreva seu objetivo, restrições e preferências e o Coach cria um plano personalizado baseado no seu perfil.</li>
           </ol>
 
-          <p>Como o plano aparece na tela de Nutricao: um card por refeicao com horario, nome e lista de alimentos. Para trocar ou atualizar, acesse Perfil, secao Meus Planos, toque em Nutricao.</p>
+          <p>Como o plano aparece na tela de Nutrição: um card por refeição com horário, nome e lista de alimentos. Para trocar ou atualizar, acesse Perfil, seção Meus Planos, toque em Nutrição.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">nutricao_01</span>
+            <span class="print-name">nutrição_01</span>
             <span class="print-desc">NutritionScreen com banner de macros</span>
           </div>
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">nutricao_02</span>
-            <span class="print-desc">NutritionScreen com cards de refeicao</span>
+            <span class="print-name">nutrição_02</span>
+            <span class="print-desc">NutritionScreen com cards de refeição</span>
           </div>
         </div>
 
@@ -822,12 +822,12 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">Como o app le o PDF do meu nutricionista?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O arquivo e processado por inteligencia artificial que identifica refeicoes, horarios e alimentos. Apos a leitura, voce pode revisar e corrigir qualquer item antes de salvar.</div>
+            <div class="faq-a">O arquivo e processado por inteligência artificial que identifica refeições, horários e alimentos. Após a leitura, você pode revisar e corrigir qualquer item antes de salvar.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">E se o PDF tiver formatacao estranha?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">A IA faz o melhor possivel com o formato disponivel. Se alguma refeicao nao for lida corretamente, voce pode corrigir manualmente na tela de revisao antes de salvar.</div>
+            <div class="faq-a">A IA faz o melhor possível com o formato disponível. Se alguma refeição não for lida corretamente, você pode corrigir manualmente na tela de revisao antes de salvar.</div>
           </div>
 
           <div class="faq-item">
@@ -838,34 +838,34 @@ footer{
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 6 — Registrar o que voce comeu
+           SEÇÃO 6 — Registrar o que você comeu
       ══════════════════════════════════════════════════════════════ -->
-      <section id="registrar-refeicao" class="guide-section">
-        <span class="section-num">Secao 06</span>
-        <h2 class="section-title">Registrar o que voce comeu</h2>
-        <p class="section-sub">Apos cada refeicao, marque como concluida ou adicione os alimentos que voce comeu. O app atualiza seus macros em tempo real.</p>
+      <section id="registrar-refeição" class="guide-section">
+        <span class="section-num">Seção 06</span>
+        <h2 class="section-title">Registrar o que você comeu</h2>
+        <p class="section-sub">Apos cada refeição, marque como concluida ou adicione os alimentos que você comeu. O app atualiza seus macros em tempo real.</p>
 
         <div class="section-body">
           <ul class="body-list">
-            <li><strong>Marcar como concluida:</strong> toque no botao de check no card da refeicao. Os macros do plano sao somados ao total do dia.</li>
-            <li><strong>Marcar como nao realizada:</strong> toque no botao X. A refeicao e excluida do calculo do dia.</li>
-            <li><strong>Adicionar alimentos:</strong> toque no botao mais dentro do card da refeicao e busque na base de dados. Voce pode adicionar alimentos reais diferentes do plano sem perder a referencia do plano original.</li>
-            <li><strong>Alimento fora da base:</strong> descreva por texto para o Coach ("comi uma fatia de pizza margherita") ou envie uma foto da refeicao. O Coach identifica os alimentos e registra automaticamente.</li>
+            <li><strong>Marcar como concluida:</strong> toque no botao de check no card da refeição. Os macros do plano são somados ao total do dia.</li>
+            <li><strong>Marcar como não realizada:</strong> toque no botao X. A refeição e excluida do calculo do dia.</li>
+            <li><strong>Adicionar alimentos:</strong> toque no botao mais dentro do card da refeição e busque na base de dados. Você pode adicionar alimentos reais diferentes do plano sem perder a referência do plano original.</li>
+            <li><strong>Alimento fora da base:</strong> descreva por texto para o Coach ("comi uma fatia de pizza margherita") ou envie uma foto da refeição. O Coach identifica os alimentos e registra automáticamente.</li>
             <li><strong>Criar alimento manualmente:</strong> na busca, toque em Criar item e preencha os valores nutricionais.</li>
           </ul>
 
-          <p>Os macros no banner da tela de Nutricao se atualizam conforme voce registra. O anel de calorias muda de cor quando voce se aproxima da meta diaria.</p>
+          <p>Os macros no banner da tela de Nutrição se atualizam conforme você registra. O anel de calorias muda de cor quando você se apróxima da meta diária.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">nutricao_03</span>
-            <span class="print-desc">NutritionScreen com card de refeicao expandido</span>
+            <span class="print-name">nutrição_03</span>
+            <span class="print-desc">NutritionScreen com card de refeição expandido</span>
           </div>
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">nutricao_04</span>
+            <span class="print-name">nutrição_04</span>
             <span class="print-desc">FoodSearchScreen com resultados de busca</span>
           </div>
         </div>
@@ -874,42 +874,42 @@ footer{
           <p class="faq-heading">Perguntas frequentes</p>
 
           <div class="faq-item">
-            <button class="faq-q">O que fazer se o alimento nao estiver na base de dados?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Use o Coach IA. Descreva o que comeu por texto ou envie uma foto. O Coach identifica os macros e registra na refeicao correta. Voce tambem pode criar o alimento manualmente com os valores que tiver.</div>
+            <button class="faq-q">O que fazer se o alimento não estiver na base de dados?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Use o Coach IA. Descreva o que comeu por texto ou envie uma foto. O Coach identifica os macros e registra na refeição correta. Você também pode criar o alimento manualmente com os valores que tiver.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Posso registrar uma refeicao que nao esta no meu plano?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Na tela de Nutricao, toque em Adicionar refeicao avulsa e registre o que comeu fora do plano.</div>
+            <button class="faq-q">Posso registrar uma refeição que não está no meu plano?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Sim. Na tela de Nutrição, toque em Adicionar refeição avulsa e registre o que comeu fora do plano.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Posso enviar foto da minha refeicao para o Coach?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Na tela do Coach, toque no icone de camera, tire ou selecione a foto e o Coach identifica os alimentos e pergunta em qual refeicao registrar.</div>
+            <button class="faq-q">Posso enviar foto da minha refeição para o Coach?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Sim. Na tela do Coach, toque no ícone de câmera, tire ou selecione a foto e o Coach identifica os alimentos e pergunta em qual refeição registrar.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 7 — Suplementos
+           SEÇÃO 7 — Suplementos
       ══════════════════════════════════════════════════════════════ -->
       <section id="suplementos" class="guide-section">
-        <span class="section-num">Secao 07</span>
+        <span class="section-num">Seção 07</span>
         <h2 class="section-title">Suplementos</h2>
-        <p class="section-sub">O Kora avisa no horario certo para voce tomar cada suplemento e registra o que foi tomado no dia.</p>
+        <p class="section-sub">O Kora avisa no horário certo para você tomar cada suplemento e registra o que foi tomado no dia.</p>
 
         <div class="section-body">
-          <p>O plano de suplementacao e uma lista de suplementos com nome, dose e horario. Voce configura subindo PDF de profissional ou adicionando manualmente em Perfil ou no checklist inicial.</p>
-          <p>Os suplementos aparecem em uma secao propria na parte inferior da tela de Nutricao, organizados pelo horario agendado. Cada card mostra o horario, o nome do suplemento e a dose.</p>
-          <p>Para registrar, toque no botao de check ao lado de cada suplemento. Quando o horario passou e o suplemento ainda nao foi marcado, o card exibe um aviso visual.</p>
-          <p>Para desativar a funcao de suplementos, acesse Perfil, secao Meus Planos, toque em Suplementacao e selecione desativar.</p>
+          <p>O plano de suplementação é uma lista de suplementos com nome, dose e horário. Você configura subindo PDF de profissional ou adicionando manualmente em Perfil ou no checklist inicial.</p>
+          <p>Os suplementos aparecem em uma seção própria na parte inferior da tela de Nutrição, organizados pelo horário agendado. Cada card mostra o horário, o nome do suplemento e a dose.</p>
+          <p>Para registrar, toque no botao de check ao lado de cada suplemento. Quando o horário passou e o suplemento ainda não foi marcado, o card exibe um aviso visual.</p>
+          <p>Para desativar a função de suplementos, acesse Perfil, seção Meus Planos, toque em Suplementação e selecione desativar.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             <span class="print-name">suplementos_01</span>
-            <span class="print-desc">NutritionScreen scrollada ate secao de suplementos</span>
+            <span class="print-desc">NutritionScreen scrollada até seção de suplementos</span>
           </div>
         </div>
 
@@ -917,37 +917,37 @@ footer{
           <p class="faq-heading">Perguntas frequentes</p>
 
           <div class="faq-item">
-            <button class="faq-q">Preciso de prescricao para usar suplementos?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Nao. Voce adiciona qualquer suplemento manualmente. O app apenas organiza e lembra os horarios. Para duvidas sobre indicacao, consulte um profissional.</div>
+            <button class="faq-q">Preciso de prescrição para usar suplementos?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Não. Você adiciona qualquer suplemento manualmente. O app apenas organiza e lembra os horários. Para dúvidas sobre indicação, consulte um profissional.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">O app envia notificacao para tomar o suplemento?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim, se voce ativar os lembretes em Perfil, na secao Notificacoes.</div>
+            <button class="faq-q">O app envia notificação para tomar o suplemento?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Sim, se você ativar os lembretes em Perfil, na seção Notificacoes.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 8 — Plano de treino
+           SEÇÃO 8 — Plano de treino
       ══════════════════════════════════════════════════════════════ -->
       <section id="plano-treino" class="guide-section">
-        <span class="section-num">Secao 08</span>
+        <span class="section-num">Seção 08</span>
         <h2 class="section-title">Plano de treino</h2>
-        <p class="section-sub">O plano de treino organiza suas fichas por series com exercicios, repeticoes e carga. Voce pode subir o plano do seu personal, criar manualmente ou gerar com o Coach IA.</p>
+        <p class="section-sub">O plano de treino organiza suas fichas por series com exercícios, repeticoes e carga. Você pode subir o plano do seu personal, criar manualmente ou gerar com o Coach IA.</p>
 
         <div class="section-body">
-          <p>Um plano de treino no Kora e composto de fichas identificadas por letra (A, B, C...) com exercicios, series, repeticoes e carga. Voce escolhe como criar:</p>
+          <p>Um plano de treino no Kora é composto de fichas identificadas por letra (A, B, C...) com exercícios, series, repeticoes e carga. Você escolhe como criar:</p>
 
           <ol class="steps-list">
-            <li><strong>Subir PDF do personal trainer:</strong> a IA extrai os exercicios e organiza por ficha.</li>
-            <li><strong>Criar manualmente:</strong> voce monta cada ficha escolhendo exercicios da biblioteca do app.</li>
+            <li><strong>Subir PDF do personal trainer:</strong> a IA extrai os exercícios e organiza por ficha.</li>
+            <li><strong>Criar manualmente:</strong> você monta cada ficha escolhendo exercícios da biblioteca do app.</li>
             <li><strong>Gerar com o Coach IA:</strong> o Coach cria um plano baseado no seu perfil, equipamentos disponiveis, objetivo e dias por semana.</li>
           </ol>
 
-          <p>O app sugere qual ficha treinar hoje com base no historico de treinos e no intervalo entre grupos musculares. Voce ve a sugestao como banner destacado na tela de Treino.</p>
-          <p>Cada exercicio da biblioteca tem uma animacao que demonstra a execucao correta. Elas aparecem como miniatura no card do exercicio. Se um exercicio nao tiver animacao, voce pode vincular um da biblioteca em Vincular exercicio.</p>
-          <p>Para trocar ou atualizar o plano, acesse Perfil, secao Meus Planos, toque em Treino.</p>
+          <p>O app sugere qual ficha treinar hoje com base no histórico de treinos e no intervalo entre grupos musculares. Você ve a sugestao como banner destacado na tela de Treino.</p>
+          <p>Cada exercício da biblioteca tem uma animação que demonstra a execução correta. Elas aparecem como miniatura no card do exercício. Se um exercício não tiver animação, você pode vincular um da biblioteca em Vincular exercício.</p>
+          <p>Para trocar ou atualizar o plano, acesse Perfil, seção Meus Planos, toque em Treino.</p>
         </div>
 
         <div class="print-row">
@@ -968,51 +968,51 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">Preciso de personal trainer para usar o plano de treino?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Nao. O Coach IA gera planos baseados no seu perfil. Para acompanhamento profissional, o app aceita o PDF do seu personal.</div>
+            <div class="faq-a">Não. O Coach IA gera planos baseados no seu perfil. Para acompanhamento profissional, o app aceita o PDF do seu personal.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">O app gera plano para academia e para casa?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Durante a configuracao do perfil voce informa os equipamentos disponiveis e o Coach adapta o plano.</div>
+            <div class="faq-a">Sim. Durante a configuração do perfil você informa os equipamentos disponiveis e o Coach adapta o plano.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">Como adicionar animacao a um exercicio?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Na tela de Treino, toque no exercicio sem imagem e selecione Vincular exercicio. Busque o exercicio correspondente na biblioteca e confirme.</div>
+            <button class="faq-q">Como adicionar animação a um exercício?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Na tela de Treino, toque no exercício sem imagem e selecione Vincular exercício. Busque o exercício correspondente na biblioteca e confirme.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 9 — Iniciar e registrar um treino
+           SEÇÃO 9 — Iniciar e registrar um treino
       ══════════════════════════════════════════════════════════════ -->
       <section id="registrar-treino" class="guide-section">
-        <span class="section-num">Secao 09</span>
+        <span class="section-num">Seção 09</span>
         <h2 class="section-title">Iniciar e registrar um treino</h2>
-        <p class="section-sub">Quando for treinar, abra o app, expanda a ficha do dia e toque em Iniciar treino. O cronometro comeca e voce registra cada serie conforme executa.</p>
+        <p class="section-sub">Quando for treinar, abra o app, expanda a ficha do dia e toque em Iniciar treino. O cronômetro comeca e você registra cada serie conforme executa.</p>
 
         <div class="section-body">
           <ul class="body-list">
             <li><strong>Como iniciar:</strong> expandir a ficha na tela de Treino e tocar em Iniciar treino.</li>
-            <li><strong>Durante a sessao:</strong> cronometro ativo, lista de exercicios, campos para registrar peso e repeticoes por serie. Ha um temporizador de descanso entre series.</li>
+            <li><strong>Durante a sessão:</strong> cronômetro ativo, lista de exercícios, campos para registrar peso e repeticoes por serie. Ha um temporizador de descanso entre series.</li>
             <li><strong>Como encerrar:</strong> toque em Concluir treino. O app salva tempo total, calorias estimadas e grupos musculares trabalhados.</li>
             <li><strong>Dia de descanso:</strong> na tela de Treino, toque em Descanso. Conta positivamente para o pilar de treino no score.</li>
-            <li><strong>Treino avulso:</strong> toque em Treinar sem plano para registrar uma sessao fora da ficha configurada.</li>
+            <li><strong>Treino avulso:</strong> toque em Treinar sem plano para registrar uma sessão fora da ficha configurada.</li>
           </ul>
 
-          <p>O treino aparece no historico e na tela de Evolucao no mesmo dia, com detalhamento de grupos musculares e duracao.</p>
+          <p>O treino aparece no histórico e na tela de Evolução no mesmo dia, com detalhamento de grupos musculares e duração.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             <span class="print-name">treino_03</span>
-            <span class="print-desc">ActiveWorkoutScreen com cronometro ativo</span>
+            <span class="print-desc">ActiveWorkoutScreen com cronômetro ativo</span>
           </div>
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             <span class="print-name">treino_04</span>
-            <span class="print-desc">WorkoutDoneScreen com resumo da sessao</span>
+            <span class="print-desc">WorkoutDoneScreen com resumo da sessão</span>
           </div>
         </div>
 
@@ -1021,41 +1021,41 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">E se eu sair do app no meio do treino?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O treino continua em andamento. Ao voltar, o cronometro retoma de onde parou.</div>
+            <div class="faq-a">O treino continua em andamento. Ao voltar, o cronômetro retoma de onde parou.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Como o app calcula as calorias queimadas?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Com base na duracao da sessao, no peso corporal registrado no perfil e no tipo de treino. E uma estimativa, nao uma medicao precisa.</div>
+            <div class="faq-a">Com base na duração da sessão, no peso corporal registrado no perfil e no tipo de treino. E uma estimativa, não uma medição precisa.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Posso registrar um treino retroativo?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Na tela de Treino, selecione o dia desejado no seletor de dias e registre a sessao para aquela data.</div>
+            <div class="faq-a">Sim. Na tela de Treino, selecione o dia desejado no seletor de dias e registre a sessão para aquela data.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 10 — Hidratacao
+           SEÇÃO 10 — Hidratação
       ══════════════════════════════════════════════════════════════ -->
-      <section id="hidratacao" class="guide-section">
-        <span class="section-num">Secao 10</span>
-        <h2 class="section-title">Hidratacao</h2>
-        <p class="section-sub">O Kora acompanha quanto voce bebe de agua durante o dia. Cada toque no botao mais adiciona 250 ml e atualiza seu progresso.</p>
+      <section id="hidratação" class="guide-section">
+        <span class="section-num">Seção 10</span>
+        <h2 class="section-title">Hidratação</h2>
+        <p class="section-sub">O Kora acompanha quanto você bebe de agua durante o dia. Cada toque no botao mais adiciona 250 ml e atualiza seu progresso.</p>
 
         <div class="section-body">
-          <p>Para registrar, toque no botao mais no card de hidratacao na tela inicial. Para ajustar a meta diaria, toque no icone de edicao no mesmo card.</p>
-          <p>A meta padrao e 2.000 ml por dia. Voce pode ajustar para o valor que preferir a qualquer momento.</p>
-          <p>O percentual da meta atingida e o que alimenta o pilar de Hidratacao no score do dia. Chegou a 100% da meta significa score maximo nesse pilar.</p>
+          <p>Para registrar, toque no botao mais no card de hidratação na tela inicial. Para ajustar a meta diária, toque no ícone de edicao no mesmo card.</p>
+          <p>A meta padrão e 2.000 ml por dia. Você pode ajustar para o valor que preferir a qualquer momento.</p>
+          <p>O percentual da meta atingida é o que alimenta o pilar de Hidratação no score do dia. Chegou a 100% da meta significa score máximo nesse pilar.</p>
           <p>Dica: registre sempre que beber um copo para manter o progresso atualizado ao longo do dia.</p>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">hidratacao_01</span>
-            <span class="print-desc">HomeScreen com card de hidratacao em destaque</span>
+            <span class="print-name">hidratação_01</span>
+            <span class="print-desc">HomeScreen com card de hidratação em destaque</span>
           </div>
         </div>
 
@@ -1064,43 +1064,43 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">A meta e a mesma para todo mundo?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">A meta padrao e 2.000 ml, mas voce pode ajustar para o valor que preferir tocando no icone de edicao no card.</div>
+            <div class="faq-a">A meta padrão e 2.000 ml, mas você pode ajustar para o valor que preferir tocando no ícone de edicao no card.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Posso corrigir um registro feito por engano?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Toque no botao menos no card de hidratacao para reduzir o total registrado.</div>
+            <div class="faq-a">Toque no botao menos no card de hidratação para reduzir o total registrado.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 11 — Coach Kora
+           SEÇÃO 11 — Coach Kora
       ══════════════════════════════════════════════════════════════ -->
       <section id="coach" class="guide-section">
-        <span class="section-num">Secao 11</span>
+        <span class="section-num">Seção 11</span>
         <h2 class="section-title">Coach Kora</h2>
-        <p class="section-sub">O Coach e um assistente com inteligencia artificial que usa seus dados de saude para dar orientacoes personalizadas, responder duvidas e registrar refeicoes por conversa.</p>
+        <p class="section-sub">O Coach e um assistente com inteligência artificial que usa seus dados de saúde para dar orientacoes personalizadas, responder dúvidas e registrar refeições por conversa.</p>
 
         <div class="section-body">
-          <p>O Coach faz: responde perguntas sobre saude, analisa seus dados do dia e do periodo, registra refeicoes por texto ou foto, e gera planos alimentares e de treino personalizados.</p>
-          <p>O Coach nao faz: nao da diagnosticos medicos, nao acessa a internet, nao substitui profissional de saude. Todas as respostas tem carater educativo.</p>
-          <p>Como acessar: icone de estrelas no canto superior direito da home ou da tela de Nutricao.</p>
+          <p>O Coach faz: responde perguntas sobre saúde, analisa seus dados do dia e do período, registra refeições por texto ou foto, e gera planos alimentares e de treino personalizados.</p>
+          <p>O Coach não faz: não da diagnósticos médicos, não acessa a internet, não substitui profissional de saúde. Todas as respostas tem caráter educativo.</p>
+          <p>Como acessar: ícone de estrelas no canto superior direito da home ou da tela de Nutrição.</p>
 
-          <p>O Coach sabe sobre voce: dados do check-in, plano alimentar ativo, historico de refeicoes, plano de treino, historico de sessoes e dados do perfil. Quanto mais voce usar o app, mais contexto o Coach tem para personalizar as respostas.</p>
+          <p>O Coach sabe sobre você: dados do check-in, plano alimentar ativo, histórico de refeições, plano de treino, histórico de sessões e dados do perfil. Quanto mais você usar o app, mais contexto o Coach tem para personalizar as respostas.</p>
 
           <p>Exemplos de perguntas uteis:</p>
           <ul class="body-list">
-            <li>"Minha alimentacao de hoje esta dentro do plano?"</li>
+            <li>"Minha alimentação de hoje está dentro do plano?"</li>
             <li>"Estou batendo minha meta de proteinas?"</li>
             <li>"O que posso comer antes do treino?"</li>
-            <li>"Por que meu score esta baixo esta semana?"</li>
+            <li>"Por que meu score está baixo esta semana?"</li>
             <li>"Crie um plano alimentar para mim com base no meu perfil"</li>
             <li>"Gere um plano de treino para tres dias por semana em casa"</li>
           </ul>
 
-          <p>Como registrar uma refeicao pelo Coach: por texto, escreva o que voce comeu ("Comi uma banana e dois ovos mexidos agora") e o Coach pergunta em qual refeicao registrar. Por foto, toque no icone de camera, envie a imagem e o Coach identifica os alimentos.</p>
-          <p>O Coach extrai padroes das conversas anteriores. Ele pode lembrar preferencias e contexto geral, mas nao guarda transcrições completas.</p>
+          <p>Como registrar uma refeição pelo Coach: por texto, escreva o que você comeu ("Comi uma banana e dois ovos mexidos agora") e o Coach pergunta em qual refeição registrar. Por foto, toque no ícone de câmera, envie a imagem e o Coach identifica os alimentos.</p>
+          <p>O Coach extrai padroes das conversas anteriores. Ele pode lembrar preferências e contexto geral, mas não guarda transcrições completas.</p>
         </div>
 
         <div class="print-row">
@@ -1121,55 +1121,55 @@ footer{
 
           <div class="faq-item">
             <button class="faq-q">O Coach tem memoria das minhas conversas?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim, parcialmente. O Coach extrai padroes e preferencias das conversas anteriores, mas nao armazena transcricoes completas. Ele lembra contexto geral, nao frases especificas.</div>
+            <div class="faq-a">Sim, parcialmente. O Coach extrai padroes e preferências das conversas anteriores, mas não armazena transcrições completas. Ele lembra contexto geral, não frases específicas.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Posso pedir para o Coach criar meu plano alimentar?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Diga ao Coach seu objetivo, quantas refeicoes faz por dia e se tem alguma restricao. Ele gera o plano e voce pode salvar direto no app.</div>
+            <div class="faq-a">Sim. Diga ao Coach seu objetivo, quantas refeições faz por dia e se tem alguma restrição. Ele gera o plano e você pode salvar direto no app.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">O Coach pode recomendar suplementos ou medicamentos?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O Coach pode dar informacoes gerais sobre suplementacao, mas nao faz prescricoes. Para recomendacoes especificas, consulte um profissional de saude.</div>
+            <div class="faq-a">O Coach pode dar informações gerais sobre suplementação, mas não faz prescricoes. Para recomendações específicas, consulte um profissional de saúde.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 12 — Tela de Evolucao
+           SEÇÃO 12 — Tela de Evolução
       ══════════════════════════════════════════════════════════════ -->
-      <section id="evolucao" class="guide-section">
-        <span class="section-num">Secao 12</span>
-        <h2 class="section-title">Tela de Evolucao</h2>
-        <p class="section-sub">A tela de Evolucao mostra seu historico de saude nos ultimos 7 dias, 30 dias ou 3 meses, com graficos de score, pilares e alimentacao.</p>
+      <section id="evolução" class="guide-section">
+        <span class="section-num">Seção 12</span>
+        <h2 class="section-title">Tela de Evolução</h2>
+        <p class="section-sub">A tela de Evolução mostra seu histórico de saúde nos últimos 7 dias, 30 dias ou 3 meses, com gráficos de score, pilares e alimentação.</p>
 
         <div class="section-body">
-          <p>Como acessar: toque no anel do score na tela inicial. Os tres periodos disponiveis aparecem no topo da tela: 7 dias, 30 dias e 3 meses.</p>
+          <p>Como acessar: toque no anel do score na tela inicial. Os tres períodos disponiveis aparecem no topo da tela: 7 dias, 30 dias e 3 meses.</p>
 
           <p>O que cada bloco mostra:</p>
           <ul class="body-list">
-            <li><strong>Score ao longo do periodo:</strong> linha do score dia a dia, media do periodo e comparacao com o periodo anterior.</li>
-            <li><strong>Calendario:</strong> pontos coloridos por dia. Verde significa score acima de 75, laranja entre 50 e 75, vermelho abaixo de 50. Dias sem cor nao tem registro.</li>
-            <li><strong>Equilibrio dos pilares:</strong> hexagono com os seis pilares. Quanto mais o hexagono se aproxima das bordas, mais equilibrada esta sua saude. Compara com o periodo anterior em linha pontilhada.</li>
-            <li><strong>Alimentacao:</strong> grafico de calorias consumidas por dia versus a meta do plano.</li>
-            <li><strong>Treino:</strong> calorias queimadas por dia, numero de sessoes e tempo medio por sessao.</li>
-            <li><strong>Pilares em detalhe:</strong> cards individuais de sono, hidratacao, disposicao e humor com medias e metas do periodo.</li>
-            <li><strong>Insights do periodo:</strong> observacoes automaticas geradas com base nos seus dados, como dias em que a meta de hidratacao foi atingida ou semanas com mais consistencia no treino.</li>
-            <li><strong>Coach com contexto:</strong> botao para abrir o Coach ja sabendo que voce esta analisando aquele periodo especifico.</li>
+            <li><strong>Score ao longo do período:</strong> linha do score dia a dia, média do período e comparação com o período anterior.</li>
+            <li><strong>Calendário:</strong> pontos coloridos por dia. Verde significa score acima de 75, laranja entre 50 e 75, vermelho abaixo de 50. Dias sem cor não tem registro.</li>
+            <li><strong>Equilibrio dos pilares:</strong> hexágono com os seis pilares. Quanto mais o hexágono se apróxima das bordas, mais equilibrada esta sua saúde. Compara com o período anterior em linha pontilhada.</li>
+            <li><strong>Alimentação:</strong> gráfico de calorias consumidas por dia versus a meta do plano.</li>
+            <li><strong>Treino:</strong> calorias queimadas por dia, número de sessões e tempo médio por sessão.</li>
+            <li><strong>Pilares em detalhe:</strong> cards individuais de sono, hidratação, disposição e humor com médias e metas do período.</li>
+            <li><strong>Insights do período:</strong> observacoes automáticas geradas com base nos seus dados, como dias em que a meta de hidratação foi atingida ou semanas com mais consistência no treino.</li>
+            <li><strong>Coach com contexto:</strong> botao para abrir o Coach já sabendo que você está analisando aquele período específico.</li>
           </ul>
         </div>
 
         <div class="print-row">
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">evolucao_01</span>
-            <span class="print-desc">EvolutionScreen com score e calendario colorido</span>
+            <span class="print-name">evolução_01</span>
+            <span class="print-desc">EvolutionScreen com score e calendário colorido</span>
           </div>
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-            <span class="print-name">evolucao_02</span>
-            <span class="print-desc">EvolutionScreen com hexagono dos pilares</span>
+            <span class="print-name">evolução_02</span>
+            <span class="print-desc">EvolutionScreen com hexágono dos pilares</span>
           </div>
         </div>
 
@@ -1177,41 +1177,41 @@ footer{
           <p class="faq-heading">Perguntas frequentes</p>
 
           <div class="faq-item">
-            <button class="faq-q">Por que alguns dias no calendario estao sem cor?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Dias sem cor nao tem check-in registrado. O score so e calculado quando o check-in e feito.</div>
+            <button class="faq-q">Por que alguns dias no calendário estão sem cor?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Dias sem cor não tem check-in registrado. O score só é calculado quando o check-in e feito.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q">O que significa o hexagono dos pilares?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Cada ponta do hexagono representa um pilar. Quanto mais proxima da borda, mais alto o score daquele pilar no periodo. Um hexagono pequeno indica pilares com baixo registro.</div>
+            <button class="faq-q">O que significa o hexágono dos pilares?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Cada ponta do hexágono representa um pilar. Quanto mais próxima da borda, mais alto o score daquele pilar no período. Um hexágono pequeno indica pilares com baixo registro.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Por que meu score varia muito de um dia para o outro?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O score depende de registros diarios. Um dia sem check-in, sem treino registrado ou com hidratacao baixa reduz o score significativamente. A consistencia nos registros estabiliza o score ao longo do tempo.</div>
+            <div class="faq-a">O score depende de registros diários. Um dia sem check-in, sem treino registrado ou com hidratação baixa reduz o score significativamente. A consistência nos registros estabiliza o score ao longo do tempo.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 13 — Perfil e configuracoes
+           SEÇÃO 13 — Perfil e configurações
       ══════════════════════════════════════════════════════════════ -->
       <section id="perfil" class="guide-section">
-        <span class="section-num">Secao 13</span>
-        <h2 class="section-title">Perfil e configuracoes</h2>
-        <p class="section-sub">No Perfil voce mantem seus dados pessoais atualizados, gerencia seus planos e acessa as configuracoes do app.</p>
+        <span class="section-num">Seção 13</span>
+        <h2 class="section-title">Perfil e configurações</h2>
+        <p class="section-sub">No Perfil você mantem seus dados pessoais atualizados, gerencia seus planos e acessa as configurações do app.</p>
 
         <div class="section-body">
           <ul class="body-list">
-            <li><strong>Dados pessoais:</strong> objetivo, nivel de experiencia, peso, altura, meta de peso, genero e data de nascimento. O Coach usa esses dados para personalizar planos e recomendacoes.</li>
-            <li><strong>Preferencias de treino:</strong> equipamentos disponiveis, duracao das sessoes, dias por semana, nivel de treino, rotina de atividade, restricoes fisicas e foco muscular.</li>
-            <li><strong>Alimentacao:</strong> numero de refeicoes por dia. Usado pelo sistema de geracao de planos.</li>
-            <li><strong>Meus planos:</strong> veja, troque ou desative plano alimentar, plano de treino e suplementacao.</li>
-            <li><strong>Historico:</strong> acesse treinos anteriores, a tela de Evolucao e a lista de compras.</li>
-            <li><strong>Lista de compras:</strong> gerada automaticamente com base nos alimentos do plano alimentar ativo.</li>
-            <li><strong>Notificacoes:</strong> configure alertas de refeicao, suplemento, check-in, treino e hidratacao.</li>
+            <li><strong>Dados pessoais:</strong> objetivo, nivel de experiencia, peso, altura, meta de peso, genero e data de nascimento. O Coach usa esses dados para personalizar planos e recomendações.</li>
+            <li><strong>Preferências de treino:</strong> equipamentos disponiveis, duração das sessões, dias por semana, nivel de treino, rotina de atividade, restrições físicas e foco muscular.</li>
+            <li><strong>Alimentação:</strong> número de refeições por dia. Usado pelo sistema de geracao de planos.</li>
+            <li><strong>Meus planos:</strong> veja, troque ou desative plano alimentar, plano de treino e suplementação.</li>
+            <li><strong>Histórico:</strong> acesse treinos anteriores, a tela de Evolução e a lista de compras.</li>
+            <li><strong>Lista de compras:</strong> gerada automáticamente com base nos alimentos do plano alimentar ativo.</li>
+            <li><strong>Notificacoes:</strong> configure alertas de refeição, suplemento, check-in, treino e hidratação.</li>
             <li><strong>Trocar foto:</strong> toque no avatar no topo da tela.</li>
-            <li><strong>Excluir conta:</strong> disponivel na secao Conta. Os dados sao removidos em ate 30 dias conforme a LGPD.</li>
+            <li><strong>Excluir conta:</strong> disponível na seção Conta. Os dados são removidos em até 30 dias conforme a LGPD.</li>
           </ul>
         </div>
 
@@ -1224,7 +1224,7 @@ footer{
           <div class="print-placeholder">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             <span class="print-name">perfil_02</span>
-            <span class="print-desc">ProfileScreen com Preferencias de treino</span>
+            <span class="print-desc">ProfileScreen com Preferências de treino</span>
           </div>
         </div>
 
@@ -1232,80 +1232,80 @@ footer{
           <p class="faq-heading">Perguntas frequentes</p>
 
           <div class="faq-item">
-            <button class="faq-q">Por que preencher os dados fisicos e importante?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O Coach usa peso, altura e objetivo para calcular suas necessidades calorias e personalizar os planos gerados. Dados desatualizados reduzem a precisao das recomendacoes.</div>
+            <button class="faq-q">Por que preencher os dados físicos e importante?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">O Coach usa peso, altura e objetivo para calcular suas necessidades calóricas e personalizar os planos gerados. Dados desatualizados reduzem a precisão das recomendações.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Como trocar meu plano alimentar?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Acesse Perfil, role ate Meus Planos, toque em Nutricao e selecione Subir novo plano ou Criar novo.</div>
+            <div class="faq-a">Acesse Perfil, role até Meus Planos, toque em Nutrição e selecione Subir novo plano ou Criar novo.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q">Como solicitar exclusao da conta?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Acesse Perfil, role ate a secao Conta e toque em Excluir conta. Seus dados sao removidos em ate 30 dias.</div>
+            <div class="faq-a">Acesse Perfil, role até a seção Conta e toque em Excluir conta. Seus dados são removidos em até 30 dias.</div>
           </div>
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════════
-           SECAO 14 — Duvidas frequentes
+           SEÇÃO 14 — Dúvidas frequentes
       ══════════════════════════════════════════════════════════════ -->
       <section id="faq" class="guide-section">
-        <span class="section-num">Secao 14</span>
-        <h2 class="section-title">Duvidas frequentes</h2>
-        <p class="section-sub">Respostas rapidas para as perguntas mais comuns sobre o Kora.</p>
+        <span class="section-num">Seção 14</span>
+        <h2 class="section-title">Dúvidas frequentes</h2>
+        <p class="section-sub">Respostas rápidas para as perguntas mais comuns sobre o Kora.</p>
 
         <div class="faq-block" style="margin-top:24px;border-top:none;padding-top:0">
 
           <div class="faq-item">
-            <button class="faq-q"><span class="faq-num">01</span>Por que meu score esta baixo?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">O score combina seis pilares. O mais comum e ter sono, disposicao ou humor zerados por falta de check-in. Verifique qual pilar esta mais baixo tocando no anel do score na home.</div>
+            <button class="faq-q"><span class="faq-num">01</span>Por que meu score está baixo?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">O score combina seis pilares. O mais comum e ter sono, disposição ou humor zerados por falta de check-in. Verifique qual pilar esta mais baixo tocando no anel do score na home.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">02</span>Como o app sabe minhas calorias?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Com base no plano alimentar configurado. Quando voce marca uma refeicao como concluida ou adiciona alimentos, o total calorico e os macros sao atualizados.</div>
+            <div class="faq-a">Com base no plano alimentar configurado. Quando você marca uma refeição como concluida ou adiciona alimentos, o total calórico e os macros são atualizados.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">03</span>Posso usar sem plano alimentar?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. Sem plano, os macros nao sao calculados. Voce ainda registra check-in, hidratacao e treino normalmente.</div>
+            <div class="faq-a">Sim. Sem plano, os macros não são calculados. Você ainda registra check-in, hidratação e treino normalmente.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q"><span class="faq-num">04</span>O que fazer se o alimento nao estiver na base de dados?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Use o Coach. Descreva o alimento por texto ou envie uma foto. O Coach identifica os macros e registra. Voce tambem pode criar o alimento manualmente.</div>
+            <button class="faq-q"><span class="faq-num">04</span>O que fazer se o alimento não estiver na base de dados?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Use o Coach. Descreva o alimento por texto ou envie uma foto. O Coach identifica os macros e registra. Você também pode criar o alimento manualmente.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">05</span>Como vincular um alimento ao meu plano?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Na tela de Nutricao, abra a refeicao correspondente, toque em Adicionar alimento e busque ou crie o item.</div>
+            <div class="faq-a">Na tela de Nutrição, abra a refeição correspondente, toque em Adicionar alimento e busque ou crie o item.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q"><span class="faq-num">06</span>Como adicionar animacao a um exercicio?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Na tela de Treino, toque no exercicio sem imagem e selecione Vincular exercicio para associar um da biblioteca com animacao.</div>
+            <button class="faq-q"><span class="faq-num">06</span>Como adicionar animação a um exercício?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Na tela de Treino, toque no exercício sem imagem e selecione Vincular exercício para associar um da biblioteca com animação.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">07</span>O Coach IA tem memoria?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim, parcialmente. O Coach extrai padroes das conversas e lembra contexto geral. Nao guarda transcricoes completas.</div>
+            <div class="faq-a">Sim, parcialmente. O Coach extrai padroes das conversas e lembra contexto geral. Não guarda transcrições completas.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">08</span>Posso usar o Kora sem personal ou nutricionista?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Sim. O Coach gera planos alimentares e de treino personalizados. Os planos tem carater orientativo.</div>
+            <div class="faq-a">Sim. O Coach gera planos alimentares e de treino personalizados. Os planos tem caráter orientativo.</div>
           </div>
 
           <div class="faq-item">
             <button class="faq-q"><span class="faq-num">09</span>O app funciona offline?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Parte das funcionalidades requer conexao com a internet. O registro de refeicoes recentes e o historico local ficam disponiveis sem conexao.</div>
+            <div class="faq-a">Parte das funcionalidades requer conexao com a internet. O registro de refeições recentes e o histórico local ficam disponiveis sem conexao.</div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q"><span class="faq-num">10</span>Como ativar notificacoes?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-            <div class="faq-a">Acesse Perfil, role ate Preferencias e toque em Notificacoes. Voce configura cada tipo de lembrete separadamente.</div>
+            <button class="faq-q"><span class="faq-num">10</span>Como ativar notificações?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a">Acesse Perfil, role até Preferências e toque em Notificacoes. Você configura cada tipo de lembrete separadamente.</div>
           </div>
 
         </div>
@@ -1329,7 +1329,7 @@ footer{
       </svg>
     </span>
     <span class="foot-stores-divider"></span>
-    <span class="foot-stores-label">App disponivel em breve</span>
+    <span class="foot-stores-label">App disponível em breve</span>
   </div>
   <div class="foot-links">
     <a href="../" class="foot-link">korahealthhub.com.br</a>
@@ -1422,37 +1422,37 @@ URGENTES — publicar antes do lancamento
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 home_01       HomeScreen com anel do score e cards do dia visiveis
 score_01      HomeScreen com anel do score em destaque mostrando os seis pilares
-checkin_01    CheckinScreen com as secoes de sono e disposicao visiveis
+checkin_01    CheckinScreen com as seções de sono e disposição visiveis
 checklist_01  ChecklistScreen com os tres itens, um deles expandido
 coach_01      CoachScreen com chips de sugestao de perguntas
-coach_02      CoachScreen com resposta personalizada do Coach com dados do usuario
+coach_02      CoachScreen com resposta personalizada do Coach com dados do usuário
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SEGUNDA FASE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-nutricao_01   NutritionScreen com banner de macros (anel de calorias e barras)
-nutricao_02   NutritionScreen com cards de refeicao visiveis abaixo do banner
-nutricao_03   NutritionScreen com card de refeicao expandido e botao de adicionar
-nutricao_04   FoodSearchScreen com resultados de busca visiveis
-treino_01     WorkoutScreen com ficha expandida mostrando exercicios com thumbnails
+nutrição_01   NutritionScreen com banner de macros (anel de calorias e barras)
+nutrição_02   NutritionScreen com cards de refeição visiveis abaixo do banner
+nutrição_03   NutritionScreen com card de refeição expandido e botao de adicionar
+nutrição_04   FoodSearchScreen com resultados de busca visiveis
+treino_01     WorkoutScreen com ficha expandida mostrando exercícios com thumbnails
 treino_02     WorkoutScreen com banner de sugestao de ficha destacado
-treino_03     ActiveWorkoutScreen com cronometro ativo e series sendo registradas
-treino_04     WorkoutDoneScreen com resumo da sessao concluida
+treino_03     ActiveWorkoutScreen com cronômetro ativo e series sendo registradas
+treino_04     WorkoutDoneScreen com resumo da sessão concluida
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TERCEIRA FASE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-suplementos_01  NutritionScreen scrollada ate a secao de suplementos
-hidratacao_01   HomeScreen com card de hidratacao em destaque
-evolucao_01     EvolutionScreen mostrando grafico de score e calendario colorido
-evolucao_02     EvolutionScreen mostrando hexagono dos pilares
+suplementos_01  NutritionScreen scrollada até a seção de suplementos
+hidratação_01   HomeScreen com card de hidratação em destaque
+evolução_01     EvolutionScreen mostrando gráfico de score e calendário colorido
+evolução_02     EvolutionScreen mostrando hexágono dos pilares
 perfil_01       ProfileScreen com grupos Perfil pessoal e Meus planos visiveis
-perfil_02       ProfileScreen com grupo Preferencias de treino visivel
+perfil_02       ProfileScreen com grupo Preferências de treino visivel
 
 Instrucoes de captura:
 - Usar iPhone 14 ou similar (390x844px)
-- Fundo escuro do app ja e adequado para o guia
-- Salvar como PNG, largura minima 390px
+- Fundo escuro do app já e adequado para o guia
+- Salvar como PNG, largura mínima 390px
 - Colocar em landing/guia/prints/[nome_do_print].png
 - Substituir o print-placeholder correspondente por <img src="prints/[nome].png" ...>
 -->
