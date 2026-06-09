@@ -6,8 +6,7 @@
   <title>Guia do usuário — Kora Health Hub</title>
   <meta name="description" content="Aprenda a usar o Kora: plano alimentar, treino, Coach IA, score e muito mais.">
   <link rel="icon" href="../favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* Reset */
     *, *::before, *::after {
@@ -34,7 +33,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Manrope', system-ui, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 15px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
@@ -60,17 +59,29 @@
       filter: brightness(0) invert(1);
     }
 
-    .nav-back {
+    .nav-home {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
       color: var(--text-dim);
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
     }
 
-    .nav-back:hover { color: var(--text); }
+    .nav-home:hover {
+      background: rgba(255,255,255,0.10);
+      color: var(--text);
+    }
+
+    .nav-home svg {
+      width: 16px;
+      height: 16px;
+    }
 
     /* CONTEÚDO */
     .wrap {
@@ -87,7 +98,7 @@
     }
 
     .hero h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(28px, 5vw, 44px);
       font-weight: 800;
       line-height: 1.1;
@@ -137,7 +148,7 @@
       gap: 12px;
       cursor: pointer;
       color: var(--text);
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
       font-weight: 600;
       text-align: left;
@@ -209,7 +220,7 @@
     .section:last-child { border-bottom: none; }
 
     .section-tag {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', monospace;
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -221,7 +232,7 @@
     .section-tag span { color: var(--text-faint); }
 
     .section h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(20px, 3vw, 28px);
       font-weight: 700;
       line-height: 1.2;
@@ -276,7 +287,7 @@
     }
 
     .print-box span {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', monospace;
       font-size: 10px;
       color: var(--text-faint);
       text-align: center;
@@ -299,7 +310,7 @@
       gap: 12px;
       cursor: pointer;
       color: var(--text);
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
       font-weight: 600;
       text-align: left;
@@ -430,7 +441,7 @@
       color: var(--teal-l);
       font-size: 11px;
       font-weight: 700;
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', monospace;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -448,7 +459,7 @@
       margin-bottom: 14px;
     }
     .faq-num {
-      font-family: 'DM Mono', monospace;
+      font-family: 'Inter', monospace;
       font-size: 11px;
       font-weight: 700;
       color: var(--teal);
@@ -485,11 +496,11 @@
   <a href="../" class="nav-logo">
     <img src="./nome-kora.png" alt="Kora">
   </a>
-  <a href="../" class="nav-back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M15 18l-6-6 6-6"/>
+  <a href="../" class="nav-home" aria-label="Voltar ao site">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
     </svg>
-    Voltar ao site
   </a>
 </nav>
 
