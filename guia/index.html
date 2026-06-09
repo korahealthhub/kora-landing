@@ -43,7 +43,7 @@ button{cursor:pointer}
   --px:         80px;
   --max:        1140px;
 }
-@média(max-width:768px){:root{--px:22px}}
+@media(max-width:768px){:root{--px:22px}}
 
 /* ─── Base ───────────────────────────────────────────────────────── */
 body{
@@ -126,11 +126,12 @@ nav.scrolled{
 
 /* ─── Mobile TOC ─────────────────────────────────────────────────── */
 .toc-mobile-wrap{
+  display:block;
   max-width:var(--max);
   margin:28px auto 0;
   padding:0 var(--px);
 }
-@média(min-width:1024px){.toc-mobile-wrap{display:none}}
+@media(min-width:1024px){.toc-mobile-wrap{display:none}}
 .toc-mobile-btn{
   display:flex;align-items:center;justify-content:space-between;
   width:100%;
@@ -182,7 +183,7 @@ nav.scrolled{
   margin:0 auto;
   padding:40px var(--px) 80px;
 }
-@média(min-width:1024px){
+@media(min-width:1024px){
   .guide-layout{
     display:grid;
     grid-template-columns:220px 1fr;
@@ -196,11 +197,14 @@ nav.scrolled{
 .toc-sidebar{
   display:none;
 }
-@média(min-width:1024px){
+@media(min-width:1024px){
   .toc-sidebar{
     display:block;
     position:sticky;
     top:80px;
+    width:220px;
+    max-height:calc(100vh - 100px);
+    overflow-y:auto;
   }
 }
 .toc-heading{
@@ -508,7 +512,7 @@ footer{
 .foot-link:hover{color:var(--text-dim)}
 
 /* ─── Responsive ─────────────────────────────────────────────────── */
-@média(max-width:640px){
+@media(max-width:640px){
   .print-row{justify-content:center}
   .pillar-row{flex-direction:column;gap:4px}
   .pillar-dot{display:none}
