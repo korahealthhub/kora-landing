@@ -1563,6 +1563,29 @@ footer{
   transition:color .2s;
 }
 .foot-link:hover{color:var(--text-dim)}
+.nav-dl-btns{display:flex;align-items:center;gap:8px;margin-right:8px;}
+.nav-dl-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 14px;border-radius:100px;
+  font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.02em;white-space:nowrap;
+  transition:all .2s ease;
+  text-decoration:none;
+}
+.nav-dl-ios{
+  background:linear-gradient(135deg,#3DAA85,#5DCAA5);
+  color:#fff;
+  border:1px solid rgba(93,202,165,0.3);
+  box-shadow:0 3px 12px rgba(61,170,133,0.22);
+}
+.nav-dl-ios:hover{box-shadow:0 5px 18px rgba(61,170,133,0.38);transform:translateY(-1px)}
+.nav-dl-android{
+  background:rgba(255,255,255,0.06);
+  color:rgba(245,240,230,0.75);
+  border:1px solid rgba(255,255,255,0.12);
+}
+.nav-dl-android:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#fff;transform:translateY(-1px)}
+@media(max-width:640px){.nav-dl-btns{display:none}}
 </style>
 </head>
 <body>
@@ -1573,6 +1596,13 @@ footer{
 <nav id="nav">
   <div class="nav-brand">
     <img src="./nome-kora.png" class="nav-name" alt="Kora">
+  </div>
+  <div class="nav-dl-btns">
+    <a href="https://apps.apple.com/br/app/kora-health-hub/id6769632514" class="nav-dl-btn nav-dl-ios" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Baixar no iPhone
+    </a>
+    <a href="/android/" class="nav-dl-btn nav-dl-android">Teste Android</a>
   </div>
   <div class="nav-social">
     <!-- Lojas — em breve -->
@@ -1623,13 +1653,6 @@ footer{
         Alimentação, treino e suplementos organizados em um só lugar. Check-in em minutos. Score real do seu dia. Consistência de verdade.
       </p>
 
-      <div class="hero-cta-wrap sr d3">
-        <div class="wl-btn-wrap" style="margin-top:0;">
-          <a href="#form-cadastro" class="hero-cta" style="color:#ffffff;">
-            Garantir minha vaga gratuita <span class="cta-arrow">→</span>
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- Visual: iPhone 3D -->
@@ -1835,14 +1858,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── Stats strip ──────────────────────────────────────────── -->
-<div class="mid-cta sr">
-  <p class="mid-cta-text">Quero ter uma rotina consistente.</p>
-  <div class="wl-btn-wrap" style="margin-top:0;">
-    <a href="#form-cadastro" class="hero-cta" style="font-size:15px;padding:15px 32px;color:#ffffff;">
-      Garantir minha vaga gratuita <span class="cta-arrow">→</span>
-    </a>
-  </div>
 </div>
 
 <!-- ─── Score (cream) ──────────────────────────────────────────── -->
@@ -2156,116 +2171,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── CTA intermediário ────────────────────────────────────── -->
-<div class="mid-cta sr">
-  <p class="mid-cta-text">Quero ter uma rotina consistente.</p>
-  <div class="wl-btn-wrap" style="margin-top:0;">
-    <a href="#form-cadastro" class="hero-cta" style="font-size:15px;padding:15px 32px;color:#ffffff;">
-      Garantir minha vaga gratuita <span class="cta-arrow">→</span>
-    </a>
-  </div>
-</div>
-
-<!-- ─── Waitlist v2 ─────────────────────────────────────────── -->
-<section class="waitlist" id="lista">
-  <div class="wl-blob" aria-hidden="true"></div>
-  <div class="wl-inner">
-
-    <!-- Header -->
-    <h2 class="wl-h1 sr d1">Venha fazer parte dessa comunidade.</h2>
-
-    <!-- Gauge de vagas -->
-    <div class="wl-gauge sr d1">
-      <div class="wl-gauge-header" style="justify-content:center;margin-bottom:14px;">
-        <span class="wl-scarcity-badge">
-          <span class="wl-scarcity-badge-dot"></span>
-          Últimas 8 vagas
-        </span>
-      </div>
-      <div class="wl-gauge-track">
-        <div class="wl-gauge-fill"></div>
-      </div>
-      <div class="wl-gauge-foot" style="justify-content:center;">
-        <span class="wl-gauge-foot-live">
-          <span class="wl-live-dot"></span>
-          <span id="wl-counter">0</span>&nbsp;usuários confirmados
-        </span>
-      </div>
-    </div>
-
-
-<!-- 3 benefícios -->
-    <div class="wl-benefits sr d2">
-      <div class="wl-benefit">
-        <div class="wl-benefit-label">Para os 50 primeiros</div>
-        <h3 class="wl-benefit-title">1 mês de Pro gratuito.</h3>
-        <p class="wl-benefit-body">Acesso ao grupo exclusivo no WhatsApp com o time do Kora enquanto o app é construído.</p>
-      </div>
-      <div class="wl-benefit tier-gold">
-        <div class="wl-benefit-label">Para os Top 10</div>
-        <h3 class="wl-benefit-title">Pro vitalício — para sempre.</h3>
-        <p class="wl-benefit-body">Os 10 mais engajados ganham acesso permanente quando o app lançar. Sem custo. Para sempre.</p>
-      </div>
-      <div class="wl-benefit">
-        <div class="wl-benefit-label">Como entrar no Top 10</div>
-        <h3 class="wl-benefit-title">Use. Interaja. Compartilhe.</h3>
-        <div class="wl-steps">
-          <div class="wl-step">
-            <span class="wl-step-num">01</span>
-            <span class="wl-step-text">Faça check-ins diários — leva 1 min.</span>
-          </div>
-          <div class="wl-step">
-            <span class="wl-step-num">02</span>
-            <span class="wl-step-text">Cadastre seus planos de treino e nutrição.</span>
-          </div>
-          <div class="wl-step">
-            <span class="wl-step-num">03</span>
-            <span class="wl-step-text">Compartilhe o app com amigos. Cada indicação conta pontos.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Formulário -->
-    <div class="wl-form-wrap sr d3" id="form-cadastro">
-    <form class="wl-form2" id="wl2-form" action="https://formsubmit.co/ajax/atendimento.app.kora@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nova vaga — Kora Beta">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="">
-
-      <input class="wl-field" type="text" id="f2-name" name="name" placeholder="Seu nome" required autocomplete="name">
-      <input class="wl-field" type="email" id="f2-email" name="email" placeholder="seu@email.com" required autocomplete="email">
-      <input class="wl-field" type="text" id="f2-instagram" name="instagram" placeholder="@seu.instagram — opcional">
-      <select class="wl-field wl-select" id="f2-difficulty" name="dificuldade">
-        <option value="" disabled selected>Qual sua maior dificuldade hoje?</option>
-        <option>Organizar os planos dos meus profissionais</option>
-        <option>Manter consistência na rotina diária</option>
-        <option>Saber o que comprar no mercado</option>
-        <option>Entender minha evolução real</option>
-        <option>Outro</option>
-      </select>
-      <textarea class="wl-field wl-textarea" id="f2-feedback" name="feedback" rows="3" placeholder="O que não pode faltar num app de saúde do seu dia a dia?"></textarea>
-
-      <div class="wl-btn-wrap">
-        <button class="wl-btn2" id="wl2-btn" type="submit">Garantir minha vaga gratuita →</button>
-      </div>
-      <p class="wl-foot-note">Não geramos spam.</p>
-    </form>
-    </div><!-- /wl-form-wrap -->
-
-    <!-- Sucesso -->
-    <div class="wl-success" id="wl2-ok">
-      <svg width="48" height="48" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="23" fill="none" stroke="#3D9E8C" stroke-width="1.5"/>
-        <path d="M14 24l7 7 13-13" stroke="#3D9E8C" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg>
-      <p class="wl-success-title">Você está dentro.</p>
-      <p class="wl-success-body">Entraremos em contato pelo WhatsApp<br>assim que o grupo abrir. Fique de olho.</p>
-    </div>
-
-  </div>
-</section>
 
 <!-- ─── Footer ────────────────────────────────────────────────── -->
 <footer>
@@ -2281,7 +2186,7 @@ footer{
       </svg>
     </span>
     <span class="foot-stores-divider"></span>
-    <span class="foot-stores-label">App disponível em breve</span>
+    <span class="foot-stores-label">Disponível no iPhone</span>
   </div>
   <div class="foot-links">
     <a href="./privacidade" class="foot-link">Privacidade</a>
@@ -2348,75 +2253,7 @@ if (chatCard) {
   chatObs.observe(chatCard);
 }
 
-// ── 5. Contador de vagas — repete a cada visita ───────────────────
-const wlGauge = document.querySelector('.wl-gauge');
-if (wlGauge) {
-  let cntRaf = null;
-  const cntEl = document.getElementById('wl-counter');
 
-  const cntObs = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      cancelAnimationFrame(cntRaf);
-      wlGauge.classList.remove('on');
-      void wlGauge.offsetWidth;
-      wlGauge.classList.add('on');
-      if (cntEl) cntEl.textContent = '0';
-      const target = 42, duration = 1800, start = performance.now();
-      const tick = now => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        cntEl.textContent = Math.round(ease * target);
-        if (t < 1) cntRaf = requestAnimationFrame(tick);
-      };
-      cntRaf = requestAnimationFrame(tick);
-    } else {
-      wlGauge.classList.remove('on');
-      cancelAnimationFrame(cntRaf);
-      if (cntEl) cntEl.textContent = '0';
-    }
-  }, { threshold: 0.4 });
-  cntObs.observe(wlGauge);
-}
-
-// ── 6. Form AJAX (waitlist) ─────────────────────────────────────
-const form = document.getElementById('wl2-form');
-const btn  = document.getElementById('wl2-btn');
-const ok   = document.getElementById('wl2-ok');
-
-if (form) {
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const name  = document.getElementById('f2-name').value.trim();
-    const email = document.getElementById('f2-email').value.trim();
-    if (!name)  { document.getElementById('f2-name').focus();  return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      document.getElementById('f2-email').focus(); return;
-    }
-    const orig = btn.textContent;
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/atendimento.app.kora@gmail.com', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
-      if (res.ok) {
-        form.style.opacity = '0';
-        form.style.transition = 'opacity 0.4s ease';
-        setTimeout(() => {
-          form.style.display = 'none';
-          ok.style.display = 'flex';
-          setTimeout(() => ok.classList.add('visible'), 20);
-        }, 400);
-      } else throw 0;
-    } catch {
-      btn.textContent = orig;
-      btn.disabled = false;
-      alert('Erro ao enviar. Tente novamente.');
-    }
-  });
-}
 
 // ── 5. Smooth scroll for anchor links ──────────────────────────
 
