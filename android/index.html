@@ -60,14 +60,16 @@ nav.scrolled{
   filter:brightness(0) invert(1);
   opacity:.9;
 }
-.nav-back{
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:13px;font-weight:600;
-  color:rgba(245,240,230,0.55);
-  transition:color .2s;
+.home-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  color:rgba(245,240,230,0.7);
+  transition:all .2s;
+  flex-shrink:0;
 }
-.nav-back:hover{color:var(--text)}
-.nav-back svg{flex-shrink:0}
+.home-btn:hover{background:rgba(255,255,255,0.1);color:#fff}
 
 /* ─── Main ────────────────────────────────────────────── */
 main{
@@ -197,11 +199,11 @@ footer a:hover{color:var(--text-dim)}
   <div class="nav-brand">
     <img src="../nome-kora.png" alt="Kora">
   </div>
-  <a href="/" class="nav-back">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
+  <a href="/" class="home-btn" aria-label="Voltar ao site">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
     </svg>
-    Voltar ao site
   </a>
 </nav>
 
@@ -219,9 +221,13 @@ footer a:hover{color:var(--text-dim)}
       <p class="sub">Estamos em fase de teste fechado no Google Play. Deixe seu e-mail e entraremos em contato com o link de download.</p>
     </div>
 
-    <form class="form" id="android-form">
+    <form class="form" id="android-form" action="https://formsubmit.co/robertoandraderosa@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Solicitação de acesso — Kora Android">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="form-next">
       <input class="field" type="text" id="f-name" name="name" placeholder="Seu nome (opcional)" autocomplete="name">
       <input class="field" type="email" id="f-email" name="email" placeholder="seu@email.com" required autocomplete="email">
+      <input class="field" type="tel" id="f-phone" name="phone" placeholder="(11) 99999-9999" autocomplete="tel">
       <button class="submit-btn" type="submit" id="submit-btn">Quero testar</button>
     </form>
 
@@ -250,24 +256,13 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, {passive: true});
 
-const form = document.getElementById('android-form');
-const btn  = document.getElementById('submit-btn');
-const ok   = document.getElementById('success-msg');
+document.getElementById('form-next').value =
+  window.location.origin + window.location.pathname + '?enviado=true';
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('f-email').value.trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    document.getElementById('f-email').focus();
-    return;
-  }
-  form.style.opacity = '0';
-  form.style.transition = 'opacity 0.35s ease';
-  setTimeout(() => {
-    form.style.display = 'none';
-    ok.classList.add('visible');
-  }, 350);
-});
+if (new URLSearchParams(window.location.search).get('enviado') === 'true') {
+  document.getElementById('android-form').style.display = 'none';
+  document.getElementById('success-msg').classList.add('visible');
+}
 </script>
 
 </body>
