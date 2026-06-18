@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YWGCSWEBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9YWGCSWEBJ');
+</script>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D8Q75PRC77U8IPSBJ8TG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kora | Download</title>
+<meta name="description" content="Baixe o Kora — App de saúde completo com Coach IA.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../logo-k.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;outline:none}
+
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:#07161B;
+  color:#F5F0E6;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
+}
+
+/* ─── Logo ───────────────────────────────────── */
+.logo{
+  height:28px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.88;
+  margin-bottom:40px;
+}
+
+/* ─── Spinner ────────────────────────────────── */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{
+  width:36px;height:36px;
+  border:3px solid rgba(93,202,165,0.18);
+  border-top-color:#5DCAA5;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  margin-bottom:20px;
+}
+
+/* ─── Status text ────────────────────────────── */
+.status{
+  font-size:15px;
+  font-weight:600;
+  color:rgba(245,240,230,0.55);
+  letter-spacing:.02em;
+  margin-bottom:52px;
+}
+
+/* ─── Fallback buttons ───────────────────────── */
+.fallback{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:100%;
+  max-width:320px;
+}
+.fallback-label{
+  font-size:11px;
+  font-weight:600;
+  color:rgba(245,240,230,0.22);
+  text-align:center;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.dl-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#F5F0E6;
+  transition:background .18s,border-color .18s,transform .18s;
+  cursor:pointer;
+}
+.dl-btn:hover{
+  background:rgba(93,202,165,0.09);
+  border-color:rgba(93,202,165,0.25);
+  transform:translateY(-1px);
+}
+.dl-btn-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(93,202,165,0.12);
+  color:#5DCAA5;
+  flex-shrink:0;
+}
+.dl-btn-body{display:flex;flex-direction:column;gap:2px}
+.dl-btn-label{font-size:14px;font-weight:700;color:#F5F0E6}
+.dl-btn-caption{font-size:12px;color:rgba(245,240,230,0.45)}
+</style>
+</head>
+<body>
+
+<img src="../nome-kora.png" class="logo" alt="Kora">
+
+<div class="spinner"></div>
+<p class="status">Redirecionando...</p>
+
+<div class="fallback">
+  <p class="fallback-label">Ou escolha manualmente</p>
+
+  <!-- iOS -->
+  <a href="https://apps.apple.com/br/app/kora-health-hub/id6769632514"
+     class="dl-btn"
+     target="_blank" rel="noopener"
+     onclick="gtag('event','click_appstore',{'event_category':'conversion','event_label':'app_store_ios'});ttq.track('ClickButton',{contents:[{content_id:'app_store_ios',content_type:'app',content_name:'Kora iOS App Store'}]});">
+    <span class="dl-btn-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+    </span>
+    <span class="dl-btn-body">
+      <span class="dl-btn-label">Baixar no iPhone</span>
+      <span class="dl-btn-caption">App Store — disponível agora</span>
+    </span>
+  </a>
+
+  <!-- Android -->
+  <a href="/android/"
+     class="dl-btn"
+     onclick="gtag('event','click_googleplay',{'event_category':'conversion','event_label':'google_play_android'});ttq.track('ClickButton',{contents:[{content_id:'google_play_android',content_type:'app',content_name:'Kora Android Google Play'}]});">
+    <span class="dl-btn-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.18 23.76c.3.17.65.19.97.07l11.65-6.74-2.5-2.5-10.12 9.17zm-1.12-20.3A1.5 1.5 0 0 0 2 4.5v15a1.5 1.5 0 0 0 .06.54l10.44-9.54L2.06 3.46zM20.1 9.24l-2.5-1.44-2.8 2.56 2.8 2.8 2.52-1.46a1.5 1.5 0 0 0 0-2.46zM4.15.24a1 1 0 0 0-.97.07L13.3 9.58l2.5-2.5L4.15.24z"/>
+      </svg>
+    </span>
+    <span class="dl-btn-body">
+      <span class="dl-btn-label">Testar no Android</span>
+      <span class="dl-btn-caption">Teste fechado — Google Play</span>
+    </span>
+  </a>
+
+  <!-- Desktop -->
+  <a href="/sobre.html" class="dl-btn">
+    <span class="dl-btn-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </span>
+    <span class="dl-btn-body">
+      <span class="dl-btn-label">Conhecer o Kora</span>
+      <span class="dl-btn-caption">Site completo do aplicativo</span>
+    </span>
+  </a>
+</div>
+
+<script>
+  var ua = navigator.userAgent || '';
+  var isIOS     = /iPhone|iPad|iPod/i.test(ua);
+  var isAndroid = /Android/i.test(ua);
+
+  var destination = isIOS
+    ? 'https://apps.apple.com/br/app/kora-health-hub/id6769632514'
+    : isAndroid
+    ? '/android/'
+    : '/sobre.html';
+
+  var eventLabel = isIOS
+    ? 'app_store_ios'
+    : isAndroid
+    ? 'google_play_android'
+    : 'desktop';
+
+  gtag('event', 'smart_link_redirect', {
+    'event_category': 'conversion',
+    'event_label': eventLabel
+  });
+
+  ttq.track('ClickButton', {
+    contents: [{
+      content_id: eventLabel,
+      content_type: 'app',
+      content_name: 'Kora Smart Link - ' + eventLabel
+    }]
+  });
+
+  setTimeout(function() {
+    window.location.href = destination;
+  }, 500);
+</script>
+
+</body>
+</html>
