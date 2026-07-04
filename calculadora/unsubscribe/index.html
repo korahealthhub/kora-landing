@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YWGCSWEBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9YWGCSWEBJ');
+</script>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D8Q75PRC77U8IPSBJ8TG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cancelar inscrição | Kora</title>
+<link rel="icon" href="../../logo-k.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+:root{
+  --bg:#0A1A18; --teal:#3D9E8C; --teal-l:#52C5B0;
+  --text:#F5F0E6; --text-dim:rgba(245,240,230,0.52); --red:#E05252;
+  --border:rgba(61,158,140,0.12);
+}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(61,158,140,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, #000000 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+}
+
+/* Nav simples: só logo */
+nav{
+  height:60px;padding:0 22px;
+  display:flex;align-items:center;
+  border-bottom:1px solid var(--border);
+}
+.nav-name{
+  height:28px;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.9;
+}
+
+/* Conteúdo centralizado */
+.wrap{
+  flex:1;
+  display:flex;align-items:center;justify-content:center;
+  padding:32px 22px;
+}
+.card{
+  max-width:480px;width:100%;
+  text-align:center;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{
+  width:40px;height:40px;margin:0 auto 22px;
+  border:3px solid rgba(93,202,165,0.18);
+  border-top-color:var(--teal-l);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+
+.icon-check{
+  width:48px;height:48px;margin:0 auto 22px;
+  filter:brightness(0) invert(1);opacity:.95;
+}
+
+h1{
+  font-size:24px;font-weight:800;letter-spacing:-.02em;
+  line-height:1.2;margin-bottom:12px;
+}
+p{
+  font-size:15px;line-height:1.65;color:var(--text-dim);
+  margin-bottom:28px;
+}
+.back-link{
+  display:inline-block;
+  font-size:15px;font-weight:700;color:var(--teal-l);
+  transition:color .2s;
+}
+.back-link:hover{color:var(--text)}
+.state{display:none}
+.state.active{display:block}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../../"><img src="../../nome-kora.png" class="nav-name" alt="Kora"></a>
+</nav>
+
+<div class="wrap">
+  <div class="card">
+
+    <!-- Loading -->
+    <div class="state active" id="state-loading">
+      <div class="spinner"></div>
+      <p style="margin-bottom:0">Processando...</p>
+    </div>
+
+    <!-- Sucesso -->
+    <div class="state" id="state-success">
+      <img class="icon-check" src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/check_circle.png" width="48" height="48" alt="">
+      <h1>Inscrição cancelada</h1>
+      <p>Você foi removido da nossa lista.<br>Não enviaremos mais emails do Kora.</p>
+      <a class="back-link" href="https://korahealthhub.com.br">← Voltar para o site</a>
+    </div>
+
+    <!-- Erro -->
+    <div class="state" id="state-error">
+      <h1>Algo deu errado</h1>
+      <p>Não foi possível processar seu descadastro.<br>Tente novamente.</p>
+      <a class="back-link" id="retry-link" href="#">Tentar novamente</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const FN_URL = 'https://wqdxxdwplaoyirdirjif.supabase.co/functions/v1/unsubscribe-lead';
+const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZHh4ZHdwbGFveWlyZGlyamlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MDczNzUsImV4cCI6MjA5NTI4MzM3NX0.aJv0IeRF-njU9xuiIgB8Do-FjgpsgHg7yd3ypgXVRhE';
+
+function showState(id){
+  document.querySelectorAll('.state').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+async function unsubscribe(){
+  const email = new URLSearchParams(window.location.search).get('email');
+  document.getElementById('retry-link').href = window.location.href;
+
+  if (!email){
+    showState('state-error');
+    return;
+  }
+
+  showState('state-loading');
+  try {
+    const res = await fetch(`${FN_URL}?email=${encodeURIComponent(email)}`, {
+      method: 'GET',
+      headers: { 'apikey': ANON_KEY },
+    });
+    if (!res.ok) throw new Error('status ' + res.status);
+    showState('state-success');
+  } catch (err) {
+    showState('state-error');
+  }
+}
+
+unsubscribe();
+</script>
+
+</body>
+</html>
