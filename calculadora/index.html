@@ -334,7 +334,7 @@ select.field option{background:#0C1E1B;color:var(--text)}
 
 <nav id="nav">
   <div class="nav-brand">
-    <img src="../nome-kora.png" class="nav-name" alt="Kora">
+    <img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/nome-kora.png" class="nav-name" alt="Kora" style="height:28px;width:auto;filter:none;">
   </div>
   <div class="nav-dl-btns">
     <a href="https://apps.apple.com/br/app/kora-health-hub/id6769632514" class="nav-dl-btn nav-dl-ios" target="_blank" rel="noopener" onclick="gtag('event','click_appstore',{'event_category':'conversion','event_label':'app_store_ios'});ttq.track('ClickButton',{contents:[{content_id:'app_store_ios',content_type:'app',content_name:'Kora iOS App Store'}]});">
@@ -474,6 +474,7 @@ select.field option{background:#0C1E1B;color:var(--text)}
     <div class="field-group" style="margin-top:24px">
       <label class="field-label" for="f-meals">Número de refeições <span class="opt">(opcional)</span></label>
       <select class="field" id="f-meals">
+        <option value="">Não informar</option>
         <option value="2">2 refeições</option>
         <option value="3" selected>3 refeições</option>
         <option value="4">4 refeições</option>
@@ -499,7 +500,7 @@ select.field option{background:#0C1E1B;color:var(--text)}
       <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/fitness_center.png" width="24" height="24" alt="Proteína" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Proteína</span><span class="rcard-value">██ g</span></div>
       <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/balance.png" width="24" height="24" alt="Carboidrato" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Carboidrato</span><span class="rcard-value">███ g</span></div>
       <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/favorite.png" width="24" height="24" alt="Gordura" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Gordura</span><span class="rcard-value">██ g</span></div>
-      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/bolt_boost.png" width="24" height="24" alt="Água" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Água</span><span class="rcard-value">█.█ L</span></div>
+      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/water_full.png" width="24" height="24" alt="Água" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Água</span><span class="rcard-value">█.█ L</span></div>
     </div>
 
     <div class="lock-note">
@@ -629,7 +630,8 @@ document.getElementById('to-step3').addEventListener('click', () => {
   showErr('e-activity', badAct);
   if (badGoal || badAct) return;
 
-  data.meal_count = parseInt(document.getElementById('f-meals').value, 10) || 3;
+  const mealsVal = document.getElementById('f-meals').value;
+  data.meal_count = mealsVal ? parseInt(mealsVal, 10) : null;
   data.age = data.birth_date ? calculateAge(data.birth_date) : null;
   data.result = calculate(data);
   goStep(3);
@@ -785,16 +787,17 @@ function renderResult(){
   document.getElementById('result-hello').textContent =
     firstName ? `${firstName}, suas metas diárias` : 'Suas metas diárias';
 
+  const ICON = 'https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/';
   const cards = [
-    ['🔥', `${r.kcal} kcal/dia`, 'Meta calórica'],
-    ['💪', `${r.protein_g}g`, 'Proteína diária'],
-    ['🌾', `${r.carbs_g}g`, 'Carboidrato diário'],
-    ['🥑', `${r.fat_g}g`, 'Gordura diária'],
-    ['💧', `${waterL}L`, 'Água diária'],
+    ['local_fire_department.png', `${r.kcal} kcal/dia`, 'Meta calórica'],
+    ['fitness_center.png', `${r.protein_g}g`, 'Proteína diária'],
+    ['balance.png', `${r.carbs_g}g`, 'Carboidrato diário'],
+    ['favorite.png', `${r.fat_g}g`, 'Gordura diária'],
+    ['water_full.png', `${waterL}L`, 'Água diária'],
   ];
-  document.getElementById('result-cards').innerHTML = cards.map(([e, v, l]) => `
+  document.getElementById('result-cards').innerHTML = cards.map(([icon, v, l]) => `
     <div class="rcard">
-      <span class="rcard-emoji">${e}</span>
+      <span class="rcard-emoji"><img src="${ICON}${icon}" width="24" height="24" alt="${l}" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span>
       <span class="rcard-label">${l}</span>
       <span class="rcard-value">${v}</span>
     </div>`).join('');
