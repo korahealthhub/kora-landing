@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9YWGCSWEBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9YWGCSWEBJ');
+</script>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D8Q75PRC77U8IPSBJ8TG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico Nutricional Grátis | Kora</title>
+<meta name="description" content="Descubra suas metas de calorias, proteína, carboidrato, gordura e água. Calculado para o seu perfil em 2 minutos.">
+<meta property="og:title" content="Diagnóstico Nutricional Grátis | Kora">
+<meta property="og:description" content="Descubra suas metas de calorias, proteína, carboidrato, gordura e água. Calculado para o seu perfil em 2 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../og-image.png">
+<meta property="og:url" content="https://korahealthhub.com.br/calculadora">
+<link rel="icon" href="../logo-k.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─── Reset ──────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+button,input,select{font-family:inherit;border:none;outline:none}
+button{cursor:pointer}
+
+/* ─── Tokens (design system do sobre.html) ───────────────────── */
+:root{
+  --bg:         #0A1A18;
+  --bg2:        #0C1E1B;
+  --teal:       #3D9E8C;
+  --teal-l:     #52C5B0;
+  --teal-d:     #2D7A6C;
+  --text:       #F5F0E6;
+  --text-dim:   rgba(245,240,230,0.52);
+  --text-faint: rgba(245,240,230,0.22);
+  --red:        #E05252;
+  --border:     rgba(61,158,140,0.12);
+  --px:         22px;
+  --max:        560px;
+}
+
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(61,158,140,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, #000000 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ─── Barra de progresso ─────────────────────────────────────── */
+.progress-track{
+  position:fixed;top:0;left:0;right:0;height:4px;z-index:200;
+  background:rgba(61,158,140,0.15);
+}
+.progress-fill{
+  height:100%;width:33%;
+  background:var(--teal-l);
+  box-shadow:0 0 10px rgba(82,197,176,0.5);
+  transition:width .4s cubic-bezier(.16,1,.3,1);
+}
+
+/* ─── Nav ────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:60px;padding:4px var(--px) 0;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,26,24,0.82);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{
+  height:26px;object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.9;
+}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-back{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:14px;font-weight:600;color:var(--text-dim);
+  transition:color .2s;
+}
+.nav-back:hover{color:var(--text)}
+.nav-dl{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:100px;
+  font-size:13px;font-weight:700;letter-spacing:.02em;
+  background:linear-gradient(135deg,#3DAA85,#5DCAA5);
+  color:#fff;border:1px solid rgba(93,202,165,0.3);
+  box-shadow:0 3px 12px rgba(61,170,133,0.22);
+  transition:box-shadow .2s,transform .2s;
+}
+.nav-dl:hover{box-shadow:0 5px 18px rgba(61,170,133,0.38);transform:translateY(-1px)}
+@media(max-width:520px){.nav-dl{display:none}}
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:96px var(--px) 80px;
+}
+.step{display:none;animation:fadeUp .45s cubic-bezier(.16,1,.3,1)}
+.step.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.step-kicker{
+  font-family:'DM Mono',monospace;
+  font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-l);margin-bottom:10px;
+}
+.step-title{
+  font-size:clamp(26px,6vw,34px);font-weight:800;
+  letter-spacing:-.02em;line-height:1.1;color:var(--text);
+  margin-bottom:6px;
+}
+.step-sub{
+  font-size:15px;line-height:1.6;color:var(--text-dim);
+  margin-bottom:28px;
+}
+
+/* ─── Campos ─────────────────────────────────────────────────── */
+.field-group{margin-bottom:18px}
+.field-label{
+  display:block;
+  font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-dim);margin-bottom:8px;
+}
+.field-label .opt{color:var(--text-faint);text-transform:none;letter-spacing:0;font-weight:500}
+.field{
+  width:100%;
+  background:rgba(14,32,28,0.92);
+  border:1px solid rgba(61,158,140,0.2);
+  border-radius:12px;
+  padding:16px 20px;
+  color:var(--text);
+  font-family:'Manrope',sans-serif;font-size:15px;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.field::placeholder{color:rgba(245,240,230,0.32)}
+.field:focus{
+  border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(61,158,140,0.15);
+}
+.field.error{border-color:var(--red)}
+select.field{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233D9E8C' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  cursor:pointer;
+}
+select.field option{background:#0C1E1B;color:var(--text)}
+.field-error{
+  display:none;
+  font-size:12px;color:var(--red);margin-top:6px;
+}
+.field-error.show{display:block}
+.field-row{display:flex;gap:12px}
+.field-row .field-group{flex:1}
+
+/* ─── Cards de seleção ───────────────────────────────────────── */
+.opt-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  margin-bottom:8px;
+}
+.opt-card{
+  text-align:left;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(245,240,230,0.07);
+  border-radius:16px;
+  padding:20px;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.opt-card:hover{transform:translateY(-2px)}
+.opt-card.selected{
+  border:2px solid var(--teal);
+  background:rgba(61,158,140,0.12);
+  padding:19px; /* compensa o border 2px */
+}
+.opt-emoji{font-size:28px;line-height:1;margin-bottom:10px;display:block}
+.opt-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.2}
+.opt-desc{font-size:13px;color:var(--text-dim);margin-top:4px;line-height:1.4}
+
+/* ─── Botões ─────────────────────────────────────────────────── */
+.actions{display:flex;gap:12px;margin-top:28px}
+.btn-primary{
+  flex:1;height:56px;border-radius:100px;
+  background:linear-gradient(135deg,#3DAA85,#5DCAA5);
+  color:#fff;font-family:'Manrope',sans-serif;font-size:16px;font-weight:600;
+  letter-spacing:.02em;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 6px 24px rgba(61,170,133,0.28);
+  transition:transform .18s,box-shadow .18s,opacity .18s;
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 32px rgba(61,170,133,0.38)}
+.btn-primary:disabled{opacity:.6;cursor:default;transform:none}
+.btn-secondary{
+  height:48px;padding:0 24px;border-radius:100px;
+  background:transparent;border:1px solid rgba(245,240,230,0.2);
+  color:var(--text);font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .2s,background .2s;
+}
+.btn-secondary:hover{border-color:rgba(245,240,230,0.4);background:rgba(255,255,255,0.03)}
+
+/* ─── Spinner ────────────────────────────────────────────────── */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{
+  width:18px;height:18px;
+  border:2px solid rgba(255,255,255,0.35);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .7s linear infinite;
+}
+
+/* ─── Preview bloqueado (etapa 3) ────────────────────────────── */
+.result-cards{margin:0 0 8px}
+.rcard{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 20px;
+  border:1px solid rgba(61,158,140,0.18);
+  border-radius:12px;background:var(--bg2);
+  margin-bottom:10px;
+}
+.rcard-emoji{font-size:22px;width:30px;flex-shrink:0}
+.rcard-label{flex:1;font-size:14px;color:var(--text-dim)}
+.rcard-value{font-size:20px;font-weight:700;color:var(--text);white-space:nowrap}
+.locked .rcard-value{
+  filter:blur(9px);
+  user-select:none;color:var(--teal-l);
+}
+.lock-note{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:14px;line-height:1.55;color:var(--text-dim);
+  margin:18px 0 24px;
+}
+.lock-note svg{flex-shrink:0;margin-top:2px;color:var(--teal-l)}
+
+/* ─── Distribuição por refeição ──────────────────────────────── */
+.dist-wrap{margin-top:22px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.dist-head,.dist-row{display:flex;align-items:center;padding:11px 14px;font-size:13px}
+.dist-head{
+  background:rgba(61,158,140,0.06);
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.dist-row{border-top:1px solid var(--border)}
+.dist-c-name{flex:1;color:var(--text-dim)}
+.dist-c{width:52px;text-align:right;font-weight:600;color:var(--text)}
+.dist-c-name.h,.dist-c.h{color:var(--text-dim);font-weight:500}
+
+/* ─── Resultado / mensagens ──────────────────────────────────── */
+.note-small{font-size:13px;color:var(--text-faint);text-align:center;margin-top:18px}
+.calc-note{font-size:14px;color:var(--text-dim);text-align:center;margin:20px 0 8px}
+.form-error{
+  display:none;text-align:center;font-size:14px;color:var(--red);margin-top:14px;
+}
+.form-error.show{display:block}
+.disclaimer{
+  font-size:12px;line-height:1.6;color:var(--text-faint);
+  text-align:center;margin-top:32px;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+
+<nav>
+  <img src="../nome-kora.png" class="nav-name" alt="Kora">
+  <div class="nav-right">
+    <a href="../" class="nav-back" aria-label="Voltar">← Voltar</a>
+    <a href="https://korahealthhub.com.br/download" class="nav-dl">Baixar o app</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ─── ETAPA 1 ─────────────────────────────────────────────── -->
+  <section class="step active" id="step1" data-step="1">
+    <div class="step-kicker">Etapa 1 de 3</div>
+    <h1 class="step-title">Seus dados</h1>
+    <p class="step-sub">Precisamos de algumas informações para calcular suas metas.</p>
+
+    <div class="field-group">
+      <label class="field-label" for="f-name">Nome <span class="opt">(opcional)</span></label>
+      <input class="field" type="text" id="f-name" placeholder="Como você se chama?" autocomplete="name">
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label class="field-label" for="f-weight">Peso (kg)</label>
+        <input class="field" type="number" id="f-weight" placeholder="Ex: 70" min="30" max="300" inputmode="decimal">
+        <div class="field-error" id="e-weight">Informe um peso entre 30 e 300 kg</div>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="f-height">Altura (cm)</label>
+        <input class="field" type="number" id="f-height" placeholder="Ex: 170" min="100" max="250" inputmode="numeric">
+        <div class="field-error" id="e-height">Informe uma altura entre 100 e 250 cm</div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="f-birth">Data de nascimento</label>
+      <input class="field" type="date" id="f-birth">
+      <div class="field-error" id="e-birth">Informe sua data de nascimento</div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="f-gender">Sexo</label>
+      <select class="field" id="f-gender">
+        <option value="" disabled selected>Selecione</option>
+        <option value="male">Masculino</option>
+        <option value="female">Feminino</option>
+      </select>
+      <div class="field-error" id="e-gender">Selecione uma opção</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" id="to-step2">Próximo</button>
+    </div>
+  </section>
+
+  <!-- ─── ETAPA 2 ─────────────────────────────────────────────── -->
+  <section class="step" id="step2" data-step="2">
+    <div class="step-kicker">Etapa 2 de 3</div>
+    <h1 class="step-title">Seu objetivo</h1>
+    <p class="step-sub">O que você quer alcançar e como é a sua rotina.</p>
+
+    <div class="field-group">
+      <label class="field-label">Objetivo</label>
+      <div class="opt-grid" id="goal-grid">
+        <button type="button" class="opt-card" data-goal="lose_weight">
+          <span class="opt-emoji">🔥</span>
+          <span class="opt-title">Emagrecer</span>
+        </button>
+        <button type="button" class="opt-card" data-goal="gain_muscle">
+          <span class="opt-emoji">💪</span>
+          <span class="opt-title">Ganhar massa</span>
+        </button>
+        <button type="button" class="opt-card" data-goal="maintain_weight">
+          <span class="opt-emoji">⚖️</span>
+          <span class="opt-title">Manter peso</span>
+        </button>
+        <button type="button" class="opt-card" data-goal="improve_health">
+          <span class="opt-emoji">🌱</span>
+          <span class="opt-title">Melhorar saúde</span>
+        </button>
+      </div>
+      <div class="field-error" id="e-goal">Escolha um objetivo</div>
+    </div>
+
+    <div class="field-group" style="margin-top:24px">
+      <label class="field-label">Nível de atividade</label>
+      <div class="opt-grid" id="activity-grid">
+        <button type="button" class="opt-card" data-activity="sedentary">
+          <span class="opt-emoji">🛋️</span>
+          <span class="opt-title">Sedentário</span>
+          <span class="opt-desc">Pouco ou nenhum exercício</span>
+        </button>
+        <button type="button" class="opt-card" data-activity="light">
+          <span class="opt-emoji">🚶</span>
+          <span class="opt-title">Levemente ativo</span>
+          <span class="opt-desc">1-3 dias de exercício por semana</span>
+        </button>
+        <button type="button" class="opt-card" data-activity="moderate">
+          <span class="opt-emoji">🏃</span>
+          <span class="opt-title">Moderadamente ativo</span>
+          <span class="opt-desc">3-5 dias de exercício por semana</span>
+        </button>
+        <button type="button" class="opt-card" data-activity="very_active">
+          <span class="opt-emoji">⚡</span>
+          <span class="opt-title">Muito ativo</span>
+          <span class="opt-desc">6-7 dias de exercício por semana</span>
+        </button>
+      </div>
+      <div class="field-error" id="e-activity">Escolha um nível de atividade</div>
+    </div>
+
+    <div class="field-group" style="margin-top:24px">
+      <label class="field-label" for="f-meals">Número de refeições <span class="opt">(opcional)</span></label>
+      <select class="field" id="f-meals">
+        <option value="2">2 refeições</option>
+        <option value="3" selected>3 refeições</option>
+        <option value="4">4 refeições</option>
+        <option value="5">5 refeições</option>
+        <option value="6">6 refeições</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button class="btn-secondary" id="back-step1">Voltar</button>
+      <button class="btn-primary" id="to-step3">Próximo</button>
+    </div>
+  </section>
+
+  <!-- ─── ETAPA 3 ─────────────────────────────────────────────── -->
+  <section class="step" id="step3" data-step="3">
+    <div class="step-kicker">Etapa 3 de 3</div>
+    <h1 class="step-title">Quase lá</h1>
+    <p class="step-sub">Seu diagnóstico está pronto. Informe seu email para receber o resultado completo.</p>
+
+    <div class="result-cards locked" id="preview-cards">
+      <div class="rcard"><span class="rcard-emoji">🔥</span><span class="rcard-label">Calorias</span><span class="rcard-value">████ kcal</span></div>
+      <div class="rcard"><span class="rcard-emoji">💪</span><span class="rcard-label">Proteína</span><span class="rcard-value">██ g</span></div>
+      <div class="rcard"><span class="rcard-emoji">🌾</span><span class="rcard-label">Carboidrato</span><span class="rcard-value">███ g</span></div>
+      <div class="rcard"><span class="rcard-emoji">🥑</span><span class="rcard-label">Gordura</span><span class="rcard-value">██ g</span></div>
+      <div class="rcard"><span class="rcard-emoji">💧</span><span class="rcard-label">Água</span><span class="rcard-value">█.█ L</span></div>
+    </div>
+
+    <div class="lock-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>Desbloqueie seu diagnóstico personalizado e receba também por email.</span>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="f-email">Email</label>
+      <input class="field" type="email" id="f-email" placeholder="seu@email.com" autocomplete="email" inputmode="email">
+      <div class="field-error" id="e-email">Digite um email válido</div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label" for="f-whatsapp">WhatsApp <span class="opt">(opcional) — para dicas exclusivas</span></label>
+      <input class="field" type="tel" id="f-whatsapp" placeholder="(11) 99999-9999" autocomplete="tel">
+    </div>
+
+    <div class="actions">
+      <button class="btn-secondary" id="back-step2">Voltar</button>
+      <button class="btn-primary" id="submit-btn">Ver meu diagnóstico</button>
+    </div>
+    <div class="form-error" id="form-error">Algo deu errado. Tente novamente.</div>
+  </section>
+
+  <!-- ─── RESULTADO ───────────────────────────────────────────── -->
+  <section class="step" id="result" data-step="3">
+    <div class="step-kicker">Seu diagnóstico</div>
+    <h1 class="step-title" id="result-hello">Suas metas diárias</h1>
+    <p class="step-sub">Calculado com base no seu perfil.</p>
+
+    <div class="result-cards" id="result-cards"></div>
+
+    <div id="dist-container"></div>
+
+    <p class="calc-note">Calculado com base no seu perfil: objetivo, nível de atividade, peso e altura.</p>
+
+    <div class="actions">
+      <a class="btn-primary" id="result-cta" href="#" target="_blank" rel="noopener" style="text-decoration:none"></a>
+    </div>
+    <p class="note-small">Enviamos também para o seu email 📩</p>
+
+    <p class="disclaimer">Estimativa gerada automaticamente com base em teoria nutricional. Não substitui um profissional de saúde.</p>
+  </section>
+
+</div>
+
+<script>
+// ═══ Estado ═══════════════════════════════════════════════════════
+const data = { goal: null, activity_level: null };
+const SUPABASE_URL = 'https://wqdxxdwplaoyirdirjif.supabase.co/functions/v1/submit-calculator-lead';
+const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZHh4ZHdwbGFveWlyZGlyamlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MDczNzUsImV4cCI6MjA5NTI4MzM3NX0.aJv0IeRF-njU9xuiIgB8Do-FjgpsgHg7yd3ypgXVRhE';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Device + UTM
+const ua = navigator.userAgent;
+const device = /iPhone|iPad|iPod/i.test(ua) ? 'ios' : /Android/i.test(ua) ? 'android' : 'desktop';
+const params = new URLSearchParams(window.location.search);
+const utm_source = params.get('utm_source');
+const utm_medium = params.get('utm_medium');
+const utm_campaign = params.get('utm_campaign');
+
+// ═══ Navegação entre etapas ═══════════════════════════════════════
+const steps = { 1: 'step1', 2: 'step2', 3: 'step3' };
+function showEl(id){
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goStep(n){
+  showEl(steps[n]);
+  document.getElementById('progress').style.width = (n === 1 ? 33 : n === 2 ? 66 : 100) + '%';
+}
+
+function showErr(id, show){ document.getElementById(id).classList.toggle('show', show); }
+function markField(id, bad){ document.getElementById(id).classList.toggle('error', bad); }
+
+// ═══ Etapa 1 → validação ══════════════════════════════════════════
+document.getElementById('to-step2').addEventListener('click', () => {
+  const weight = parseFloat(document.getElementById('f-weight').value);
+  const height = parseFloat(document.getElementById('f-height').value);
+  const birth = document.getElementById('f-birth').value;
+  const gender = document.getElementById('f-gender').value;
+
+  const badW = !(weight >= 30 && weight <= 300);
+  const badH = !(height >= 100 && height <= 250);
+  const badB = !birth;
+  const badG = !gender;
+  markField('f-weight', badW); showErr('e-weight', badW);
+  markField('f-height', badH); showErr('e-height', badH);
+  markField('f-birth', badB);  showErr('e-birth', badB);
+  markField('f-gender', badG); showErr('e-gender', badG);
+  if (badW || badH || badB || badG) return;
+
+  data.name = document.getElementById('f-name').value.trim() || null;
+  data.weight_kg = weight;
+  data.height_cm = height;
+  data.birth_date = birth;
+  data.gender = gender;
+  goStep(2);
+});
+
+// ═══ Etapa 2 → seleção de cards ═══════════════════════════════════
+document.querySelectorAll('#goal-grid .opt-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('#goal-grid .opt-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    data.goal = card.dataset.goal;
+    showErr('e-goal', false);
+  });
+});
+document.querySelectorAll('#activity-grid .opt-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('#activity-grid .opt-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    data.activity_level = card.dataset.activity;
+    showErr('e-activity', false);
+  });
+});
+
+document.getElementById('back-step1').addEventListener('click', () => goStep(1));
+
+document.getElementById('to-step3').addEventListener('click', () => {
+  const badGoal = !data.goal;
+  const badAct = !data.activity_level;
+  showErr('e-goal', badGoal);
+  showErr('e-activity', badAct);
+  if (badGoal || badAct) return;
+
+  data.meal_count = parseInt(document.getElementById('f-meals').value, 10) || 3;
+  data.age = data.birth_date ? calculateAge(data.birth_date) : null;
+  data.result = calculate(data);
+  goStep(3);
+});
+
+document.getElementById('back-step2').addEventListener('click', () => goStep(2));
+
+// ═══ Cálculo (replica nutrition.ts do app) ════════════════════════
+function calculateAge(birthDate){
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+  return age;
+}
+
+function calculate(d){
+  const { weight_kg, height_cm, birth_date, gender, goal, activity_level } = d;
+  const isMale = gender === 'male';
+  const age = birth_date ? calculateAge(birth_date) : null;
+
+  let tmb;
+  if (age !== null){
+    tmb = isMale
+      ? 10 * weight_kg + 6.25 * height_cm - 5 * age + 5
+      : 10 * weight_kg + 6.25 * height_cm - 5 * age - 161;
+  } else {
+    tmb = isMale
+      ? 66 + 13.75 * weight_kg + 5.00 * height_cm
+      : 655 + 9.56 * weight_kg + 1.85 * height_cm;
+  }
+
+  const factors = { sedentary: 1.2, light: 1.375, moderate: 1.55, very_active: 1.9 };
+  const tdee = tmb * (factors[activity_level] ?? 1.375);
+
+  let targetKcal;
+  switch (goal){
+    case 'lose_weight': targetKcal = Math.max(isMale ? 1500 : 1200, tdee - 500); break;
+    case 'gain_muscle': targetKcal = tdee + 300; break;
+    default: targetKcal = tdee;
+  }
+  targetKcal = Math.round(targetKcal);
+
+  const protein = Math.round(weight_kg * (goal === 'maintain_weight' ? 1.6 : 2.0));
+  const fat = Math.round((targetKcal * 0.25) / 9);
+  const carbs = Math.round((targetKcal - protein * 4 - fat * 9) / 4);
+  const water_ml = Math.round(weight_kg * 35);
+
+  return { kcal: targetKcal, protein_g: protein, carbs_g: carbs, fat_g: fat, water_ml };
+}
+
+// ═══ Distribuição por refeição ════════════════════════════════════
+const DISTRIBUTIONS = {
+  2: [0.40, 0.60],
+  3: [0.30, 0.40, 0.30],
+  4: [0.25, 0.30, 0.25, 0.20],
+  5: [0.20, 0.25, 0.25, 0.20, 0.10],
+  6: [0.15, 0.20, 0.25, 0.20, 0.15, 0.05],
+};
+const MEAL_NAMES = {
+  2: ['Almoço', 'Jantar'],
+  3: ['Café da manhã', 'Almoço', 'Jantar'],
+  4: ['Café da manhã', 'Almoço', 'Lanche', 'Jantar'],
+  5: ['Café da manhã', 'Almoço', 'Lanche', 'Jantar', 'Ceia'],
+  6: ['Café da manhã', 'Lanche', 'Almoço', 'Lanche', 'Jantar', 'Ceia'],
+};
+function carbWeightDecreasing(index, mealCount){
+  const total = (mealCount * (mealCount + 1)) / 2;
+  return (mealCount - index) / total;
+}
+function buildDistribution(result, goal, mealCount){
+  const dists = DISTRIBUTIONS[mealCount];
+  if (!dists) return null;
+  const names = MEAL_NAMES[mealCount];
+  return dists.map((pct, i) => {
+    const carbWeight = goal === 'lose_weight' ? carbWeightDecreasing(i, mealCount) : pct;
+    return {
+      name: names[i],
+      pct,
+      kcal: Math.round(result.kcal * pct),
+      protein: Math.round(result.protein_g / mealCount),
+      carbs: Math.round(result.carbs_g * carbWeight),
+      fat: Math.round(result.fat_g * pct),
+    };
+  });
+}
+
+// ═══ Submit ═══════════════════════════════════════════════════════
+const submitBtn = document.getElementById('submit-btn');
+let submitting = false;
+
+document.getElementById('f-email').addEventListener('input', () => {
+  showErr('e-email', false); markField('f-email', false);
+});
+
+submitBtn.addEventListener('click', async () => {
+  if (submitting) return;
+  const email = document.getElementById('f-email').value.trim();
+  const whatsapp = document.getElementById('f-whatsapp').value.trim() || null;
+
+  if (!EMAIL_RE.test(email)){
+    markField('f-email', true); showErr('e-email', true);
+    return;
+  }
+
+  data.email = email;
+  data.whatsapp = whatsapp;
+
+  submitting = true;
+  document.getElementById('form-error').classList.remove('show');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner"></span> Calculando...';
+
+  const payload = {
+    email, whatsapp, name: data.name, device,
+    utm_source, utm_medium, utm_campaign,
+    weight_kg: data.weight_kg, height_cm: data.height_cm, age: data.age,
+    gender: data.gender, goal: data.goal, activity_level: data.activity_level,
+    meal_count: data.meal_count,
+    result_kcal: data.result.kcal,
+    result_protein: data.result.protein_g,
+    result_carbs: data.result.carbs_g,
+    result_fat: data.result.fat_g,
+    result_water_ml: data.result.water_ml,
+  };
+
+  try {
+    const res = await fetch(SUPABASE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': ANON_KEY },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error('bad status ' + res.status);
+
+    gtag('event', 'calculator_lead', { event_category: 'lead', event_label: 'calculator_submit' });
+    ttq.track('CompleteRegistration', { contents: [{ content_id: 'calculator_lead', content_type: 'lead', content_name: 'Kora Calculator Lead' }] });
+
+    renderResult();
+  } catch (err) {
+    document.getElementById('form-error').classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Ver meu diagnóstico';
+    submitting = false;
+  }
+});
+
+// ═══ Render do resultado ══════════════════════════════════════════
+function renderResult(){
+  const r = data.result;
+  const waterL = (r.water_ml / 1000).toFixed(1);
+  const firstName = data.name ? data.name.split(/\s+/)[0] : null;
+  document.getElementById('result-hello').textContent =
+    firstName ? `${firstName}, suas metas diárias` : 'Suas metas diárias';
+
+  const cards = [
+    ['🔥', `${r.kcal} kcal/dia`, 'Meta calórica'],
+    ['💪', `${r.protein_g}g`, 'Proteína diária'],
+    ['🌾', `${r.carbs_g}g`, 'Carboidrato diário'],
+    ['🥑', `${r.fat_g}g`, 'Gordura diária'],
+    ['💧', `${waterL}L`, 'Água diária'],
+  ];
+  document.getElementById('result-cards').innerHTML = cards.map(([e, v, l]) => `
+    <div class="rcard">
+      <span class="rcard-emoji">${e}</span>
+      <span class="rcard-label">${l}</span>
+      <span class="rcard-value">${v}</span>
+    </div>`).join('');
+
+  // Distribuição por refeição
+  const dist = buildDistribution(r, data.goal, data.meal_count);
+  const distContainer = document.getElementById('dist-container');
+  if (dist){
+    distContainer.innerHTML = `
+      <div class="dist-wrap">
+        <div class="dist-head">
+          <span class="dist-c-name h">Refeição</span>
+          <span class="dist-c h">Cal</span>
+          <span class="dist-c h">Prot</span>
+          <span class="dist-c h">Carb</span>
+          <span class="dist-c h">Gord</span>
+        </div>
+        ${dist.map(row => `
+          <div class="dist-row">
+            <span class="dist-c-name">${row.name}</span>
+            <span class="dist-c">${row.kcal}</span>
+            <span class="dist-c">${row.protein}g</span>
+            <span class="dist-c">${row.carbs}g</span>
+            <span class="dist-c">${row.fat}g</span>
+          </div>`).join('')}
+      </div>`;
+  } else {
+    distContainer.innerHTML = '';
+  }
+
+  // CTA dinâmico por dispositivo
+  const cta = document.getElementById('result-cta');
+  if (device === 'ios'){
+    cta.textContent = 'Baixar no App Store';
+    cta.href = 'https://apps.apple.com/app/id6769632514';
+  } else if (device === 'android'){
+    cta.textContent = 'Baixar no Google Play';
+    cta.href = 'https://korahealthhub.com.br/android/';
+  } else {
+    cta.textContent = 'Conheça o Kora';
+    cta.href = 'https://korahealthhub.com.br/sobre.html';
+  }
+  cta.addEventListener('click', () => {
+    gtag('event', 'calculator_cta_click', { event_category: 'conversion', event_label: device });
+    ttq.track('ClickButton', { contents: [{ content_id: 'calculator_cta_' + device, content_type: 'app', content_name: 'Kora Calculator CTA' }] });
+  });
+
+  showEl('result');
+  document.getElementById('progress').style.width = '100%';
+}
+</script>
+
+</body>
+</html>
