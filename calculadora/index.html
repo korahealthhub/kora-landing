@@ -474,9 +474,9 @@ select.field option{background:#0C1E1B;color:var(--text)}
     <div class="field-group" style="margin-top:24px">
       <label class="field-label" for="f-meals">Número de refeições <span class="opt">(opcional)</span></label>
       <select class="field" id="f-meals">
-        <option value="">Não informar</option>
+        <option value="" selected>Não informar</option>
         <option value="2">2 refeições</option>
-        <option value="3" selected>3 refeições</option>
+        <option value="3">3 refeições</option>
         <option value="4">4 refeições</option>
         <option value="5">5 refeições</option>
         <option value="6">6 refeições</option>
@@ -496,10 +496,10 @@ select.field option{background:#0C1E1B;color:var(--text)}
     <p class="step-sub">Seu diagnóstico está pronto. Informe seu email para receber o resultado completo.</p>
 
     <div class="result-cards locked" id="preview-cards">
-      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/local_fire_department.png" width="24" height="24" alt="Calorias" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Calorias</span><span class="rcard-value">████ kcal</span></div>
-      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/fitness_center.png" width="24" height="24" alt="Proteína" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Proteína</span><span class="rcard-value">██ g</span></div>
-      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/balance.png" width="24" height="24" alt="Carboidrato" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Carboidrato</span><span class="rcard-value">███ g</span></div>
-      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/favorite.png" width="24" height="24" alt="Gordura" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Gordura</span><span class="rcard-value">██ g</span></div>
+      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/my_location.png" width="24" height="24" alt="Calorias" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Calorias</span><span class="rcard-value">████ kcal</span></div>
+      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/egg.png" width="24" height="24" alt="Proteína" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Proteína</span><span class="rcard-value">██ g</span></div>
+      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/grain.png" width="24" height="24" alt="Carboidrato" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Carboidrato</span><span class="rcard-value">███ g</span></div>
+      <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/avocado.png" width="24" height="24" alt="Gordura" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Gordura</span><span class="rcard-value">██ g</span></div>
       <div class="rcard"><span class="rcard-emoji"><img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/water_full.png" width="24" height="24" alt="Água" style="filter:brightness(0) invert(1);opacity:0.9;vertical-align:middle;"></span><span class="rcard-label">Água</span><span class="rcard-value">█.█ L</span></div>
     </div>
 
@@ -541,7 +541,7 @@ select.field option{background:#0C1E1B;color:var(--text)}
     <div class="actions">
       <a class="btn-primary" id="result-cta" href="#" target="_blank" rel="noopener" style="text-decoration:none"></a>
     </div>
-    <p class="note-small">Enviamos também para o seu email 📩</p>
+    <p class="note-small"><span style="display:inline-flex; align-items:center; gap:6px;">Enviamos também para o seu email <img src="https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/mail_shield.png" width="16" height="16" alt="email" style="filter:brightness(0) invert(1); opacity:0.8; flex-shrink:0;"></span></p>
 
     <p class="disclaimer">Estimativa gerada automaticamente com base em teoria nutricional. Não substitui um profissional de saúde.</p>
   </section>
@@ -789,10 +789,10 @@ function renderResult(){
 
   const ICON = 'https://wqdxxdwplaoyirdirjif.supabase.co/storage/v1/object/public/email-assets/';
   const cards = [
-    ['local_fire_department.png', `${r.kcal} kcal/dia`, 'Meta calórica'],
-    ['fitness_center.png', `${r.protein_g}g`, 'Proteína diária'],
-    ['balance.png', `${r.carbs_g}g`, 'Carboidrato diário'],
-    ['favorite.png', `${r.fat_g}g`, 'Gordura diária'],
+    ['my_location.png', `${r.kcal} kcal/dia`, 'Meta calórica'],
+    ['egg.png', `${r.protein_g}g`, 'Proteína diária'],
+    ['grain.png', `${r.carbs_g}g`, 'Carboidrato diário'],
+    ['avocado.png', `${r.fat_g}g`, 'Gordura diária'],
     ['water_full.png', `${waterL}L`, 'Água diária'],
   ];
   document.getElementById('result-cards').innerHTML = cards.map(([icon, v, l]) => `
