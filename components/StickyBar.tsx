@@ -31,7 +31,20 @@ export default function StickyBar() {
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 14, color: 'var(--kora-cream-100)', letterSpacing: '-0.01em' }}>Kora</div>
         </div>
       </div>
-      <a href={downloadUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'var(--kora-teal-400)', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13, letterSpacing: '0.04em', padding: '10px 18px', borderRadius: 'var(--radius-pill)', textDecoration: 'none', whiteSpace: 'nowrap' }} onMouseEnter={e => (e.currentTarget.style.background = 'var(--kora-teal-300)')} onMouseLeave={e => (e.currentTarget.style.background = 'var(--kora-teal-400)')}>
+      <a
+        href={downloadUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'var(--kora-teal-400)', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13, letterSpacing: '0.04em', padding: '10px 18px', borderRadius: 'var(--radius-pill)', textDecoration: 'none', whiteSpace: 'nowrap' }}
+        onMouseEnter={e => (e.currentTarget.style.background = 'var(--kora-teal-300)')}
+        onMouseLeave={e => (e.currentTarget.style.background = 'var(--kora-teal-400)')}
+        onClick={() => {
+          if (downloadUrl.includes('apps.apple.com')) {
+            (window as any).gtag?.('event', 'click_appstore', { event_category: 'conversion', event_label: 'app_store_ios' });
+            (window as any).ttq?.track('ClickButton', { contents: [{ content_id: 'app_store_ios', content_type: 'app', content_name: 'Kora iOS App Store' }] });
+          }
+        }}
+      >
         Download Grátis
       </a>
     </div>

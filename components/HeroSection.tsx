@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -15,6 +15,14 @@ export default function HeroSection() {
   const videoRef    = useRef<HTMLVideoElement>(null);
   const downloadUrl = useDownloadUrl();
   const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
+  // Começa como true (imagem) e só troca para false (vídeo) após confirmar que não é TikTok.
+  // Evita que o TikTok in-app browser capture o elemento <video> no render inicial.
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => {
+    const isTikTok = /musical_ly|TikTok|BytedanceWebview|ByteLocale|aweme/i.test(navigator.userAgent);
+    if (!isTikTok) setShowVideo(true);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -63,24 +71,40 @@ export default function HeroSection() {
       className="theme-dark"
       style={{ position: 'relative', minHeight: '100svh', overflow: 'hidden', color: '#fff' }}
     >
-      {/* ── Video background ── */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
+      {/* ── Background: imagem por padrão; vídeo só após confirmar que não é TikTok ── */}
+      <img
+        src={`${BASE}/uploads/hero-poster.jpg`}
+        alt=""
+        aria-hidden="true"
         style={{
           position: 'absolute', inset: 0,
           width: '100%', height: '100%',
           objectFit: 'cover',
-          transformOrigin: 'center center',
           zIndex: 0,
         }}
-      >
-        <source src={`${BASE}/uploads/hero-video.mp4`} type="video/mp4" />
-      </video>
+      />
+      {showVideo && (
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+            transformOrigin: 'center center',
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        >
+          <source src={`${BASE}/uploads/hero-video.mp4`} type="video/mp4" />
+        </video>
+      )}
 
       {/* ── Layered overlays for depth + readability ── */}
       {/* 1. Base dark wash */}
@@ -143,7 +167,19 @@ export default function HeroSection() {
               Treino, alimentação, hidratação, sono, humor e disposição em um só lugar. Com um Coach IA que não deixa você parar.
             </p>
 
-            <a href={downloadUrl} className="hero-cta cta-btn" style={{ maxWidth: 300, margin: '0 auto' }} target="_blank" rel="noopener noreferrer">
+            <a
+              href={downloadUrl}
+              className="hero-cta cta-btn"
+              style={{ maxWidth: 300, margin: '0 auto' }}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (downloadUrl.includes('apps.apple.com')) {
+                  (window as any).gtag?.('event', 'click_appstore', { event_category: 'conversion', event_label: 'app_store_ios' });
+                  (window as any).ttq?.track('ClickButton', { contents: [{ content_id: 'app_store_ios', content_type: 'app', content_name: 'Kora iOS App Store' }] });
+                }
+              }}
+            >
               Baixar grátis
             </a>
 

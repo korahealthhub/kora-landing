@@ -78,7 +78,20 @@ export default function CtaFinalSection() {
         <h2 className="cta-final-h2" style={{ fontFamily: 'var(--font-display)', fontSize: 32, lineHeight: 0.98, fontWeight: 800, letterSpacing: '-0.02em', textTransform: 'uppercase', margin: '0 0 22px', textWrap: 'balance' } as React.CSSProperties}>
           Comece hoje. Grátis por tempo limitado.
         </h2>
-        <a ref={ctaRef} href={downloadUrl} className="cta-btn" style={{ maxWidth: 340, margin: '0 auto' }} target="_blank" rel="noopener noreferrer">
+        <a
+          ref={ctaRef}
+          href={downloadUrl}
+          className="cta-btn"
+          style={{ maxWidth: 340, margin: '0 auto' }}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
+            if (downloadUrl.includes('apps.apple.com')) {
+              (window as any).gtag?.('event', 'click_appstore', { event_category: 'conversion', event_label: 'app_store_ios' });
+              (window as any).ttq?.track('ClickButton', { contents: [{ content_id: 'app_store_ios', content_type: 'app', content_name: 'Kora iOS App Store' }] });
+            }
+          }}
+        >
           Baixar Grátis
         </a>
         <div style={{ marginTop: 14 }}>
@@ -98,7 +111,16 @@ export default function CtaFinalSection() {
       <div className="calc-section" style={{ marginTop: 44, padding: '28px 24px', background: 'var(--kora-ink-900)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, lineHeight: 1.05, fontWeight: 800, letterSpacing: '-0.01em', textTransform: 'uppercase', margin: '0 0 10px', color: '#fff' }}>Quero receber meu diagnóstico</h3>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.55, margin: '0 auto 20px', maxWidth: 300 }}>Descubra grátis quantas calorias você deve comer por dia. Leva 2 minutos.</p>
-        <a href="https://korahealthhub.com.br/calculadora/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'transparent', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '13px 24px', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.22)', transition: 'background var(--dur-fast)' }} onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')} onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
+        <a
+          href="https://korahealthhub.com.br/calculadora/"
+          style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'transparent', color: '#fff', fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '13px 24px', borderRadius: 'var(--radius-pill)', border: '1px solid rgba(255,255,255,0.22)', transition: 'background var(--dur-fast)' }}
+          onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')}
+          onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+          onClick={() => {
+            (window as any).gtag?.('event', 'click_calculadora', { event_category: 'navigation', event_label: 'calculadora' });
+            (window as any).ttq?.track('ClickButton', { contents: [{ content_id: 'calculadora', content_type: 'page', content_name: 'Calculadora Kora' }] });
+          }}
+        >
           Calcular minhas metas →
         </a>
       </div>
