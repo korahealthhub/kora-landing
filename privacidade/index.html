@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Kora Health Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0F1F1F;
+      --card:    #1E2126;
+      --card2:   #24292F;
+      --teal:    #3D9E8C;
+      --tealLt:  #52C4AE;
+      --t1:      #FFFBE7;
+      --t2:      rgba(255,251,231,0.60);
+      --t3:      rgba(255,251,231,0.38);
+      --border:  rgba(255,251,231,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--t1);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,31,31,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .topbar-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+    }
+
+    .topbar-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--t1);
+      letter-spacing: -0.2px;
+    }
+
+    /* ── Language toggle ── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--t3);
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      text-transform: uppercase;
+    }
+
+    .lang-btn.active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ── */
+    .doc-header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(61,158,140,0.12);
+      border: 1px solid rgba(61,158,140,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .doc-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--t1);
+      margin-bottom: 6px;
+    }
+
+    .doc-subtitle {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .doc-meta {
+      font-size: 13px;
+      color: var(--t3);
+      font-weight: 400;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .section-number {
+      display: inline-block;
+      margin-right: 6px;
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--t1);
+      letter-spacing: -0.2px;
+      margin-bottom: 12px;
+      margin-top: 36px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--t2);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--t2);
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      color: var(--t2);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    /* ── Notice box ── */
+    .notice {
+      background: rgba(61,158,140,0.08);
+      border: 1px solid rgba(61,158,140,0.22);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+
+    .notice p {
+      color: rgba(255,251,231,0.75);
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    /* ── Warning box ── */
+    .warning {
+      background: rgba(200,134,26,0.08);
+      border: 1px solid rgba(200,134,26,0.22);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+
+    .warning p {
+      color: rgba(255,251,231,0.75);
+      margin-bottom: 0;
+      font-size: 13px;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-top: 8px;
+    }
+
+    .contact-box p {
+      margin-bottom: 4px;
+    }
+
+    .contact-box a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      margin-bottom: 0;
+      padding-left: 18px;
+    }
+
+    .toc li {
+      margin-bottom: 4px;
+    }
+
+    .toc a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--t3);
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    /* ── Language content ── */
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .page { padding: 32px 16px 60px; }
+      .doc-title { font-size: 22px; }
+      h2 { font-size: 15px; }
+      .topbar { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="topbar-brand" href="#">
+      <span class="topbar-name">Kora Health Hub</span>
+    </a>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button class="lang-btn active" id="btn-pt" onclick="setLang('pt')" aria-pressed="true">PT</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ═══════════════════════════════════════════ PT-BR ═══ -->
+    <div data-lang="pt" class="visible">
+
+      <div class="doc-header">
+        <div class="doc-header-icon">🔒</div>
+        <div class="doc-title">Política de Privacidade</div>
+        <div class="doc-subtitle">Kora — Health Hub</div>
+        <div class="doc-meta">Última atualização: 14 de maio de 2026 &nbsp;·&nbsp; Versão 2.0</div>
+      </div>
+
+      <div class="notice">
+        <p>Esta política descreve como a Kora coleta, usa e protege seus dados pessoais e de saúde. Ao utilizar o aplicativo, você concorda com os termos aqui descritos. Leia com atenção antes de criar sua conta.</p>
+      </div>
+
+      <div class="toc">
+        <div class="toc-title">Conteúdo</div>
+        <ol>
+          <li><a href="#pt-1">Dados coletados e finalidade</a></li>
+          <li><a href="#pt-2">Como os dados são usados</a></li>
+          <li><a href="#pt-3">Compartilhamento com terceiros</a></li>
+          <li><a href="#pt-4">Retenção de dados</a></li>
+          <li><a href="#pt-5">Seus direitos (LGPD)</a></li>
+          <li><a href="#pt-6">Segurança</a></li>
+          <li><a href="#pt-7">Menores de idade</a></li>
+          <li><a href="#pt-8">Notificações push</a></li>
+          <li><a href="#pt-9">Inteligência Artificial</a></li>
+          <li><a href="#pt-10">Contato</a></li>
+        </ol>
+      </div>
+
+      <!-- 1 -->
+      <div class="section" id="pt-1">
+        <div class="section-title"><span class="section-number">01</span>Dados coletados e finalidade</div>
+
+        <h2>Dados de cadastro</h2>
+        <p>Para criar sua conta coletamos:</p>
+        <ul>
+          <li><strong>Nome completo</strong> — identificação e personalização do app</li>
+          <li><strong>Endereço de e-mail</strong> — autenticação, recuperação de senha e comunicações transacionais</li>
+          <li><strong>Senha</strong> — armazenada em hash seguro via Supabase Auth; nunca acessamos sua senha em texto simples</li>
+        </ul>
+        <p>Ao usar login social (Sign In with Apple ou Google Sign-In), recebemos nome e e-mail diretamente do provedor de identidade, conforme as permissões que você autorizar.</p>
+
+        <h2>Dados de saúde</h2>
+        <p>O núcleo do app é o acompanhamento da sua rotina de saúde. Coletamos:</p>
+        <ul>
+          <li><strong>Dados biométricos:</strong> peso, altura, IMC (calculado localmente)</li>
+          <li><strong>Sono:</strong> horário de dormir, horas dormidas</li>
+          <li><strong>Bem-estar:</strong> humor (escala 1–5), disposição (escala 1–5)</li>
+          <li><strong>Hidratação:</strong> mililitros consumidos diariamente, meta diária de água</li>
+          <li><strong>Nutrição:</strong> refeições do dia, alimentos, horários, check de refeições realizadas; suplementos com dose e horário</li>
+          <li><strong>Treino:</strong> exercícios cadastrados, séries, repetições, descanso, plano de treino ativo, registro de treino realizado e duração</li>
+          <li><strong>Check-in diário:</strong> respostas às perguntas de bem-estar, Kora Score calculado</li>
+        </ul>
+
+        <h2>Foto de perfil</h2>
+        <p>Opcional. Armazenada no Supabase Storage. Usada exclusivamente para exibição no seu perfil dentro do app.</p>
+
+        <h2>Push tokens</h2>
+        <p>Armazenamos o token de notificação push gerado pelo seu dispositivo via Expo. Usado exclusivamente para enviar notificações que você configura no app (lembretes de check-in, refeições, treino, hidratação e insights de saúde).</p>
+
+        <h2>Planos enviados por upload</h2>
+        <p>Se você enviar arquivos PDF de planos nutricionais ou de treino, esses arquivos são processados por Inteligência Artificial para extração estruturada das informações. Após o processamento, o conteúdo extraído é armazenado no seu perfil. Os arquivos brutos não são armazenados permanentemente.</p>
+
+        <h2>Dados de uso e diagnóstico</h2>
+        <p>Coletamos dados de erros e comportamento do app por meio do Sentry (veja seção 3) para identificar e corrigir falhas técnicas. Esses dados não incluem dados de saúde.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="pt-2">
+        <div class="section-title"><span class="section-number">02</span>Como os dados são usados</div>
+
+        <p>Seus dados são utilizados exclusivamente para:</p>
+        <ul>
+          <li>Fornecer as funcionalidades do app: dashboard de saúde, Kora Score, planos alimentares e de treino, acompanhamento de hidratação</li>
+          <li>Personalizar conteúdo e insights gerados pelo Coach IA com base no seu histórico</li>
+          <li>Enviar notificações push que você habilitou nas configurações</li>
+          <li>Gerar relatórios semanais de progresso entregues via notificação</li>
+          <li>Identificar e corrigir erros técnicos no aplicativo</li>
+          <li>Cumprir obrigações legais e regulatórias</li>
+        </ul>
+
+        <div class="notice">
+          <p><strong>Nunca vendemos seus dados.</strong> Seus dados de saúde não são compartilhados com anunciantes, seguradoras, empregadores ou qualquer terceiro para fins comerciais não relacionados às funcionalidades do app.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="pt-3">
+        <div class="section-title"><span class="section-number">03</span>Compartilhamento com terceiros</div>
+
+        <p>Compartilhamos dados apenas com os seguintes prestadores de serviço, estritamente para operar o aplicativo:</p>
+
+        <h3>Supabase</h3>
+        <p>Banco de dados, autenticação e armazenamento de arquivos. Servidores localizados em <strong>sa-east-1 (São Paulo, Brasil)</strong>. Seus dados de saúde ficam em território nacional. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Política de privacidade do Supabase</a>.</p>
+
+        <h3>Anthropic / Claude API</h3>
+        <p>Usada pelo Coach IA para gerar insights personalizados de saúde e pelo processamento de planos nutricionais enviados por PDF. Quando você interage com o Coach ou envia um plano, dados relevantes do seu perfil de saúde são transmitidos à API da Anthropic para geração da resposta. A Anthropic não usa esses dados para treinar modelos. <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Política de privacidade da Anthropic</a>.</p>
+
+        <h3>Apple (Sign In with Apple)</h3>
+        <p>Se você usar o login com Apple, a Apple autentica sua identidade e nos repassa nome e e-mail conforme as permissões que você autorizar. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de privacidade da Apple</a>.</p>
+
+        <h3>Google (Sign In with Google)</h3>
+        <p>Se você usar o login com Google, o Google autentica sua identidade e nos repassa nome e e-mail. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidade do Google</a>.</p>
+
+        <h3>Expo / EAS (Expo Application Services)</h3>
+        <p>Plataforma usada para compilação, distribuição e atualizações over-the-air do aplicativo. Pode processar metadados técnicos do app. <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Política de privacidade da Expo</a>.</p>
+
+        <h3>Sentry</h3>
+        <p>Monitoramento de erros e desempenho. Captura stack traces, informações do dispositivo e dados de sessão anonimizados. Não captura dados de saúde. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Política de privacidade do Sentry</a>.</p>
+
+        <h3>GitHub Actions</h3>
+        <p>Utilizado para execução de rotinas automatizadas no servidor (envio de insights diários e resumos semanais). Não armazena dados de usuários além dos necessários para a execução das tarefas agendadas.</p>
+
+        <div class="warning">
+          <p><strong>Transferências internacionais:</strong> A Anthropic (EUA) e o Sentry (EUA) processam dados fora do Brasil. Essas transferências ocorrem sob cláusulas contratuais padrão e são necessárias para o funcionamento das funcionalidades de IA e monitoramento de erros.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="section" id="pt-4">
+        <div class="section-title"><span class="section-number">04</span>Retenção de dados</div>
+
+        <ul>
+          <li><strong>Dados de conta e saúde:</strong> mantidos enquanto sua conta estiver ativa</li>
+          <li><strong>Check-ins e histórico:</strong> retidos indefinidamente para permitir visualização de evolução de longo prazo</li>
+          <li><strong>Push tokens:</strong> atualizados a cada sessão; tokens obsoletos são removidos automaticamente</li>
+          <li><strong>Arquivos PDF de upload:</strong> processados e descartados após extração; não são armazenados permanentemente</li>
+          <li><strong>Dados de erro (Sentry):</strong> retidos por até 90 dias conforme política padrão do Sentry</li>
+          <li><strong>Após exclusão da conta:</strong> todos os dados pessoais são removidos permanentemente dos nossos sistemas em até 30 dias, exceto quando houver obrigação legal de retenção</li>
+        </ul>
+
+        <h3>Exclusão de conta</h3>
+        <p>Você pode solicitar a exclusão da sua conta a qualquer momento diretamente no app (Perfil → Configurações → Excluir conta) ou pelo e-mail <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a>. A exclusão é irreversível e remove todos os seus dados de saúde, check-ins e histórico.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="pt-5">
+        <div class="section-title"><span class="section-number">05</span>Seus direitos (LGPD)</div>
+
+        <p>Em conformidade com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong>, você tem os seguintes direitos:</p>
+        <ul>
+          <li><strong>Acesso:</strong> obter confirmação de que seus dados são tratados e acessar uma cópia</li>
+          <li><strong>Correção:</strong> solicitar correção de dados incompletos, inexatos ou desatualizados</li>
+          <li><strong>Anonimização ou bloqueio:</strong> solicitar que dados desnecessários sejam anonimizados ou bloqueados</li>
+          <li><strong>Exclusão:</strong> solicitar eliminação dos dados tratados com base no seu consentimento</li>
+          <li><strong>Portabilidade:</strong> solicitar a portabilidade dos seus dados para outro serviço</li>
+          <li><strong>Revogação do consentimento:</strong> retirar o consentimento a qualquer momento, sem prejuízo das operações realizadas anteriormente</li>
+          <li><strong>Informação:</strong> ser informado sobre as entidades com quem compartilhamos seus dados</li>
+          <li><strong>Oposição:</strong> se opor a tratamento realizado em descumprimento da LGPD</li>
+        </ul>
+
+        <p>Para exercer qualquer um desses direitos, entre em contato pelo e-mail <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a>. Responderemos em até 15 dias úteis.</p>
+
+        <p>A base legal para o tratamento dos seus dados de saúde é o <strong>consentimento</strong> (Art. 7º, I, e Art. 11, I da LGPD), obtido no momento do cadastro. O tratamento para finalidades operacionais essenciais também se fundamenta no <strong>legítimo interesse</strong> e no <strong>cumprimento de contrato</strong>.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="pt-6">
+        <div class="section-title"><span class="section-number">06</span>Segurança</div>
+
+        <p>Adotamos as seguintes medidas técnicas e organizacionais para proteger seus dados:</p>
+        <ul>
+          <li><strong>Criptografia em trânsito:</strong> toda comunicação entre o app e nossos servidores utiliza TLS/HTTPS</li>
+          <li><strong>Criptografia em repouso:</strong> dados armazenados no Supabase são criptografados em disco</li>
+          <li><strong>Row Level Security (RLS):</strong> políticas de banco de dados que garantem que cada usuário acesse apenas seus próprios dados</li>
+          <li><strong>Senhas com hash:</strong> senhas são armazenadas usando bcrypt via Supabase Auth</li>
+          <li><strong>Autenticação JWT:</strong> sessões protegidas por tokens de curta duração</li>
+          <li><strong>Acesso restrito:</strong> apenas membros da equipe com necessidade técnica têm acesso à infraestrutura</li>
+          <li><strong>Monitoramento contínuo:</strong> erros e anomalias são monitorados via Sentry</li>
+        </ul>
+
+        <p>Nenhum sistema é 100% seguro. Em caso de incidente de segurança que afete seus dados, notificaremos os usuários afetados nos prazos previstos pela LGPD.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="pt-7">
+        <div class="section-title"><span class="section-number">07</span>Menores de idade</div>
+
+        <div class="warning">
+          <p><strong>O Kora é destinado exclusivamente a pessoas com 18 anos ou mais.</strong> Não coletamos intencionalmente dados de menores de 18 anos. Se identificarmos que uma conta pertence a um menor, ela será encerrada imediatamente e os dados removidos.</p>
+        </div>
+
+        <p>Se você acredita que um menor forneceu dados para o Kora, entre em contato pelo e-mail <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a> para que possamos tomar as providências necessárias.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="pt-8">
+        <div class="section-title"><span class="section-number">08</span>Notificações push</div>
+
+        <p>O Kora pode enviar notificações push para o seu dispositivo, sempre com sua autorização prévia. Os tipos de notificação disponíveis são:</p>
+        <ul>
+          <li>Lembretes de check-in diário</li>
+          <li>Lembretes de refeições e suplementos</li>
+          <li>Lembretes de treino</li>
+          <li>Lembretes de hidratação</li>
+          <li>Insights proativos de saúde (insights diários gerados por IA)</li>
+          <li>Resumo semanal de progresso</li>
+        </ul>
+
+        <p>Você pode gerenciar ou desativar cada tipo de notificação individualmente nas configurações do app (Perfil → Notificações). Também é possível desativar todas as notificações nas configurações do seu sistema operacional a qualquer momento.</p>
+
+        <p>Armazenamos apenas o token técnico necessário para o envio. Não compartilhamos tokens de push com terceiros para fins publicitários.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="pt-9">
+        <div class="section-title"><span class="section-number">09</span>Inteligência Artificial</div>
+
+        <p>O Kora utiliza modelos de linguagem da <strong>Anthropic (Claude)</strong> em duas funcionalidades:</p>
+
+        <h3>Coach IA</h3>
+        <p>Quando você interagir com o Coach no aplicativo, dados do seu perfil de saúde — incluindo check-ins recentes, plano alimentar, plano de treino e histórico de hidratação — são enviados à API da Anthropic para geração de insights personalizados. Esses dados são transmitidos de forma segura via HTTPS e não são armazenados pela Anthropic para treinamento de modelos.</p>
+
+        <h3>Processamento de planos (upload de PDF)</h3>
+        <p>Quando você envia um PDF de plano nutricional ou de treino, o conteúdo do arquivo é transmitido à API da Anthropic para extração estruturada das informações (refeições, horários, exercícios, séries etc.). O arquivo bruto não é retido; apenas os dados extraídos são salvos no seu perfil.</p>
+
+        <div class="notice">
+          <p>A IA gera conteúdo informativo com base nos seus dados e não substitui orientação médica, nutricional ou de educação física profissional. Consulte sempre um profissional de saúde qualificado antes de tomar decisões relacionadas à sua saúde.</p>
+        </div>
+
+        <h3>Decisões automatizadas</h3>
+        <p>O Kora não utiliza IA para tomar decisões automatizadas com efeitos jurídicos ou significativos sobre você. Todos os insights gerados são informativos e a decisão de agir cabe exclusivamente ao usuário.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="pt-10">
+        <div class="section-title"><span class="section-number">10</span>Contato e encarregado de dados</div>
+
+        <p>Para dúvidas, exercício de direitos, solicitações de exclusão ou qualquer questão relacionada à privacidade, entre em contato:</p>
+
+        <div class="contact-box">
+          <p style="font-size:13px;color:var(--t3);margin-bottom:8px;">E-mail de atendimento</p>
+          <a href="mailto:atendimento.app.kora@gmail.com">atendimento.app.kora@gmail.com</a>
+          <p style="font-size:12px;color:var(--t3);margin-top:10px;margin-bottom:0;">Prazo de resposta: até 15 dias úteis</p>
+        </div>
+
+        <p style="margin-top:16px;">Esta Política de Privacidade pode ser atualizada periodicamente. Notificaremos usuários ativos sobre alterações relevantes por e-mail ou notificação no app com pelo menos 15 dias de antecedência. A data da última atualização consta sempre no topo deste documento.</p>
+      </div>
+
+      <div class="footer">
+        <p>© 2026 Kora Health Hub · <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal);text-decoration:none;">atendimento.app.kora@gmail.com</a></p>
+        <p style="margin-top:4px;">Última atualização: 14 de maio de 2026</p>
+      </div>
+
+    </div><!-- /pt -->
+
+
+    <!-- ═══════════════════════════════════════════ EN ═══ -->
+    <div data-lang="en">
+
+      <div class="doc-header">
+        <div class="doc-header-icon">🔒</div>
+        <div class="doc-title">Privacy Policy</div>
+        <div class="doc-subtitle">Kora — Health Hub</div>
+        <div class="doc-meta">Last updated: May 14, 2026 &nbsp;·&nbsp; Version 2.0</div>
+      </div>
+
+      <div class="notice">
+        <p>This policy describes how Kora collects, uses, and protects your personal and health data. By using the app, you agree to the terms described here. Please read carefully before creating your account.</p>
+      </div>
+
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ol>
+          <li><a href="#en-1">Data collected and purpose</a></li>
+          <li><a href="#en-2">How data is used</a></li>
+          <li><a href="#en-3">Third-party sharing</a></li>
+          <li><a href="#en-4">Data retention</a></li>
+          <li><a href="#en-5">Your rights (LGPD)</a></li>
+          <li><a href="#en-6">Security</a></li>
+          <li><a href="#en-7">Minors</a></li>
+          <li><a href="#en-8">Push notifications</a></li>
+          <li><a href="#en-9">Artificial Intelligence</a></li>
+          <li><a href="#en-10">Contact</a></li>
+        </ol>
+      </div>
+
+      <!-- 1 -->
+      <div class="section" id="en-1">
+        <div class="section-title"><span class="section-number">01</span>Data collected and purpose</div>
+
+        <h2>Account data</h2>
+        <p>To create your account we collect:</p>
+        <ul>
+          <li><strong>Full name</strong> — identification and app personalization</li>
+          <li><strong>Email address</strong> — authentication, password recovery, and transactional communications</li>
+          <li><strong>Password</strong> — stored as a secure hash via Supabase Auth; we never access your password in plain text</li>
+        </ul>
+        <p>When using social login (Sign In with Apple or Google Sign-In), we receive name and email directly from the identity provider according to the permissions you grant.</p>
+
+        <h2>Health data</h2>
+        <p>The core of the app is tracking your health routine. We collect:</p>
+        <ul>
+          <li><strong>Biometric data:</strong> weight, height, BMI (calculated locally)</li>
+          <li><strong>Sleep:</strong> bedtime, hours slept</li>
+          <li><strong>Well-being:</strong> mood (1–5 scale), energy (1–5 scale)</li>
+          <li><strong>Hydration:</strong> milliliters consumed daily, daily water goal</li>
+          <li><strong>Nutrition:</strong> daily meals, foods, schedules, meal completion check; supplements with dose and time</li>
+          <li><strong>Workout:</strong> registered exercises, sets, reps, rest time, active workout plan, workout completion log and duration</li>
+          <li><strong>Daily check-in:</strong> well-being questionnaire responses, Kora Score calculation</li>
+        </ul>
+
+        <h2>Profile photo</h2>
+        <p>Optional. Stored in Supabase Storage. Used exclusively to display your profile picture within the app.</p>
+
+        <h2>Push tokens</h2>
+        <p>We store the push notification token generated by your device via Expo. Used exclusively to send notifications you configure in the app (check-in reminders, meals, workouts, hydration, and health insights).</p>
+
+        <h2>Uploaded plans</h2>
+        <p>If you upload PDF files of nutrition or workout plans, these files are processed by Artificial Intelligence for structured data extraction. After processing, the extracted content is stored in your profile. Raw files are not permanently stored.</p>
+
+        <h2>Usage and diagnostic data</h2>
+        <p>We collect error and app behavior data via Sentry (see section 3) to identify and fix technical issues. This data does not include health data.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="en-2">
+        <div class="section-title"><span class="section-number">02</span>How data is used</div>
+
+        <p>Your data is used exclusively to:</p>
+        <ul>
+          <li>Provide app features: health dashboard, Kora Score, meal and workout plans, hydration tracking</li>
+          <li>Personalize content and insights generated by the AI Coach based on your history</li>
+          <li>Send push notifications you have enabled in settings</li>
+          <li>Generate weekly progress reports delivered via notification</li>
+          <li>Identify and fix technical errors in the application</li>
+          <li>Comply with legal and regulatory obligations</li>
+        </ul>
+
+        <div class="notice">
+          <p><strong>We never sell your data.</strong> Your health data is not shared with advertisers, insurers, employers, or any third party for commercial purposes unrelated to app features.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="en-3">
+        <div class="section-title"><span class="section-number">03</span>Third-party sharing</div>
+
+        <p>We share data only with the following service providers, strictly to operate the application:</p>
+
+        <h3>Supabase</h3>
+        <p>Database, authentication, and file storage. Servers located in <strong>sa-east-1 (São Paulo, Brazil)</strong>. Your health data stays within Brazil. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a>.</p>
+
+        <h3>Anthropic / Claude API</h3>
+        <p>Used by the AI Coach to generate personalized health insights and to process nutritional plans uploaded as PDFs. When you interact with the Coach or upload a plan, relevant health profile data is transmitted to Anthropic's API to generate a response. Anthropic does not use this data to train models. <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a>.</p>
+
+        <h3>Apple (Sign In with Apple)</h3>
+        <p>If you use Apple login, Apple authenticates your identity and forwards name and email according to the permissions you grant. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>
+
+        <h3>Google (Sign In with Google)</h3>
+        <p>If you use Google login, Google authenticates your identity and forwards name and email. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+
+        <h3>Expo / EAS (Expo Application Services)</h3>
+        <p>Platform used for app compilation, distribution, and over-the-air updates. May process technical app metadata. <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo Privacy Policy</a>.</p>
+
+        <h3>Sentry</h3>
+        <p>Error and performance monitoring. Captures stack traces, device information, and anonymized session data. Does not capture health data. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry Privacy Policy</a>.</p>
+
+        <h3>GitHub Actions</h3>
+        <p>Used for automated server-side routines (daily health insights and weekly summaries). Does not store user data beyond what is needed to execute the scheduled tasks.</p>
+
+        <div class="warning">
+          <p><strong>International transfers:</strong> Anthropic (US) and Sentry (US) process data outside Brazil. These transfers occur under standard contractual clauses and are necessary for AI features and error monitoring to function.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="section" id="en-4">
+        <div class="section-title"><span class="section-number">04</span>Data retention</div>
+
+        <ul>
+          <li><strong>Account and health data:</strong> retained while your account is active</li>
+          <li><strong>Check-ins and history:</strong> retained indefinitely to enable long-term progress tracking</li>
+          <li><strong>Push tokens:</strong> updated each session; obsolete tokens are removed automatically</li>
+          <li><strong>Uploaded PDF files:</strong> processed and discarded after extraction; not permanently stored</li>
+          <li><strong>Error data (Sentry):</strong> retained for up to 90 days per Sentry's default policy</li>
+          <li><strong>After account deletion:</strong> all personal data is permanently removed from our systems within 30 days, unless there is a legal retention obligation</li>
+        </ul>
+
+        <h3>Account deletion</h3>
+        <p>You may request account deletion at any time directly in the app (Profile → Settings → Delete account) or by email at <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a>. Deletion is irreversible and removes all your health data, check-ins, and history.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="en-5">
+        <div class="section-title"><span class="section-number">05</span>Your rights (LGPD)</div>
+
+        <p>In compliance with Brazil's <strong>General Data Protection Law — LGPD (Law No. 13,709/2018)</strong>, you have the following rights:</p>
+        <ul>
+          <li><strong>Access:</strong> obtain confirmation that your data is being processed and access a copy</li>
+          <li><strong>Correction:</strong> request correction of incomplete, inaccurate, or outdated data</li>
+          <li><strong>Anonymization or blocking:</strong> request that unnecessary data be anonymized or blocked</li>
+          <li><strong>Deletion:</strong> request elimination of data processed based on your consent</li>
+          <li><strong>Portability:</strong> request portability of your data to another service</li>
+          <li><strong>Revocation of consent:</strong> withdraw consent at any time, without prejudice to prior processing</li>
+          <li><strong>Information:</strong> be informed about the entities with whom we share your data</li>
+          <li><strong>Objection:</strong> object to processing carried out in non-compliance with the LGPD</li>
+        </ul>
+
+        <p>To exercise any of these rights, contact us at <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a>. We will respond within 15 business days.</p>
+
+        <p>The legal basis for processing your health data is <strong>consent</strong> (Art. 7, I, and Art. 11, I of the LGPD), obtained at registration. Processing for essential operational purposes is also based on <strong>legitimate interest</strong> and <strong>contract performance</strong>.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="en-6">
+        <div class="section-title"><span class="section-number">06</span>Security</div>
+
+        <p>We implement the following technical and organizational measures to protect your data:</p>
+        <ul>
+          <li><strong>Encryption in transit:</strong> all communication between the app and our servers uses TLS/HTTPS</li>
+          <li><strong>Encryption at rest:</strong> data stored in Supabase is encrypted on disk</li>
+          <li><strong>Row Level Security (RLS):</strong> database policies ensuring each user accesses only their own data</li>
+          <li><strong>Password hashing:</strong> passwords are stored using bcrypt via Supabase Auth</li>
+          <li><strong>JWT authentication:</strong> sessions protected by short-lived tokens</li>
+          <li><strong>Restricted access:</strong> only team members with technical need have access to infrastructure</li>
+          <li><strong>Continuous monitoring:</strong> errors and anomalies are monitored via Sentry</li>
+        </ul>
+
+        <p>No system is 100% secure. In the event of a security incident affecting your data, we will notify affected users within the timeframes required by the LGPD.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="en-7">
+        <div class="section-title"><span class="section-number">07</span>Minors</div>
+
+        <div class="warning">
+          <p><strong>Kora is intended exclusively for users aged 18 and over.</strong> We do not intentionally collect data from minors under 18. If we identify that an account belongs to a minor, it will be terminated immediately and the data removed.</p>
+        </div>
+
+        <p>If you believe a minor has provided data to Kora, please contact us at <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal)">atendimento.app.kora@gmail.com</a> so we can take the necessary steps.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="en-8">
+        <div class="section-title"><span class="section-number">08</span>Push notifications</div>
+
+        <p>Kora may send push notifications to your device, always with your prior authorization. Available notification types include:</p>
+        <ul>
+          <li>Daily check-in reminders</li>
+          <li>Meal and supplement reminders</li>
+          <li>Workout reminders</li>
+          <li>Hydration reminders</li>
+          <li>Proactive health insights (AI-generated daily insights)</li>
+          <li>Weekly progress summaries</li>
+        </ul>
+
+        <p>You can manage or disable each notification type individually in app settings (Profile → Notifications). You may also disable all notifications in your device's operating system settings at any time.</p>
+
+        <p>We only store the technical token required for delivery. We do not share push tokens with third parties for advertising purposes.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="en-9">
+        <div class="section-title"><span class="section-number">09</span>Artificial Intelligence</div>
+
+        <p>Kora uses language models from <strong>Anthropic (Claude)</strong> in two features:</p>
+
+        <h3>AI Coach</h3>
+        <p>When you interact with the Coach in the app, data from your health profile — including recent check-ins, meal plan, workout plan, and hydration history — is sent to Anthropic's API to generate personalized insights. This data is transmitted securely via HTTPS and is not stored by Anthropic for model training.</p>
+
+        <h3>Plan processing (PDF upload)</h3>
+        <p>When you upload a nutrition or workout plan PDF, the file content is transmitted to Anthropic's API for structured data extraction (meals, schedules, exercises, sets, etc.). The raw file is not retained; only the extracted data is saved to your profile.</p>
+
+        <div class="notice">
+          <p>AI-generated content is informational and does not replace professional medical, nutritional, or fitness guidance. Always consult a qualified healthcare professional before making health-related decisions.</p>
+        </div>
+
+        <h3>Automated decisions</h3>
+        <p>Kora does not use AI to make automated decisions with legal or significant effects on you. All generated insights are informational and acting on them is entirely at the user's discretion.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="en-10">
+        <div class="section-title"><span class="section-number">10</span>Contact</div>
+
+        <p>For questions, exercising rights, deletion requests, or any privacy-related matter, please contact us:</p>
+
+        <div class="contact-box">
+          <p style="font-size:13px;color:var(--t3);margin-bottom:8px;">Support email</p>
+          <a href="mailto:atendimento.app.kora@gmail.com">atendimento.app.kora@gmail.com</a>
+          <p style="font-size:12px;color:var(--t3);margin-top:10px;margin-bottom:0;">Response time: up to 15 business days</p>
+        </div>
+
+        <p style="margin-top:16px;">This Privacy Policy may be updated periodically. We will notify active users of significant changes by email or in-app notification at least 15 days in advance. The date of the last update is always shown at the top of this document.</p>
+      </div>
+
+      <div class="footer">
+        <p>© 2026 Kora Health Hub · <a href="mailto:atendimento.app.kora@gmail.com" style="color:var(--teal);text-decoration:none;">atendimento.app.kora@gmail.com</a></p>
+        <p style="margin-top:4px;">Last updated: May 14, 2026</p>
+      </div>
+
+    </div><!-- /en -->
+
+  </div><!-- /page -->
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function(el) {
+        el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
+      });
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-pt').setAttribute('aria-pressed', lang === 'pt');
+      document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    }
+  </script>
+
+</body>
+</html>
