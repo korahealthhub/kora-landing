@@ -151,8 +151,9 @@ body{
   </a>
 
   <!-- Android -->
-  <a href="/android/"
+  <a href="https://play.google.com/store/apps/details?id=com.usekoraapp.health"
      class="dl-btn"
+     target="_blank" rel="noopener"
      onclick="gtag('event','click_googleplay',{'event_category':'conversion','event_label':'google_play_android'});ttq.track('ClickButton',{contents:[{content_id:'google_play_android',content_type:'app',content_name:'Kora Android Google Play'}]});">
     <span class="dl-btn-icon">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -160,8 +161,8 @@ body{
       </svg>
     </span>
     <span class="dl-btn-body">
-      <span class="dl-btn-label">Testar no Android</span>
-      <span class="dl-btn-caption">Teste fechado — Google Play</span>
+      <span class="dl-btn-label">Baixar no Android</span>
+      <span class="dl-btn-caption">Google Play — disponível agora</span>
     </span>
   </a>
 
@@ -189,7 +190,7 @@ body{
   var destination = isIOS
     ? 'https://apps.apple.com/br/app/kora-health-hub/id6769632514'
     : isAndroid
-    ? '/android/'
+    ? 'https://play.google.com/store/apps/details?id=com.usekoraapp.health'
     : '/';
 
   var eventLabel = isIOS
