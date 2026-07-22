@@ -14,7 +14,6 @@ const faqs = [
   { q: 'Funciona para treino em casa?', a: 'Sim. O app tem exercícios para academia, casa e peso do corpo. Você escolhe de acordo com o que tem disponível no dia.' },
   { q: 'Funciona para iniciante?', a: 'Sim. Foi feito para quem está começando agora e para quem já treina mas não consegue manter a constância.' },
   { q: 'Como o Coach IA funciona?', a: 'O Coach IA tira dúvidas sobre treino, alimentação e hábitos, registra suas refeições por foto ou mensagem e envia lembretes inteligentes para não deixar você esquecer nada.' },
-  { q: 'E o Android?', a: 'O Android está em beta fechado. Acesse korahealthhub.com.br/android para garantir seu acesso antecipado.' },
   { q: 'Ainda tem dúvidas?', a: 'Fala com a gente pelo e-mail atendimento.app.kora@gmail.com. Respondemos o mais rápido possível.' },
 ];
 
@@ -94,11 +93,6 @@ export default function CtaFinalSection() {
         >
           Baixar Grátis
         </a>
-        <div style={{ marginTop: 14 }}>
-          <a href="https://korahealthhub.com.br/android/" style={{ fontSize: 14, fontWeight: 600, color: 'var(--kora-grey-500)', transition: 'color var(--dur-fast)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--kora-teal-500)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--kora-grey-500)')}>
-            Tem Android? Entre no beta →
-          </a>
-        </div>
       </div>
 
       <div className="faq-section" style={{ marginTop: 52 }}>
